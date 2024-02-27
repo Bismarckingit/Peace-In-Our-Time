@@ -1,0 +1,58 @@
+#Special note: crime icons are useless - the game ignores them and assigns the graphical icons in gfx/interface/crime_strip.dds based on order entry in this file. First entry is icon = 1, second entry is icon = 2, etc.
+#active = yes means this crime gets assigned randomly by the game. Scripted crimes that are manually assigned or removed like this crime rework features should NEVER have active = yes in the entry
+#There is no way to remove crime as remove_crime does not work, so a no_crime crime has to be added to remove a crime.
+
+no_crime = {
+}
+
+nuke_province = {
+	population_growth = -0.1
+	immigrant_push = 10
+	immigrant_attract = -5
+	pop_militancy_modifier = -1.00 #Who wants to rise up in a nuclear wasteland?
+	local_RGO_throughput = -0.99
+	local_factory_output = -0.99
+	supply_limit = -99.0
+}
+
+bio_province = {
+	immigrant_attract = -0.50
+	immigrant_push = 0.30
+	local_RGO_output = -0.50
+	local_factory_throughput = -0.50
+	population_growth = -0.01
+}
+
+chem_province = {
+	population_growth = -0.025
+	immigrant_push = 0.5
+	immigrant_attract = -1
+	pop_militancy_modifier = 0.5
+	local_RGO_throughput = -0.75
+	local_factory_output = -0.90
+}
+
+war_damaged = {
+	immigrant_push = 0.05
+	local_artisan_output = -0.25
+	pop_militancy_modifier = 0.05
+	local_factory_throughput = -0.25
+	social_reform_desire = 0.5
+	population_growth = -0.001
+	local_factory_input = 0.20
+}
+
+natural_disaster = {
+	local_RGO_output = -0.5
+	population_growth = -0.002
+}
+
+nuke_accident = {
+	immigrant_push = 1.25
+	population_growth = -0.03
+	immigrant_attract = -0.60
+	core_pop_militancy_modifier = 0.01
+	local_RGO_throughput = -0.25
+	local_factory_output = -0.25
+	supply_limit = -30.0
+}

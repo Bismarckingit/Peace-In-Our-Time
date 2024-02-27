@@ -1,0 +1,888 @@
+# GENERATED
+#Start dates don't really matter unless a country was vassalized after either 1946 or 1950
+#End dates do matter somewhat - if the end date was in 1947 for example, the country will be independent in the 1950 and 1992 start date.
+#If the end date was in 1975, the country will be vassalized in 1946 and 1950 start dates but independent in 1992 start date.
+
+
+### 1946 Start Date ###
+# Chinese Warlords
+vassal = {
+	first = JAP
+	second = CHI
+	start_date = 1945.1.1
+	end_date = 1975.4.22
+}
+vassal = {
+	first = JAP
+	second = KWA
+	start_date = 1945.1.1
+	end_date = 1975.4.22
+}
+vassal = {
+	first = JAP
+	second = MCK
+	start_date = 1945.1.1
+	end_date = 1975.4.22
+}
+vassal = {
+	first = JAP
+	second = IMN
+	start_date = 1945.1.1
+	end_date = 1975.4.22
+}
+### Colonies ###
+
+# French Colonies
+vassal = {
+	first = FRA
+	second = FAG
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = FRA
+	second = ICU
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}	
+vassal = {
+	first = FRA
+	second = AOF
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = FRA
+	second = AEF
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = FRA
+	second = DJI
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = FRA
+	second = MAD
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = FRA
+	second = FEZ
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = FRA
+	second = CMR
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = FRA
+	second = GUN
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+
+# British Colonies
+vassal = {
+	first = ENG
+	second = SUD
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = KEN
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = UGA
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = TAN
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = SOM
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = SML
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = ERI
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = MLW
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = ZAM
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = BOT
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = LES
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = SWA
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = NGE
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = GHA
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = GAM
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = SRN
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = SYE
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = SRL
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = BUR
+	start_date = 1945.1.1
+	end_date = 1948.1.1
+}
+vassal = {
+	first = ENG
+	second = GUY
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = CYP
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = MAL
+	start_date = 1945.1.1
+	end_date = 1964.9.23
+}
+vassal = {
+	first = ENG
+	second = BLZ
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = TRI
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = HKG
+	start_date = 1945.1.1
+	end_date = 1995.1.1
+}
+vassal = {
+	first = ENG
+	second = SNG
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = BRU
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = SWK
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ENG
+	second = SAB
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+#Italian Colonies
+vassal = {
+	first = ITA
+	second = ETH
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+vassal = {
+	first = ITA
+	second = LBY
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+
+#Belgian Colonies
+vassal = {
+	first = BEL
+	second = CNG
+	start_date = 1945.1.1
+	end_date = 1964.1.1
+}
+vassal = {
+	first = BEL
+	second = RWA
+	start_date = 1945.1.1
+	end_date = 1964.1.1
+}
+
+#Dutch Colonies
+vassal = {
+	first = NET
+	second = SUR
+	start_date = 1945.1.1
+	end_date = 1964.1.1
+}
+vassal = {
+	first = NET
+	second = WPA
+	start_date = 1950.1.1
+	end_date = 1961.1.1
+}
+vassal = {
+	first = NET
+	second = IDO
+	start_date = 1945.1.1
+	end_date = 1960.1.1
+}
+
+#Portuguese Colonies
+vassal = {
+	first = POR
+	second = GUB
+	start_date = 1945.1.1
+	end_date = 1964.1.1
+}
+vassal = {
+	first = POR
+	second = ANG
+	start_date = 1945.1.1
+	end_date = 1964.1.1
+}
+vassal = {
+	first = POR
+	second = MOZ
+	start_date = 1945.1.1
+	end_date = 1964.1.1
+}
+vassal = {
+	first = POR
+	second = MCA
+	start_date = 1945.1.1
+	end_date = 1998.1.1
+}
+vassal = {
+	first = POR
+	second = STP
+	start_date = 1945.1.1
+	end_date = 1964.1.1
+}
+vassal = {
+	first = POR
+	second = CPV
+	start_date = 1945.1.1
+	end_date = 1975.7.5
+}
+vassal = {
+	first = POR
+	second = MCA
+	start_date = 1945.1.1
+	end_date = 1999.12.20
+}
+vassal = {
+	first = POR
+	second = TIM
+	start_date = 1945.1.1
+	end_date = 1973.12.20
+}
+
+#Spanish Colonies
+vassal = {
+	first = SPA
+	second = WSA
+	start_date = 1945.1.1
+	end_date = 1964.1.1
+}
+vassal = {
+	first = SPA
+	second = EQG
+	start_date = 1945.1.1
+	end_date = 1964.1.1
+}
+
+vassal = {
+	first = SAF
+	second = NAM
+	start_date = 1945.4.27
+	end_date = 1990.3.21
+}
+
+vassal = {
+	first = AST
+	second = PPN
+	start_date = 1945.1.1
+	end_date = 1976.1.1
+}
+
+substate = {
+	first = ENG
+	second = IOM
+	start_date = 1800.1.1
+	end_date = 2100.1.1
+}
+substate = {
+	first = ENG
+	second = JER
+	start_date = 1800.1.1
+	end_date = 2100.1.1
+}
+vassal = {
+	first = USA
+	second = ICL
+	start_date = 1945.1.1
+	end_date = 1947.1.1
+}
+substate = {
+	first = FMS
+	second = KED
+	start_date = 1900.1.1
+	end_date = 1949.1.1
+}
+substate = {
+	first = FMS
+	second = JOH
+	start_date = 1900.1.1
+	end_date = 1949.1.1
+}
+substate = {
+	first = FMS
+	second = TER
+	start_date = 1900.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = VAN
+	start_date = 1900.1.1
+	end_date = 1980.1.1
+}
+vassal = {
+	first = ENG
+	second = IRQ
+	start_date = 1944.1.1
+	end_date = 1947.1.1
+}
+substate = {
+	first = KMT
+	second = TAI
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = FIN
+	second = ALA
+	start_date = 1945.1.1
+	end_date = 2092.1.1
+}
+vassal = {
+	first = FRA
+	second = SYR
+	start_date = 1945.1.1
+	end_date = 1947.1.1
+}
+vassal = {
+	first = NZL
+	second = SAM
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+vassal = {
+	first = AST
+	second = NAU
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+vassal = {
+	first = USA
+	second = XPI
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+vassal = {
+	first = FRA
+	second = CAM
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+vassal = {
+	first = FRA
+	second = LUA
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+vassal = {
+	first = ENG
+	second = SOM
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+vassal = {
+	first = ENG
+	second = OMA
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+vassal = {
+	first = ENG
+	second = MLD
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+vassal = {
+	first = ENG
+	second = FMS
+	start_date = 1945.1.1
+	end_date = 1957.1.1
+}
+vassal = {
+	first = ENG
+	second = ZAN
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+vassal = {
+	first = ENG
+	second = UAE
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+vassal = {
+	first = ENG
+	second = BHR
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+substate = {
+	first = RAJ
+	second = BHU
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = RHO
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+vassal = {
+	first = ENG
+	second = PAL
+	start_date = 1945.1.1
+	end_date = 1948.1.1
+}
+vassal = {
+	first = ENG
+	second = JOR
+	start_date = 1945.1.1
+	end_date = 1946.6.1
+}
+vassal = {
+	first = ENG
+	second = KUW
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+vassal = {
+	first = FRA
+	second = MOR
+	start_date = 1945.1.1
+	end_date = 1956.1.1
+}
+vassal = {
+	first = ENG
+	second = JAK
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = AZK
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = QAT
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+vassal = {
+	first = ENG
+	second = TON
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+vassal = {
+	first = ENG
+	second = RAJ
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = PAK
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = MNP
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = BLO
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = RAA
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = IND
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = GWA
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = BER
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = ORI
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = NAX
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+substate = {
+	first = RAJ
+	second = SIK
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = HYD
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = MYS
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = ENG
+	second = TRA
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = FRA
+	second = TUN
+	start_date = 1945.1.1
+	end_date = 1956.1.1
+}
+vassal = {
+	first = USA
+	second = PHI
+	start_date = 1945.1.1
+	end_date = 1949.1.1
+}
+vassal = {
+	first = USA
+	second = CUB
+	start_date = 1945.1.1
+	end_date = 1959.1.1
+}
+vassal = {
+	first = SPA
+	second = TGZ
+	start_date = 1940.1.1
+	end_date = 1956.1.1
+}
+substate = {
+	first = USA
+	second = HAW
+	start_date = 1900.1.1
+	end_date = 1959.8.21
+}
+
+### 1992 Start Date ###
+
+vassal = {
+	first = DEN
+	second = GRN
+	start_date = 1979.1.1
+	end_date = 2100.1.1
+}
+vassal = {
+	first = TUR
+	second = NCY
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = DEN
+	second = FAR
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = DEN
+	second = GRN
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = NET
+	second = CUR
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = NZL
+	second = TOK
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = NZL
+	second = NIU
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = NZL
+	second = COI
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = SAF
+	second = TRK
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = SAF
+	second = BOP
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = SAF
+	second = CIS
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = SAF
+	second = GZA
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = SAF
+	second = VED
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = SAF
+	second = LBW
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = SAF
+	second = NGW
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = SAF
+	second = NDB
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = SAF
+	second = QWA
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = SAF
+	second = ZUL
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = USA
+	second = PUR
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = USA
+	second = NMI
+	start_date = 1986.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = USA
+	second = PAU
+	start_date = 1986.1.1
+	end_date = 1994.1.1
+}
+vassal = {
+	first = USA
+	second = SMO
+	start_date = 1900.1.1
+	end_date = 2000.1.1
+}
+vassal = {
+	first = HND
+	second = BHU
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = DAI
+	second = LUA
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = DAI
+	second = CAM
+	start_date = 1978.1.1
+	end_date = 1993.1.1
+}
+
+#BOT
+vassal = {
+	first = ENG
+	second = BEU
+	start_date = 1991.1.1
+	end_date = 2032.1.1
+}
+vassal = {
+	first = ENG
+	second = AGI
+	start_date = 1976.1.1
+	end_date = 2100.1.1
+}
+vassal = {
+	first = ENG
+	second = BEU
+	start_date = 1968.1.1
+	end_date = 2100.1.1
+}
+vassal = {
+	first = ENG
+	second = VIR
+	start_date = 1967.1.1
+	end_date = 2100.1.1
+}
+vassal = {
+	first = ENG
+	second = TCI
+	start_date = 1976.1.1
+	end_date = 2100.1.1
+}

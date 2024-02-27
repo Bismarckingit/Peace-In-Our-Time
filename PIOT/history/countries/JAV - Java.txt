@@ -1,0 +1,77 @@
+
+
+#========================= H E A D E R =========================
+
+capital = 1416
+primary_culture = indonesian
+religion = sunni
+government = democracy
+plurality = 10
+nationalvalue = nv_islamic
+literacy = 0.5
+civilized = yes 
+prestige = 3
+schools = traditional_academic
+oob = "JAV_oob.txt"
+
+
+#========================= H O U S E - O F - L O R D S =========================
+
+ruling_party = JAV_conservative_92
+upper_house = {
+big_tent = 0
+progressive = 0
+traditionalist = 0
+conservative = 34
+liberal = 33
+socialist = 33
+communist = 0
+communist_social = 0
+populist = 0
+nationalist = 0
+}
+vote_franschise = rigged_voting
+political_opinions = popular_opinion
+public_meetings = free_meetings
+penal_system = capital_punishment
+civil_service = elitist_service
+publishing_rights = free_publishing
+union_rights = restricted_unions
+political_parties = parties_short
+immigration_policy = naturalization
+conscription_policy = two_year_draft
+minorities_reform = minorities_equal_rights
+voting_system = first_past_the_post
+wage_reform = trinket_wage
+security_reform = basic_security
+safety_regulations = trinket_safety
+unemployment_subsidies = trinket_subsidies
+child_care = no_child_care
+pensions = trinket_pensions
+health_care = trinket_health_care
+pollution = trinket_envir
+education = competent_public_education
+public_housing_reform = no_public_housing
+
+
+# Technologies
+infantry = 1
+cold_war_doctrine = 1
+international_financial_institutions = 1
+gold_standard = 1
+radio_network = 1
+compulsory_primary_education = 1
+containment = 1
+decolonization = 1
+radio = 1
+modern_roads = 1
+modern_shipyard = 1
+modern_shipbuilding = 1
+# Starting Consciousness
+consciousness = 0
+nonstate_consciousness = 0
+schools = army_tech_school
+
+
+#========================= END OF FILE =========================
+

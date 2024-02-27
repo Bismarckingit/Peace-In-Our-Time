@@ -1,0 +1,17 @@
+owner = IDO
+controller = IDO # Anything typed here will be added to all selected province history files
+add_core = IDO
+add_core = WPA
+trade_goods = fish
+life_rating = 30
+terrain = jungle_mountains
+colonial = 2
+1950.1.1 = { owner = WPA controller = WPA } 
+1992.1.1 = { 
+    owner = IDO
+    controller = IDO
+    add_core = IDO
+    add_core = WPA
+    life_rating = 30
+    colonial = 0
+}

@@ -1,0 +1,15 @@
+CODE;ENGLISH;FRENCH;GERMAN;POLISH;SPANISH;HUNGARIAN;CZECH;HUNGARIAN;DUTCH;PORTUGUESE;RUSSIAN;FINNISH;;x;;;;;;;;;;;;;;;;
+no_crime;No Status;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;
+desc_no_crime;No Major Status Effects are in place for this province;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;
+nuke_province;Nuclear Contamination;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;
+desc_nuke_province;This province was struck by nuclear weapons that caused significant radioactive contamination. It will take a long time for radition levels to return to normal.;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;
+bio_province;Bioweapon Epidemic;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;
+desc_bio_province;This province was struck by bioweapons that caused a significant epidemic. Only a vaccine will remove this modifier.;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;
+chem_province;Chemical Contamination;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;
+desc_chem_province;This province was struck by chemical weapons that caused significant contamination. Only time can clean this province.;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;
+war_damaged;Ravaged by War;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;
+desc_war_damaged;This province was recently destroyed by a devastating war. Recovery will take time.;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;
+natural_disaster;Natural Disaster;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;
+desc_natural_disaster;This province was struck by a natural disaster.;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;
+nuke_accident;Nuclear Reactor Accident;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;
+desc_nuke_accident;This province was contaminated following a nuclear reactor meltdown. It will take a long time for radition levels to return to normal.;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;

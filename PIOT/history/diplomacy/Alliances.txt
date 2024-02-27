@@ -1,0 +1,180 @@
+# GENERATED
+#### WW2 allies ####
+alliance = {
+	first = ENG
+	second = FRA
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+alliance = {
+	first = USA
+	second = FRA
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+alliance = {
+	first = FRA
+	second = ENG
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+alliance = {
+	first = ENG
+	second = BEL
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+alliance = {
+	first = ENG
+	second = NET
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+alliance = {
+	first = ENG
+	second = LUX
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+alliance = {
+	first = FRA
+	second = BEL
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+alliance = {
+	first = FRA
+	second = NET
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+alliance = {
+	first = FRA
+	second = LUX
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+
+alliance = {
+	first = ENG
+	second = IRQ
+	start_date = 1947.1.1
+	end_date = 1954.1.1
+}
+alliance = {
+	first = ENG
+	second = PAK
+	start_date = 1950.1.1
+	end_date = 1956.1.1
+}
+alliance = {
+	first = ENG
+	second = HND
+	start_date = 1950.1.1
+	end_date = 1956.1.1
+}
+alliance = {
+	first = USA
+	second = SKO
+	start_date = 1950.1.1
+	end_date = 2092.1.1
+}
+alliance = {
+	first = USA
+	second = KUW
+	start_date = 1990.1.1
+	end_date = 2030.1.1
+}
+
+alliance = {
+	first = ENG
+	second = EGY
+	start_date = 1945.1.1
+	end_date = 1952.1.1
+}
+
+
+alliance = {
+	first = SAA
+	second = YEM
+	start_date = 2014.1.1
+	end_date = 2030.1.1
+}
+alliance = {
+	first = UAE
+	second = YEM
+	start_date = 2014.1.1
+	end_date = 2030.1.1
+}
+alliance = {
+	first = SAA
+	second = UAE
+	start_date = 2014.1.1
+	end_date = 2030.1.1
+}
+
+alliance = {
+	first = ENG
+	second = AST
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+
+alliance = {
+	first = ENG
+	second = NZL
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+
+alliance = {
+	first = ENG
+	second = SAF
+	start_date = 1945.1.1
+	end_date = 1993.1.1
+}
+
+alliance = {
+	first = ENG
+	second = RHO
+	start_date = 1945.1.1
+	end_date = 1976.1.1
+}
+alliance = {
+	first = RUS
+	second = MGL
+	start_date = 1945.1.1
+	end_date = 1986.1.1
+}
+alliance = {
+	first = CAN
+	second = ENG
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+alliance = {
+	first = ENG
+	second = NET
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+alliance = {
+	first = USA
+	second = CAN
+	start_date = 1945.1.1
+	end_date = 2030.1.1
+}
+### KMT Warlords ###
+
+alliance = {
+	first = JAP
+	second = CHI
+	start_date = 1945.1.1
+	end_date = 1975.1.1
+}
+alliance = {
+	first = JAP
+	second = KWA
+	start_date = 1945.1.1
+	end_date = 1975.1.1
+}

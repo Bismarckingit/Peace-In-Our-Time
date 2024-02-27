@@ -1,0 +1,19 @@
+owner = GER
+controller = GER
+add_core = GER
+add_core = FRG
+add_core = SGF
+trade_goods = grain
+life_rating = 35
+terrain = forested_farmland
+railroad = 1
+colonial = 0
+1950.1.1 = { owner = FRG controller = FRG } 
+1992.1.1 = { 
+    owner = GER
+    controller = GER
+    add_core = GER
+    life_rating = 35
+    railroad = 3
+    colonial = 0
+}

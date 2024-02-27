@@ -1,0 +1,23 @@
+owner = SYR
+controller = SYR
+add_core = SYR
+add_core = ROJ
+add_core = KUR
+trade_goods = grain
+life_rating = 35
+terrain = dry_grassland
+colonial = 0
+1992.1.1 = {
+owner = SYR
+controller = SYR
+add_core = SYR
+add_core = ROJ
+add_core = KUR
+life_rating = 35
+colonial = 0
+}
+
+2015.1.1 = {
+owner = ROJ
+controller = ROJ
+}

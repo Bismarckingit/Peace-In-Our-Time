@@ -1,0 +1,23 @@
+political_decisions = {
+
+	form_spy_agency = {
+		picture = "form_spy_agency"
+		potential = {
+			NOT = { has_country_modifier = spy_agency }
+		}
+		allow = {
+			war = no
+			election = no
+			money = 200000
+			radio = 1
+		}
+		effect = {
+			prestige = 10
+			money = -100000
+			add_country_modifier = { name = spy_agency duration = -1 }
+		}
+		ai_will_do = { 
+			factor = 1 
+		}
+	}
+}

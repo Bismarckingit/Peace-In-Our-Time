@@ -1,0 +1,19 @@
+owner = GER
+controller = GER
+add_core = GER
+add_core = FRG
+trade_goods = credit
+life_rating = 35
+terrain = canal
+railroad = 1
+colonial = 0
+set_province_flag = kiel_canal
+state_building = { level = 1 building = glass_factory upgrade = yes } 
+state_building = { level = 1 building = hot_beverages_factory upgrade = yes } 
+1950.1.1 = { owner = FRG controller = FRG } 
+1992.1.1 = { 
+    owner = GER
+    controller = GER
+    railroad = 3
+    naval_base = 4
+}

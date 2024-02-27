@@ -1,0 +1,28 @@
+owner = PAL
+controller = PAL
+add_core = PAL
+trade_goods = other_minerals
+life_rating = 35
+terrain = hilly_farmland
+colonial = 0
+1950.1.1 = { 
+    owner = JOR
+    controller = JOR
+    add_core = ISR
+    colonial = 0
+}
+
+1992.1.1 = { 
+    owner = ISR
+    controller = ISR
+    add_core = ISR
+    railroad = 1
+    colonial = 0
+}
+2015.1.1 = { 
+    owner = PAL
+    controller = PAL
+    remove_core = ISR
+    railroad = 1
+    colonial = 0
+}

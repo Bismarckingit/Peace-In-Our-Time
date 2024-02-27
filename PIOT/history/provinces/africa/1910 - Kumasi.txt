@@ -1,0 +1,15 @@
+owner = GHA
+controller = GHA
+add_core = GHA
+trade_goods = bauxite
+life_rating = 15
+terrain = jungle_farmland
+colonial = 0
+1992.1.1 = { 
+    owner = GHA
+    controller = GHA
+    add_core = GHA
+    life_rating = 15
+    colonial = 0
+    state_building = { level = 4 building = canned_food_factory upgrade = yes } 
+}

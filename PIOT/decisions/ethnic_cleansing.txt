@@ -1,0 +1,420 @@
+political_decisions = {
+	
+	##### Reduces non-accepted pops in THIS and brings in accepted pops to replace them #####
+	
+	ethnic_cleansing = {
+		picture = "ethnic_cleansing"
+		alert = no
+		potential = {
+			OR = {
+				government = presidential_dictatorship
+				government = nationalist_dictatorship
+				government = sectarian_dictatorship
+				government = proletarian_dictatorship
+				government = proletarian_dictatorship1
+				minorities_reform = minorities_oppression
+			}
+			NOT = { has_country_flag = ethnic_cleansed }
+			NOT = { has_country_modifier = ethnic_cleansing }
+		}
+
+		allow = {
+			is_vassal = no
+			is_disarmed = no
+			election = no
+			OR = { ruling_party_ideology = nationalist ruling_party_ideology = traditionalist ruling_party_ideology = populist ruling_party_ideology = communist ruling_party_ideology = communist_social }
+			NOT = { citizenship_policy = full_citizenship }
+			OR = {
+				ai = no
+				AND = { ai = yes tag = RWA revolt_percentage = 0.80 citizenship_policy = residency } 
+				AND = { ai = yes tag = RSR war = yes citizenship_policy = residency }
+				AND = { ai = yes tag = SRK war = yes citizenship_policy = residency }
+				AND = { ai = yes tag = SER war = yes national_provinces_occupied = 0.5 citizenship_policy = residency }
+				AND = { ai = yes tag = CRO war = yes national_provinces_occupied = 0.5 citizenship_policy = residency }
+				AND = { ai = yes tag = BOS war = yes national_provinces_occupied = 0.5 citizenship_policy = residency }
+				AND = { 
+					average_militancy = 7 
+					citizenship_policy = residency
+					has_recently_lost_war = yes
+				}
+				AND = { 
+					average_militancy = 9 
+					citizenship_policy = residency
+					revolt_percentage = 0.80 
+				}
+				AND = { 
+					jingoism = 24
+					citizenship_policy = residency
+					war = yes
+				}
+			}
+			NOT = { has_country_modifier = geno_cooldown }
+		}
+
+		effect = {
+			set_country_flag = ethnic_cleansed
+			country_event = 1512037
+			#set_country_flag = genocide_101
+			clr_country_flag = discovered_genocide 
+			clr_country_flag = discovered_genocide1
+			add_country_modifier = { name = ethnic_cleansing duration = -1 }
+			#Stop exploit
+			add_country_modifier = { name = geno_cooldown duration = 365 }
+			
+			#Unaccepted pops go ballistic
+			any_pop = {
+				limit = { 
+					is_primary_culture = no 
+					is_accepted_culture = no 
+				}
+				militancy = 10
+				consciousness = 10
+				
+				ideology = { factor = 0.1 value = nationalist }
+			}
+			
+			#Accepted pops are happy to get more living space
+			any_pop = {
+				limit = { 
+					is_primary_culture = yes
+				}
+				militancy = -10
+				consciousness = -10
+				ideology = { factor = 0.1 value = nationalist }
+			}
+			any_pop = {
+				limit = { 
+					is_accepted_culture = yes
+				}
+				militancy = -5
+				consciousness = -5
+				ideology = { factor = 0.05 value = nationalist }
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+			modifier = { badboy = 1 war = no factor = 0 }
+			modifier = { tag = SAF factor = 0 }
+			modifier = { AND = { tag = RUS OR = { government = proletarian_dictatorship government = proletarian_dictatorship1 } } factor = 0 } #So AI USSR doesn't immediately start killing everyone
+			modifier = { OR = { tag = RWA tag = RSR tag = SRK tag = SER tag = CRO tag = BOS } factor = 1 } 
+		}
+	}
+	
+	end_ethnic_cleansing = {
+		picture = "ethnic_cleansing"
+		potential = {
+			OR = { 
+				has_country_flag = ethnic_cleansed
+				has_country_modifier = ethnic_cleansing 
+				has_country_flag = genocide_101
+			}
+		}
+
+		allow = {
+			OR = { is_vassal = yes is_disarmed = yes NOT = { average_militancy = 5 } ai = no }
+			OR = { 
+				ai = no
+				NOT = { 
+					OR = { 
+						ruling_party_ideology = nationalist 
+						ruling_party_ideology = traditionalist 
+						ruling_party_ideology = populist
+						ruling_party_ideology = communist 
+						ruling_party_ideology = communist_social
+					}
+				}
+				minorities_reform = minorities_equal_rights 
+				minorities_reform = minorities_affirmative_action 
+				government = theocracy
+			}
+		}
+
+		effect = {
+			clr_country_flag = ethnic_cleansed
+			clr_country_flag = genocide_101
+			remove_country_modifier = ethnic_cleansing
+			clr_country_flag = discovered_genocide 
+			clr_country_flag = discovered_genocide1
+			clr_country_flag = promote_colonial_migration_active
+			any_owned = { remove_province_modifier = ethnic_cleansing_province_modifier }
+			any_owned = { remove_province_modifier = pop_replacement_province_modifier }
+			random_owned = {
+				limit = { owner = { has_country_flag = revert_to_closed_borders } }
+				owner = {
+					political_reform = nobody_gets_out
+					clr_country_flag = revert_to_closed_borders
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	##### Promote migration to colonies to outnumber natives there #####
+
+	promote_colonial_migration_on = {
+		picture = "promote_colonial_migration_on"
+		alert = no
+		potential = {
+			NOT = { has_country_flag = promote_colonial_migration_active }
+			
+			is_vassal = no
+			
+			ai = no
+			
+			#THIS owns colonial provinces
+			colonial_nation = yes
+			
+			NOT = { has_country_modifier = geno_cooldown }
+		}
+		
+		allow = {
+		
+			#Ruling Party must love accepted pops only
+			OR = {
+				AND = { ai = yes citizenship_policy = residency }
+				AND = { ai = no NOT = { citizenship_policy = full_citizenship } }
+			}
+		
+			#Laws must already be against minorities
+			minorities_reform = minorities_oppression
+			
+			is_vassal = no
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = promote_colonial_migration_active
+			
+			badboy = 2.5
+			
+			#Unaccepted pops go ballistic
+			any_pop = {
+				limit = { 
+					is_primary_culture = no 
+					is_accepted_culture = no 
+				}
+				militancy = 10
+				consciousness = 10
+				
+				ideology = { factor = 0.1 value = nationalist }
+			}
+			
+			#Accepted pops are happy to get more living space
+			any_pop = {
+				limit = { 
+					is_primary_culture = yes
+				}
+				militancy = -10
+				consciousness = -10
+				ideology = { factor = 0.1 value = nationalist }
+			}
+			any_pop = {
+				limit = { 
+					is_accepted_culture = yes
+				}
+				militancy = -5
+				consciousness = -5
+				ideology = { factor = 0.05 value = nationalist }
+			}
+			
+			#Stop exploit
+			add_country_modifier = { name = geno_cooldown duration = 365 }
+		}
+		
+		ai_will_do = { 
+			factor = 1
+			
+			#AI will not take decision if infamy is high
+			modifier = { factor = 0 badboy = 0.5 }
+			
+			#AI will not take decision unless nationalistic
+			modifier = { factor = 0 NOT = { ruling_party_ideology = nationalist } }
+			
+			#AI will not take decision unless a GP
+			modifier = { factor = 0 is_greater_power = no }
+			
+			#AI will not take decision during the cold war to avoid messing with historical events
+			modifier = { factor = 0 NOT = { has_global_flag = blocsenabled } }
+		}
+		
+	}
+	
+	promote_colonial_migration_off = {
+		picture = "promote_colonial_migration_off"
+		alert = no
+		potential = {
+			has_country_flag = promote_colonial_migration_active
+			
+			NOT = { has_country_modifier = geno_cooldown }
+		}
+		
+		allow = {
+		
+			OR = {
+				ai = no
+				
+				NOT = { colonial_nation = yes }
+				
+				NOT = { citizenship_policy = residency }
+				
+				NOT = { minorities_reform = minorities_oppression }
+				
+				#AI will stop this if it will otherwise lead to containment against THIS
+				badboy = 1
+			}
+			
+		}
+		
+		effect = {
+			clr_country_flag = promote_colonial_migration_active
+			
+			#Unaccepted pops are happy
+			any_pop = {
+				limit = { 
+					is_primary_culture = no 
+					is_accepted_culture = no 
+				}
+				militancy = -5
+				consciousness = -5
+			}
+			
+			#Accepted pops are angry
+			any_pop = {
+				limit = { 
+					is_primary_culture = yes
+				}
+				militancy = 5
+				consciousness = 5
+			}
+			any_pop = {
+				limit = { 
+					is_accepted_culture = yes
+				}
+				militancy = 2.5
+				consciousness = 2.5
+			}
+			
+		}
+		
+		ai_will_do = { 
+			factor = 1
+		}
+		
+	}
+	
+	##### Reduces non-state religion pops in THIS #####
+	
+	theocide = {
+		picture = "theocide"
+		alert = no
+		potential = {
+			#Available only to theocracies
+			government = theocracy
+			NOT = { has_country_flag = theocide }
+			NOT = { has_country_modifier = theocide_active }
+		}
+
+		allow = {
+			is_vassal = no
+			is_disarmed = no
+			election = no
+			
+			#Available only to hardline theocratic regimes
+			ruling_party_ideology = traditionalist
+			religious_policy = moralism
+			has_country_flag = desecularized
+			minorities_reform = minorities_oppression
+			NOT = { citizenship_policy = full_citizenship }
+			OR = {
+				ai = no
+				AND = { 
+					average_militancy = 7 
+					citizenship_policy = residency
+					has_recently_lost_war = yes
+				}
+				AND = { 
+					average_militancy = 9 
+					citizenship_policy = residency
+					revolt_percentage = 0.80 
+				}
+				AND = { 
+					jingoism = 24
+					citizenship_policy = residency
+					war = yes
+				}
+			}
+			NOT = { has_country_modifier = geno_cooldown }
+		}
+
+		effect = {
+			set_country_flag = theocide
+			country_event = 15120373
+			clr_country_flag = discovered_theocide 
+			clr_country_flag = discovered_theocide1
+			add_country_modifier = { name = theocide_active duration = -1 }
+			#Stop exploit
+			add_country_modifier = { name = geno_cooldown duration = 365 }
+			
+			#Atheist or non state religion pops go ballistic
+			any_pop = {
+				limit = { 
+					OR = { 
+						has_pop_religion = secularism 
+						is_state_religion = no
+					}
+				}
+				militancy = 10
+				consciousness = 10
+			}
+			
+			#State religion pops are happy to see heretics eliminated
+			any_pop = {
+				limit = { 
+					is_state_religion = yes
+				}
+				militancy = -5
+				consciousness = -5
+				ideology = { factor = 0.1 value = traditionalist }
+			}
+		}
+		
+		ai_will_do = { 
+			factor = 1
+			modifier = { badboy = 1 war = no factor = 0 }
+			modifier = { tag = PER factor = 0 }
+			modifier = { tag = ISI factor = 1 }
+		}
+	}
+	
+	end_theocide = {
+		picture = "theocide"
+		potential = {
+			OR = { 
+				has_country_flag = theocide
+				has_country_modifier = theocide_active 
+				has_country_flag = theocide_101
+			}
+		}
+
+		allow = {
+			OR = { is_vassal = yes is_disarmed = yes NOT = { average_militancy = 5 } ai = no }
+			OR = { 
+				ai = no
+				NOT = { ruling_party_ideology = traditionalist }
+				minorities_reform = minorities_equal_rights 
+				minorities_reform = minorities_affirmative_action
+				citizenship_policy = full_citizenship
+			}
+			NOT = { has_country_modifier = geno_cooldown }
+		}
+
+		effect = {
+			clr_country_flag = theocide
+			clr_country_flag = theocide_101
+			remove_country_modifier = theocide_active
+			clr_country_flag = discovered_theocide 
+			clr_country_flag = discovered_theocide1
+		}
+		ai_will_do = { factor = 1 }
+	}
+}

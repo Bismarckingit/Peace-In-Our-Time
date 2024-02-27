@@ -1,0 +1,20 @@
+owner = GER
+controller = GER
+add_core = GER
+add_core = CZH # Anything typed here will be added to all selected province history files
+add_core = BOH
+trade_goods = coal
+life_rating = 35
+terrain = deciduous_forest_mountains
+colonial = 0
+1992.1.1 = { 
+    owner = CZH
+    controller = CZH
+    add_core = BOH
+    add_core = CZH
+    life_rating = 35
+    railroad = 1
+    colonial = 0
+}
+
+2015.1.1 = { owner = BOH controller = BOH } 

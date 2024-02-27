@@ -1,0 +1,17 @@
+owner = ITA
+controller = ITA 
+add_core = ITA# Anything typed here will be added to all selected province history files
+add_core = YUG
+add_core = CRO
+trade_goods = sugar
+life_rating = 35
+terrain = marginal_farmland
+naval_base = 2
+colonial = 0
+1992.1.1 = { 
+    owner = CRO
+    controller = CRO
+    add_core = CRO
+    life_rating = 35
+    colonial = 0
+}

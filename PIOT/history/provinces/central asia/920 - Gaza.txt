@@ -1,0 +1,28 @@
+owner = PAL
+controller = PAL
+add_core = GAZ
+add_core = PAL
+trade_goods = fruit
+life_rating = 35
+terrain = urban
+colonial = 0
+1950.1.1 = { 
+    owner = EGY
+    controller = EGY
+    add_core = ISR
+    colonial = 0
+}
+
+1992.1.1 = { 
+    owner = ISR
+    controller = ISR
+    add_core = ISR
+    railroad = 1
+    colonial = 0
+}
+2015.1.1 = { 
+    owner = GAZ
+    controller = GAZ
+    remove_core = ISR
+    life_rating = 15
+}

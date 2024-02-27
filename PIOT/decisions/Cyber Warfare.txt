@@ -1,0 +1,27 @@
+political_decisions = {
+
+	cyber_warfare = {
+		picture = "cyber_warfare"
+		potential = {
+			NOT = { has_country_modifier = cyber_warfare }
+			is_greater_power = yes
+			has_country_modifier = spy_agency
+			strd_internet = 1
+		}
+		allow = {
+			NOT = { has_country_modifier = cyber_warfare }
+			war = no
+			election = no
+			neodigital = 1
+			money = 1000000
+		}
+		effect = {
+			prestige = -10
+			add_country_modifier = { name = cyber_warfare duration = -1 }
+			treasury = -500000
+			any_country = { limit = { has_country_modifier = cyber_warfare } relation = { who = THIS value = -25 } }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+}

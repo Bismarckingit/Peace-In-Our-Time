@@ -1,0 +1,12 @@
+owner = USA
+controller = USA
+add_core = PNM
+trade_goods = credit
+set_province_flag = panama_canal
+life_rating = 30
+terrain = canal
+colonial = 0
+2015.1.1 = {
+owner = PNM
+controller = PNM
+}

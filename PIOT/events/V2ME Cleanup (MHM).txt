@@ -1,0 +1,5095 @@
+#
+# V2ME Cleanup 1.0.3b by Bob Bobington and Dr, configured for MHM by Doktor Kure
+#
+# Features:
+#	
+#	-Nearly invisible cleanup tag
+#	-Zero performance degradation
+#	-Immersion will not be ruined, player interaction with cleanup is kept to an absolute minimum
+#	-Multiple stability improvements and bug fixes
+#	-Easy to customize for new content
+#	-Handles backend tasks (i.e. setting govflags, invention flags, etc) on a daily, monthly, or yearly tick, as needed
+#	-Handles vassal interactions with one decision instead of hundreds, improving performance
+#	
+# Notable bugs addressed:
+#
+#	-Ghost units and ships of non-existing nations cleaned monthly
+#	-Convert slave pops in newly-annexed provinces to farmers or labourers if the annexing country doesn't have concentration camps active
+#	-Prevents existing countries from having non-existing overlords
+#	-Prevents existing countries from having non-existing vassals (disabled by default, this is intended in some mods)
+#
+# Upcoming features (TBA):
+#	-Permanent fix to craftsmen exploit/bug, without player interaction
+#	-Dynamically adressing the liquidity crisis, effectively
+#
+
+country_event = {
+	id = 47777786
+	title = "AI: Daily Cleanup Bugfix"
+	desc = "This event restarts the cleanup mechanic."
+	
+	trigger = {
+		ai = yes
+		has_global_flag = daily_cleanup_on
+	}
+	
+	option = {
+		name = "Restart the mechanism!"
+		clr_global_flag = daily_cleanup_on
+	}
+}
+	
+
+country_event = {
+	id = 47777787
+	title = "AI: Daily Cleanup Check"
+	desc = "AI: Daily Cleanup Check"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Checking..."
+		
+		#This makes CLN not have to exist on the map
+		CLN = { change_variable = { which = days_till_monthly_cleanup value = -1 } }
+		random_country = {
+			limit = { 
+				NOT = {
+					CLN = { check_variable = { which = days_till_monthly_cleanup value = 0 } }
+				}
+			}
+			CLN = {	set_variable = { which = days_till_monthly_cleanup value = 31 } }
+			CLN = {	change_variable = { which = months_till_yearly_cleanup value = -1 } }
+			CLN = { country_event = 47777790 }
+		}
+		random_country = {
+			limit = { 
+				NOT = {
+					CLN = { check_variable = { which = months_till_yearly_cleanup value = 0 } }
+				}
+			}
+			CLN = {	set_variable = { which = months_till_yearly_cleanup value = 12 } }
+			CLN = { country_event = 47777791 }
+		}
+		
+		clr_global_flag = daily_cleanup_on
+		CLN = { country_event = { id = 47777787 days = 1 } }
+		
+		### Nuke Shelters keep provinces from being completely depopulated by nuked province modifiers
+		#Good Nuke Shelters
+		any_country = {
+			limit = { exists = yes  has_country_flag = good_nuke_shelters }
+			any_owned = {
+				limit = {
+					AND = {
+						AND = {
+							has_crime = nuke_province
+							is_capital = yes
+						}
+						#Not inhospitable climate
+						NOT = {
+							OR = {
+								terrain = arctic
+								terrain = tundra
+								terrain = tundra_hills
+								terrain = tundra_mountains
+
+								terrain = desert
+								terrain = desert_hills
+								terrain = desert_mountains
+								terrain = semi_desert
+								terrain = semi_desert_hills
+								terrain = semi_desert_mountains
+								terrain = semi_desert_mountains
+							}
+						}
+					}
+					NOT = { total_pops = 12500 }
+				}
+				any_pop = { reduce_pop = 1.02 }
+			}
+		}
+		any_country = {
+			limit = { exists = yes has_country_flag = good_nuke_shelters }
+			any_owned = {
+				limit = {
+					AND = {
+						has_crime = nuke_province
+						is_state_capital = yes
+						is_capital = no
+						#Not inhospitable climate
+						NOT = {
+							OR = {
+								terrain = arctic
+								terrain = tundra
+								terrain = tundra_hills
+								terrain = tundra_mountains
+
+								terrain = desert
+								terrain = desert_hills
+								terrain = desert_mountains
+								terrain = semi_desert
+								terrain = semi_desert_hills
+								terrain = semi_desert_mountains
+								terrain = semi_desert_mountains
+							}
+						}
+					}
+					NOT = { total_pops = 10000 }
+				}
+				any_pop = { reduce_pop = 1.02 }
+			}
+		}
+		any_country = {
+			limit = { exists = yes has_country_flag = good_nuke_shelters }
+			any_owned = {
+				limit = {
+					AND = {
+						has_crime = nuke_province
+						is_state_capital = no
+						is_capital = no
+						#Not inhospitable climate
+						NOT = {
+							OR = {
+								terrain = arctic
+								terrain = tundra
+								terrain = tundra_hills
+								terrain = tundra_mountains
+
+								terrain = desert
+								terrain = desert_hills
+								terrain = desert_mountains
+								terrain = semi_desert
+								terrain = semi_desert_hills
+								terrain = semi_desert_mountains
+								terrain = semi_desert_mountains
+							}
+						}
+					}
+					NOT = { total_pops = 5000 }
+				}
+				any_pop = { reduce_pop = 1.02 }
+			}
+		}
+		any_country = {
+			limit = { exists = yes has_country_flag = good_nuke_shelters }
+			any_owned = {
+				limit = {
+					AND = {
+						NOT = { has_crime = nuke_province }
+						is_capital = yes
+						#Not inhospitable climate
+						NOT = {
+							OR = {
+								terrain = arctic
+								terrain = tundra
+								terrain = tundra_hills
+								terrain = tundra_mountains
+
+								terrain = desert
+								terrain = desert_hills
+								terrain = desert_mountains
+								terrain = semi_desert
+								terrain = semi_desert_hills
+								terrain = semi_desert_mountains
+								terrain = semi_desert_mountains
+							}
+						}
+					}
+					NOT = { total_pops = 12500 }
+				}
+				any_pop = { reduce_pop = 1.02 }
+			}
+		}
+		any_country = {
+			limit = { exists = yes has_country_flag = good_nuke_shelters }
+			any_owned = {
+				limit = {
+					AND = {
+						NOT = { has_crime = nuke_province }
+						is_state_capital = yes
+						is_capital = no
+						#Not inhospitable climate
+						NOT = {
+							OR = {
+								terrain = arctic
+								terrain = tundra
+								terrain = tundra_hills
+								terrain = tundra_mountains
+
+								terrain = desert
+								terrain = desert_hills
+								terrain = desert_mountains
+								terrain = semi_desert
+								terrain = semi_desert_hills
+								terrain = semi_desert_mountains
+								terrain = semi_desert_mountains
+							}
+						}
+					}
+					NOT = { total_pops = 10000 }
+				}
+				any_pop = { reduce_pop = 1.02 }
+			}
+		}
+		any_country = {
+			limit = { exists = yes has_country_flag = good_nuke_shelters }
+			any_owned = {
+				limit = {
+					AND = {
+						NOT = { has_crime = nuke_province }
+						is_state_capital = no
+						is_capital = no
+						#Not inhospitable climate
+						NOT = {
+							OR = {
+								terrain = arctic
+								terrain = tundra
+								terrain = tundra_hills
+								terrain = tundra_mountains
+
+								terrain = desert
+								terrain = desert_hills
+								terrain = desert_mountains
+								terrain = semi_desert
+								terrain = semi_desert_hills
+								terrain = semi_desert_mountains
+								terrain = semi_desert_mountains
+							}
+						}
+					}
+					NOT = { total_pops = 5000 }
+				}
+				any_pop = { reduce_pop = 1.02 }
+			}
+		}
+		#Markers
+		any_country = {
+			limit = { exists = yes  has_country_flag = good_nuke_shelters }
+			any_owned = {
+				limit = {
+					OR = {
+						has_crime = nuke_province
+						is_state_capital = yes
+						is_capital = yes
+						#Not inhospitable climate
+						NOT = {
+							OR = {
+								terrain = arctic
+								terrain = tundra
+								terrain = tundra_hills
+								terrain = tundra_mountains
+
+								terrain = desert
+								terrain = desert_hills
+								terrain = desert_mountains
+								terrain = semi_desert
+								terrain = semi_desert_hills
+								terrain = semi_desert_mountains
+								terrain = semi_desert_mountains
+							}
+						}
+					}
+					NOT = { has_province_modifier = nuke_shelter }
+				}
+				add_province_modifier = { name = nuke_shelter duration = -1 }
+			}
+		}
+		
+		#Okay Nuke Shelters
+		any_country = {
+			limit = { exists = yes has_country_flag = okay_nuke_shelters }
+			any_owned = {
+				limit = {
+					AND = {
+						AND = {
+							has_crime = nuke_province
+							is_capital = yes
+						}
+						#Not inhospitable climate
+						NOT = {
+							OR = {
+								terrain = arctic
+								terrain = tundra
+								terrain = tundra_hills
+								terrain = tundra_mountains
+
+								terrain = desert
+								terrain = desert_hills
+								terrain = desert_mountains
+								terrain = semi_desert
+								terrain = semi_desert_hills
+								terrain = semi_desert_mountains
+								terrain = semi_desert_mountains
+							}
+						}
+					}
+					NOT = { total_pops = 7500 }
+				}
+				any_pop = { reduce_pop = 1.02 }
+			}
+		}
+		any_country = {
+			limit = { exists = yes has_country_flag = okay_nuke_shelters }
+			any_owned = {
+				limit = {
+					AND = {
+						has_crime = nuke_province
+						is_state_capital = yes
+						is_capital = no
+						#Not inhospitable climate
+						NOT = {
+							OR = {
+								terrain = arctic
+								terrain = tundra
+								terrain = tundra_hills
+								terrain = tundra_mountains
+
+								terrain = desert
+								terrain = desert_hills
+								terrain = desert_mountains
+								terrain = semi_desert
+								terrain = semi_desert_hills
+								terrain = semi_desert_mountains
+								terrain = semi_desert_mountains
+							}
+						}
+					}
+					NOT = { total_pops = 5000 }
+				}
+				any_pop = { reduce_pop = 1.02 }
+			}
+		}
+		any_country = {
+			limit = { exists = yes has_country_flag = okay_nuke_shelters }
+			any_owned = {
+				limit = {
+					AND = {
+						has_crime = nuke_province
+						is_state_capital = no
+						is_capital = no
+						#Not inhospitable climate
+						NOT = {
+							OR = {
+								terrain = arctic
+								terrain = tundra
+								terrain = tundra_hills
+								terrain = tundra_mountains
+
+								terrain = desert
+								terrain = desert_hills
+								terrain = desert_mountains
+								terrain = semi_desert
+								terrain = semi_desert_hills
+								terrain = semi_desert_mountains
+								terrain = semi_desert_mountains
+							}
+						}
+					}
+					NOT = { total_pops = 2500 }
+				}
+				any_pop = { reduce_pop = 1.02 }
+			}
+		}
+		any_country = {
+			limit = { exists = yes has_country_flag = okay_nuke_shelters }
+			any_owned = {
+				limit = {
+					AND = {
+						NOT = { has_crime = nuke_province }
+						is_capital = yes
+						#Not inhospitable climate
+						NOT = {
+							OR = {
+								terrain = arctic
+								terrain = tundra
+								terrain = tundra_hills
+								terrain = tundra_mountains
+
+								terrain = desert
+								terrain = desert_hills
+								terrain = desert_mountains
+								terrain = semi_desert
+								terrain = semi_desert_hills
+								terrain = semi_desert_mountains
+								terrain = semi_desert_mountains
+							}
+						}
+					}
+					NOT = { total_pops = 7500 }
+				}
+				any_pop = { reduce_pop = 1.02 }
+			}
+		}
+		any_country = {
+			limit = { exists = yes has_country_flag = okay_nuke_shelters }
+			any_owned = {
+				limit = {
+					AND = {
+						NOT = { has_crime = nuke_province }
+						is_state_capital = yes
+						is_capital = no
+						#Not inhospitable climate
+						NOT = {
+							OR = {
+								terrain = arctic
+								terrain = tundra
+								terrain = tundra_hills
+								terrain = tundra_mountains
+
+								terrain = desert
+								terrain = desert_hills
+								terrain = desert_mountains
+								terrain = semi_desert
+								terrain = semi_desert_hills
+								terrain = semi_desert_mountains
+								terrain = semi_desert_mountains
+							}
+						}
+					}
+					NOT = { total_pops = 5000 }
+				}
+				any_pop = { reduce_pop = 1.02 }
+			}
+		}
+		any_country = {
+			limit = { exists = yes  has_country_flag = okay_nuke_shelters }
+			any_owned = {
+				limit = {
+					AND = {
+						OR = {
+							has_crime = nuke_province
+							is_state_capital = yes
+							is_capital = yes
+							#Not inhospitable climate
+						}
+						NOT = {
+							OR = {
+								terrain = arctic
+								terrain = tundra
+								terrain = tundra_hills
+								terrain = tundra_mountains
+
+								terrain = desert
+								terrain = desert_hills
+								terrain = desert_mountains
+								terrain = semi_desert
+								terrain = semi_desert_hills
+								terrain = semi_desert_mountains
+								terrain = semi_desert_mountains
+							}
+						}
+					}
+					NOT = { has_province_modifier = nuke_shelter }
+				}
+				add_province_modifier = { name = nuke_shelter duration = -1 }
+			}
+		}
+		
+		any_country = {
+			limit = {
+				exists = yes 
+				has_global_flag = nuclear_winter
+			}
+			any_owned = {
+				limit = {
+					NOT = { total_pops = 100 }
+				}
+				any_pop = { reduce_pop = 0 }
+			}
+		}
+		
+		any_country = {
+			limit = {
+				tag = WAS
+			}
+			any_owned = {
+				any_pop = { reduce_pop = 0 }
+			}
+		}
+		
+		#Craftsmen, Soldiers, and Bureaucrats bugfix - dependent on minorities reforms
+		any_country = {
+			limit = { exists = yes OR = { government = sectarian_dictatorship minorities_reform = minorities_oppression } }
+			any_owned = {
+				limit = {
+					OR = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+				any_pop = {
+					limit = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						OR = {
+							type = craftsmen
+							type = soldiers
+							type = officers
+							type = bureaucrats
+						}
+					}
+					pop_type = farmers
+				}
+			}
+		}
+		any_country = {
+			limit = { exists = yes NOT = { OR = { government = sectarian_dictatorship minorities_reform = minorities_oppression } } }
+			any_owned = {
+				limit = {
+					OR = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+				any_pop = {
+					limit = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						type = bureaucrats
+						type = officers
+					}
+					pop_type = farmers
+				}
+			}
+		}
+		
+		#Clean up farmers in labourer RGOs and labourers in farmer RGOs
+		any_country	= {
+			limit = {
+				exists = yes
+			}
+			any_owned = {
+				limit = {
+					AND = {
+						OR = {
+							trade_goods = fruit
+							trade_goods = grain
+							trade_goods = sugar
+							trade_goods = tea
+							trade_goods = tobacco
+							trade_goods = coffee
+							trade_goods = cotton
+							trade_goods = timber
+							trade_goods = fish
+							trade_goods = cattle
+							trade_goods = cotton
+							trade_goods = credit
+							trade_goods = rubber
+						}
+					}
+				}
+				any_pop = {
+					limit = {
+						type = labourers
+					}
+					pop_type = farmers
+				}
+			}
+		}
+		
+		any_country	= {
+			limit = {
+				exists = yes
+			}
+			any_owned = {
+				limit = {
+					AND = {
+						OR = {
+							trade_goods = coal
+							trade_goods = iron
+							trade_goods = petroleum
+							trade_goods = natural_gas
+							trade_goods = bauxite
+							trade_goods = copper
+							trade_goods = other_minerals
+							trade_goods = gold_silver
+						}
+					}
+				}
+				any_pop = {
+					limit = {
+						type = farmers
+					}
+					pop_type = labourers
+				}
+			}
+		}
+		
+		any_country = {
+			limit = { exists = yes has_country_modifier = un_humanitarian_aid }
+			any_pop = { limit = { type = aristocrats NOT = { cash_reserves = 1.2 luxury_needs = 0.8 } } money = 5 }
+			any_pop = { limit = { type = aristocrats NOT = { cash_reserves = 1.2 luxury_needs = 0.8 } } money = 5 }
+			any_pop = { limit = { type = aristocrats NOT = { cash_reserves = 1.5 luxury_needs = 0.8 } } money = 10 }
+			any_pop = { limit = { type = aristocrats NOT = { cash_reserves = 1.5 luxury_needs = 0.8 } } money = 10 }
+			any_pop = { limit = { type = aristocrats NOT = { cash_reserves = 1.5 luxury_needs = 0.8 } } money = 10 }
+			any_pop = { limit = { type = aristocrats NOT = { cash_reserves = 1.5 luxury_needs = 0.8 } } money = 10 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.5 unemployment = 0.5 type = soldiers type = slaves } } money = 0.1 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.4 everyday_needs = 0.05 unemployment = 0.5 type = soldiers type = slaves } } money = 0.1 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.3 everyday_needs = 0.05 unemployment = 0.5 type = soldiers type = slaves } } money = 0.1 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.2 everyday_needs = 0.01 unemployment = 0.5 type = soldiers type = slaves } } money = 0.2 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.1 everyday_needs = 0.01 unemployment = 0.5 type = soldiers type = slaves } } money = 0.1 }
+		}
+		any_country = {
+			limit = { exists = yes has_country_modifier = un_development_aid }
+			any_pop = { limit = { type = aristocrats NOT = { cash_reserves = 1.2 luxury_needs = 0.8 } } money = 5 }
+			any_pop = { limit = { type = aristocrats NOT = { cash_reserves = 1.2 luxury_needs = 0.8 } } money = 5 }
+			any_pop = { limit = { type = aristocrats NOT = { cash_reserves = 1.5 luxury_needs = 0.8 } } money = 50 }
+			any_pop = { limit = { type = aristocrats NOT = { cash_reserves = 1.5 luxury_needs = 0.8 } } money = 50 }
+			any_pop = { limit = { type = aristocrats NOT = { cash_reserves = 1.5 luxury_needs = 0.8 } } money = 50 }
+			any_pop = { limit = { type = aristocrats NOT = { cash_reserves = 1.5 luxury_needs = 0.8 } } money = 50 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.5 unemployment = 0.5 type = soldiers type = slaves } } money = 1 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.5 unemployment = 0.5 type = soldiers type = slaves } } money = 1 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.5 everyday_needs = 0.06 unemployment = 0.5 type = soldiers type = slaves } } money = 1.5 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.5 everyday_needs = 0.06 unemployment = 0.5 type = soldiers type = slaves } } money = 1.5 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.5 everyday_needs = 0.06 unemployment = 0.5 type = soldiers type = slaves } } money = 1.5 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.5 everyday_needs = 0.06 unemployment = 0.5 type = soldiers type = slaves } } money = 1.5 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.5 everyday_needs = 0.06 unemployment = 0.5 type = soldiers type = slaves } } money = 1.5 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.15 everyday_needs = 0.01 unemployment = 0.5 type = soldiers type = slaves } } money = 1.5 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.15 everyday_needs = 0.01 unemployment = 0.5 type = soldiers type = slaves } } money = 1.5 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.1 everyday_needs = 0.01 unemployment = 0.5 type = soldiers type = slaves } } money = 1.5 }
+			any_pop = { limit = { strata = poor NOT = { cash_reserves = 1.1 everyday_needs = 0.01 unemployment = 0.5 type = soldiers type = slaves } } money = 1.5 }
+		}
+		
+		#Prevent stack overflow
+		any_country = {
+			limit = {
+				exists = yes
+				money = 500000000
+			}
+			money = -2000000
+			money = -2000000
+			money = -2000000
+			money = -2000000
+			money = -2000000
+		}
+		
+		#Clean up UNO tag if it exists
+		any_country = {
+			limit = {
+				exists = yes
+				UNO = { exists = yes }
+				neighbour = UNO
+			}
+			inherit = UNO
+		}
+		
+		#State Capital Markers
+		any_country = {
+			limit = {
+				exists = yes
+			}
+			any_owned = {
+				limit = {
+					is_state_capital = yes
+					NOT = { has_province_modifier = state_capital_marker }
+				}
+				add_province_modifier = { name = state_capital_marker duration = -1 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+			}
+			any_owned = {
+				limit = {
+					is_state_capital = no
+					has_province_modifier = state_capital_marker
+				}
+				remove_province_modifier = state_capital_marker
+			}
+		}
+		
+		#Neutrality marker cleanup in case country changes capitals
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_modifier = neutrality has_country_modifier = neutrality_AI }
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { has_province_modifier = neutral_nation_marker }
+				}
+				add_province_modifier = { name = neutral_nation_marker duration = -1 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_modifier = neutrality has_country_modifier = neutrality_AI }
+			}
+			any_owned = {
+				limit = {
+					is_capital = no
+					has_province_modifier = neutral_nation_marker
+				}
+				remove_province_modifier = neutral_nation_marker
+			}
+		}
+		#Neutrality modifier cleanup for AI nations
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = neutrality
+				ai = yes
+				NOT = { has_country_modifier = neutrality_AI }
+			}
+			remove_country_modifier = neutrality
+			add_country_modifier = { name = neutrality_AI duration = -1 }
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = neutrality_AI
+				ai = no
+			}
+			remove_country_modifier = neutrality_AI
+			add_country_modifier = { name = neutrality duration = -1 }
+		}
+		
+		#Mark which countries have nukes
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_modifier = atomic_nation has_country_modifier = hydrogen_nation }
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { has_province_modifier = nuclear_nation_marker }
+				}
+				add_province_modifier = { name = nuclear_nation_marker duration = -1 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_modifier = atomic_nation has_country_modifier = hydrogen_nation }
+			}
+			any_owned = {
+				limit = {
+					is_capital = no
+					has_province_modifier = nuclear_nation_marker
+				}
+				remove_province_modifier = nuclear_nation_marker
+			}
+		}
+		#Cleanup Markers
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_country_modifier = atomic_nation has_country_modifier = hydrogen_nation }
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = nuclear_nation_marker
+				}
+				remove_province_modifier = nuclear_nation_marker
+			}
+		}
+		
+		#Mark which countries have chemical weapons
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = chemical_nation
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { has_province_modifier = chemical_nation_marker }
+				}
+				add_province_modifier = { name = chemical_nation_marker duration = -1 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = chemical_nation
+			}
+			any_owned = {
+				limit = {
+					is_capital = no
+					has_province_modifier = chemical_nation_marker
+				}
+				remove_province_modifier = chemical_nation_marker
+			}
+		}
+		#Cleanup Markers
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_country_modifier = chemical_nation }
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = chemical_nation_marker
+				}
+				remove_province_modifier = chemical_nation_marker
+			}
+		}
+		
+		#Mark which countries have bioweapons
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = bio_nation
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { has_province_modifier = bio_nation_marker }
+				}
+				add_province_modifier = { name = bio_nation_marker duration = -1 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = bio_nation
+			}
+			any_owned = {
+				limit = {
+					is_capital = no
+					has_province_modifier = bio_nation_marker
+				}
+				remove_province_modifier = bio_nation_marker
+			}
+		}
+		#Cleanup Markers
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_country_modifier = bio_nation }
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = bio_nation_marker
+				}
+				remove_province_modifier = bio_nation_marker
+			}
+		}
+		
+		#Mark which countries are general UN members
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = united_nations
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { has_province_modifier = un_member_marker }
+				}
+				add_province_modifier = { name = un_member_marker duration = -1 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = united_nations
+			}
+			any_owned = {
+				limit = {
+					is_capital = no
+					has_province_modifier = un_member_marker
+				}
+				remove_province_modifier = un_member_marker
+			}
+		}
+		
+		#Mark which countries are UNGA members
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = united_nations_ga_member
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { has_province_modifier = unga_member_marker }
+				}
+				add_province_modifier = { name = unga_member_marker duration = -1 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = united_nations_ga_member
+			}
+			any_owned = {
+				limit = {
+					is_capital = no
+					has_province_modifier = unga_member_marker
+				}
+				remove_province_modifier = unga_member_marker
+			}
+		}
+		
+		#Mark which countries are UNSC permanent members
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = unsc_permanent_member
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { has_province_modifier = unsc_member_marker }
+				}
+				add_province_modifier = { name = unsc_member_marker duration = -1 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = unsc_permanent_member
+			}
+			any_owned = {
+				limit = {
+					is_capital = no
+					has_province_modifier = unsc_member_marker
+				}
+				remove_province_modifier = unsc_member_marker
+			}
+		}
+		
+		### Bloc Alignment Markers ###
+		
+		#Mark which countries are Democratic Bloc Members
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = joindemo
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { has_province_modifier = demo_bloc_member }
+				}
+				add_province_modifier = { name = demo_bloc_member duration = -1 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = joindemo
+			}
+			any_owned = {
+				limit = {
+					is_capital = no
+					has_province_modifier = demo_bloc_member
+				}
+				remove_province_modifier = demo_bloc_member
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_country_flag = joindemo }
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					has_province_modifier = demo_bloc_member
+				}
+				remove_province_modifier = demo_bloc_member
+			}
+		}
+		
+		#Mark which countries are Communist Bloc Members
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = joincomm
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { has_province_modifier = comm_bloc_member }
+				}
+				add_province_modifier = { name = comm_bloc_member duration = -1 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = joincomm
+			}
+			any_owned = {
+				limit = {
+					is_capital = no
+					has_province_modifier = comm_bloc_member
+				}
+				remove_province_modifier = comm_bloc_member
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_country_flag = joincomm }
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					has_province_modifier = comm_bloc_member
+				}
+				remove_province_modifier = comm_bloc_member
+			}
+		}
+		
+		#Mark which countries are Authoritarian Bloc Members
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = joinauth
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { has_province_modifier = auth_bloc_member }
+				}
+				add_province_modifier = { name = auth_bloc_member duration = -1 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = joinauth
+			}
+			any_owned = {
+				limit = {
+					is_capital = no
+					has_province_modifier = auth_bloc_member
+				}
+				remove_province_modifier = auth_bloc_member
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_country_flag = joinauth }
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					has_province_modifier = auth_bloc_member
+				}
+				remove_province_modifier = auth_bloc_member
+			}
+		}
+		
+		#Mark which countries are Non-Aligned Bloc Members
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = joinnam
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { has_province_modifier = non_align_member }
+				}
+				add_province_modifier = { name = non_align_member duration = -1 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = joinnam
+			}
+			any_owned = {
+				limit = {
+					is_capital = no
+					has_province_modifier = non_align_member
+				}
+				remove_province_modifier = non_align_member
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_country_flag = joinnam }
+			}
+			any_owned = {
+				limit = {
+					is_capital = yes
+					has_province_modifier = non_align_member
+				}
+				remove_province_modifier = non_align_member
+			}
+		}
+		
+		########################
+		###					 ###
+		### Seasonal Effects ###
+		###					 ###
+		########################
+		
+		### General ###
+		# December - February
+		north_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					OR = {
+						month = 11
+						AND = {
+							month = 0
+							NOT = { month = 2 }
+						}
+					}
+				}
+				NOT = { has_province_modifier = winter_province_modifier }
+				NOT = {
+					OR = {
+						terrain = desert
+						terrain = desert_hills
+						terrain = desert_mountains
+						terrain = semi_desert
+						terrain = semi_desert_hills
+						terrain = semi_desert_mountains
+						terrain = semi_desert_mountains
+						
+						terrain = jungle
+						terrain = jungle_hills
+						terrain = jungle_mountains
+						terrain = seasonal_jungle
+						terrain = seasonal_jungle_hills
+						terrain = seasonal_jungle_mountains
+						terrain = swamp_jungle
+					}
+				}
+			}
+			remove_province_modifier = spring_province_modifier
+			remove_province_modifier = summer_province_modifier
+			remove_province_modifier = autumn_province_modifier
+			add_province_modifier = { name = winter_province_modifier duration = -1 }
+		}
+		south_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					OR = {
+						month = 11
+						AND = {
+							month = 0
+							NOT = { month = 2 }
+						}
+					}
+				}
+				NOT = { has_province_modifier = summer_province_modifier }
+				NOT = {
+					OR = {
+						terrain = desert
+						terrain = desert_hills
+						terrain = desert_mountains
+						terrain = semi_desert
+						terrain = semi_desert_hills
+						terrain = semi_desert_mountains
+						terrain = semi_desert_mountains
+						
+						terrain = jungle
+						terrain = jungle_hills
+						terrain = jungle_mountains
+						terrain = seasonal_jungle
+						terrain = seasonal_jungle_hills
+						terrain = seasonal_jungle_mountains
+						terrain = swamp_jungle
+					}
+				}
+			}
+			remove_province_modifier = spring_province_modifier
+			add_province_modifier = { name = summer_province_modifier duration = -1 }
+			remove_province_modifier = autumn_province_modifier
+			remove_province_modifier = winter_province_modifier
+		}
+		
+		# March - May
+		north_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					month = 2
+					NOT = { month = 5 }
+				}
+				NOT = { has_province_modifier = spring_province_modifier }
+				NOT = {
+					OR = {
+						terrain = desert
+						terrain = desert_hills
+						terrain = desert_mountains
+						terrain = semi_desert
+						terrain = semi_desert_hills
+						terrain = semi_desert_mountains
+						terrain = semi_desert_mountains
+						
+						terrain = jungle
+						terrain = jungle_hills
+						terrain = jungle_mountains
+						terrain = seasonal_jungle
+						terrain = seasonal_jungle_hills
+						terrain = seasonal_jungle_mountains
+						terrain = swamp_jungle
+					}
+				}
+			}
+			add_province_modifier = { name = spring_province_modifier duration = -1 }
+			remove_province_modifier = summer_province_modifier
+			remove_province_modifier = autumn_province_modifier
+			remove_province_modifier = winter_province_modifier
+		}
+		south_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					month = 2
+					NOT = { month = 5 }
+				}
+				NOT = { has_province_modifier = autumn_province_modifier }
+				NOT = {
+					OR = {
+						terrain = desert
+						terrain = desert_hills
+						terrain = desert_mountains
+						terrain = semi_desert
+						terrain = semi_desert_hills
+						terrain = semi_desert_mountains
+						terrain = semi_desert_mountains
+						
+						terrain = jungle
+						terrain = jungle_hills
+						terrain = jungle_mountains
+						terrain = seasonal_jungle
+						terrain = seasonal_jungle_hills
+						terrain = seasonal_jungle_mountains
+						terrain = swamp_jungle
+					}
+				}
+			}
+			remove_province_modifier = spring_province_modifier
+			remove_province_modifier = summer_province_modifier
+			add_province_modifier = { name = autumn_province_modifier duration = -1 }
+			remove_province_modifier = winter_province_modifier
+		}
+		
+		# June - August
+		north_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					month = 5
+					NOT = { month = 8 }
+				}
+				NOT = { has_province_modifier = summer_province_modifier }
+				NOT = {
+					OR = {
+						terrain = desert
+						terrain = desert_hills
+						terrain = desert_mountains
+						terrain = semi_desert
+						terrain = semi_desert_hills
+						terrain = semi_desert_mountains
+						terrain = semi_desert_mountains
+						
+						terrain = jungle
+						terrain = jungle_hills
+						terrain = jungle_mountains
+						terrain = seasonal_jungle
+						terrain = seasonal_jungle_hills
+						terrain = seasonal_jungle_mountains
+						terrain = swamp_jungle
+					}
+				}
+			}
+			remove_province_modifier = spring_province_modifier
+			add_province_modifier = { name = summer_province_modifier duration = -1 }
+			remove_province_modifier = autumn_province_modifier
+			remove_province_modifier = winter_province_modifier
+		}
+		south_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					month = 5
+					NOT = { month = 8 }
+				}
+				NOT = { has_province_modifier = winter_province_modifier }
+				NOT = {
+					OR = {
+						terrain = desert
+						terrain = desert_hills
+						terrain = desert_mountains
+						terrain = semi_desert
+						terrain = semi_desert_hills
+						terrain = semi_desert_mountains
+						terrain = semi_desert_mountains
+						
+						terrain = jungle
+						terrain = jungle_hills
+						terrain = jungle_mountains
+						terrain = seasonal_jungle
+						terrain = seasonal_jungle_hills
+						terrain = seasonal_jungle_mountains
+						terrain = swamp_jungle
+					}
+				}
+			}
+			remove_province_modifier = spring_province_modifier
+			remove_province_modifier = summer_province_modifier
+			remove_province_modifier = autumn_province_modifier
+			add_province_modifier = { name = winter_province_modifier duration = -1 }
+		}
+		
+		# September - November
+		north_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					month = 8
+					NOT = { month = 11 }
+				}
+				NOT = { has_province_modifier = autumn_province_modifier }
+				NOT = {
+					OR = {
+						terrain = desert
+						terrain = desert_hills
+						terrain = desert_mountains
+						terrain = semi_desert
+						terrain = semi_desert_hills
+						terrain = semi_desert_mountains
+						terrain = semi_desert_mountains
+						
+						terrain = jungle
+						terrain = jungle_hills
+						terrain = jungle_mountains
+						terrain = seasonal_jungle
+						terrain = seasonal_jungle_hills
+						terrain = seasonal_jungle_mountains
+						terrain = swamp_jungle
+					}
+				}
+			}
+			remove_province_modifier = spring_province_modifier
+			remove_province_modifier = summer_province_modifier
+			add_province_modifier = { name = autumn_province_modifier duration = -1 }
+			remove_province_modifier = winter_province_modifier
+		}
+		south_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					month = 8
+					NOT = { month = 11 }
+				}
+				NOT = { has_province_modifier = spring_province_modifier }
+				NOT = {
+					OR = {
+						terrain = desert
+						terrain = desert_hills
+						terrain = desert_mountains
+						terrain = semi_desert
+						terrain = semi_desert_hills
+						terrain = semi_desert_mountains
+						terrain = semi_desert_mountains
+						
+						terrain = jungle
+						terrain = jungle_hills
+						terrain = jungle_mountains
+						terrain = seasonal_jungle
+						terrain = seasonal_jungle_hills
+						terrain = seasonal_jungle_mountains
+						terrain = swamp_jungle
+					}
+				}
+			}
+			add_province_modifier = { name = spring_province_modifier duration = -1 }
+			remove_province_modifier = summer_province_modifier
+			remove_province_modifier = autumn_province_modifier
+			remove_province_modifier = winter_province_modifier
+		}
+		
+		### Farms ###
+		# December - February
+		north_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					OR = {
+						month = 11
+						AND = {
+							month = 0
+							NOT = { month = 2 }
+						}
+					}
+				}
+				AND = {
+					OR = {
+						trade_goods = fruit
+						trade_goods = grain
+						trade_goods = sugar
+						trade_goods = tea
+						trade_goods = tobacco
+						trade_goods = coffee
+						trade_goods = cotton
+					}
+				}
+				NOT = { has_province_modifier = winter_farm_province_modifier }
+			}
+			remove_province_modifier = spring_farm_province_modifier
+			remove_province_modifier = summer_farm_province_modifier
+			remove_province_modifier = autumn_farm_province_modifier
+			add_province_modifier = { name = winter_farm_province_modifier duration = -1 }
+		}
+		south_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					OR = {
+						month = 11
+						AND = {
+							month = 0
+							NOT = { month = 2 }
+						}
+					}
+				}
+				AND = {
+					OR = {
+						trade_goods = fruit
+						trade_goods = grain
+						trade_goods = sugar
+						trade_goods = tea
+						trade_goods = tobacco
+						trade_goods = coffee
+						trade_goods = cotton
+					}
+				}
+				NOT = { has_province_modifier = summer_farm_province_modifier }
+			}
+			remove_province_modifier = spring_farm_province_modifier
+			add_province_modifier = { name = summer_farm_province_modifier duration = -1 }
+			remove_province_modifier = autumn_farm_province_modifier
+			remove_province_modifier = winter_farm_province_modifier
+		}
+		
+		# March - May
+		north_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					month = 2
+					NOT = { month = 5 }
+				}
+				AND = {
+					OR = {
+						trade_goods = fruit
+						trade_goods = grain
+						trade_goods = sugar
+						trade_goods = tea
+						trade_goods = tobacco
+						trade_goods = coffee
+						trade_goods = cotton
+					}
+				}
+				NOT = { has_province_modifier = spring_farm_province_modifier }
+			}
+			add_province_modifier = { name = spring_farm_province_modifier duration = -1 }
+			remove_province_modifier = summer_farm_province_modifier
+			remove_province_modifier = autumn_farm_province_modifier
+			remove_province_modifier = winter_farm_province_modifier
+		}
+		south_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					month = 2
+					NOT = { month = 5 }
+				}
+				AND = {
+					OR = {
+						trade_goods = fruit
+						trade_goods = grain
+						trade_goods = sugar
+						trade_goods = tea
+						trade_goods = tobacco
+						trade_goods = coffee
+						trade_goods = cotton
+					}
+				}
+				NOT = { has_province_modifier = autumn_farm_province_modifier }
+			}
+			remove_province_modifier = spring_farm_province_modifier
+			remove_province_modifier = summer_farm_province_modifier
+			add_province_modifier = { name = autumn_farm_province_modifier duration = -1 }
+			remove_province_modifier = winter_farm_province_modifier
+		}
+		
+		# June - August
+		north_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					month = 5
+					NOT = { month = 8 }
+				}
+				AND = {
+					OR = {
+						trade_goods = fruit
+						trade_goods = grain
+						trade_goods = sugar
+						trade_goods = tea
+						trade_goods = tobacco
+						trade_goods = coffee
+						trade_goods = cotton
+					}
+				}
+				NOT = { has_province_modifier = summer_farm_province_modifier }
+			}
+			remove_province_modifier = spring_farm_province_modifier
+			add_province_modifier = { name = summer_farm_province_modifier duration = -1 }
+			remove_province_modifier = autumn_farm_province_modifier
+			remove_province_modifier = winter_farm_province_modifier
+		}
+		south_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					month = 5
+					NOT = { month = 8 }
+				}
+				AND = {
+					OR = {
+						trade_goods = fruit
+						trade_goods = grain
+						trade_goods = sugar
+						trade_goods = tea
+						trade_goods = tobacco
+						trade_goods = coffee
+						trade_goods = cotton
+					}
+				}
+				NOT = { has_province_modifier = winter_farm_province_modifier }
+			}
+			remove_province_modifier = spring_farm_province_modifier
+			remove_province_modifier = summer_farm_province_modifier
+			remove_province_modifier = autumn_farm_province_modifier
+			add_province_modifier = { name = winter_farm_province_modifier duration = -1 }
+		}
+		
+		# September - November
+		north_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					month = 8
+					NOT = { month = 11 }
+				}
+				AND = {
+					OR = {
+						trade_goods = fruit
+						trade_goods = grain
+						trade_goods = sugar
+						trade_goods = tea
+						trade_goods = tobacco
+						trade_goods = coffee
+						trade_goods = cotton
+					}
+				}
+				NOT = { has_province_modifier = autumn_farm_province_modifier }
+			}
+			remove_province_modifier = spring_farm_province_modifier
+			remove_province_modifier = summer_farm_province_modifier
+			add_province_modifier = { name = autumn_farm_province_modifier duration = -1 }
+			remove_province_modifier = winter_farm_province_modifier
+		}
+		south_hemisphere_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					month = 8
+					NOT = { month = 11 }
+				}
+				AND = {
+					OR = {
+						trade_goods = fruit
+						trade_goods = grain
+						trade_goods = sugar
+						trade_goods = tea
+						trade_goods = tobacco
+						trade_goods = coffee
+						trade_goods = cotton
+					}
+				}
+				NOT = { has_province_modifier = spring_farm_province_modifier }
+			}
+			add_province_modifier = { name = spring_farm_province_modifier duration = -1 }
+			remove_province_modifier = summer_farm_province_modifier
+			remove_province_modifier = autumn_farm_province_modifier
+			remove_province_modifier = winter_farm_province_modifier
+		}
+		
+		any_land_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					has_country_modifier = nuclear_winter
+				}
+				AND = {
+					OR = {
+						trade_goods = fruit
+						trade_goods = grain
+						trade_goods = sugar
+						trade_goods = tea
+						trade_goods = tobacco
+						trade_goods = coffee
+						trade_goods = cotton
+					}
+				}
+				NOT = { has_province_modifier = nuclear_winter_farm_province }
+				NOT = { has_province_modifier = nuke_province_marker }
+			}
+			add_province_modifier = { name = nuclear_winter_farm_province duration = -1 }
+		}
+		any_land_metaregion = {
+			limit = {
+				owner = {
+					exists = yes
+					has_country_modifier = nuclear_winter
+				}
+				NOT = { has_province_modifier = nuclear_winter_province }
+				NOT = { has_province_modifier = nuke_province_marker }
+			}
+			add_province_modifier = { name = nuclear_winter_province duration = -1 }
+		}
+		
+		#########################################################
+		#														#
+		#				DEVELOPMENT LEVELS						#
+		#			Level 1 - below 10% literacy				#
+		#			Level 2 - 10% - 20% literacy				#
+		#			Level 3 - 20% - 30% literacy				#
+		#			Level 4 - 30% - 40% literacy				#
+		#			Level 5 - 40% - 50% literacy				#
+		#			Level 6 - 50% - 60% literacy				#
+		#			Level 7 - above 60% literacy				#
+		#														#
+		#########################################################
+		
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_country_modifier = taiwan_economy }
+			}
+			any_owned = {
+				limit = { #Less than 10% or less than 30K pops
+					OR = { NOT = { total_pops = 30000 } NOT = { literacy = 0.10 } }
+					NOT = { has_province_modifier = dev_1 }
+				}
+				
+				remove_province_modifier = dev_2
+				remove_province_modifier = dev_3
+				remove_province_modifier = dev_4
+				remove_province_modifier = dev_5
+				remove_province_modifier = dev_6
+				remove_province_modifier = dev_7
+				add_province_modifier = { name = dev_1 duration = -1 } 
+			}
+		}
+		
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_country_modifier = taiwan_economy }
+			}
+			any_owned = {
+				limit = { #Between 10% to 20%
+					total_pops = 30000
+					literacy = 0.10 NOT = { literacy = 0.20 }
+					NOT = { has_province_modifier = dev_2 }
+				} 
+				remove_province_modifier = dev_1
+				
+				remove_province_modifier = dev_3
+				remove_province_modifier = dev_4
+				remove_province_modifier = dev_5
+				remove_province_modifier = dev_6
+				remove_province_modifier = dev_7
+				add_province_modifier = { name = dev_2 duration = -1 } 
+			}
+		}
+		
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_country_modifier = taiwan_economy }
+			}
+			any_owned = {
+				limit = { #Between 20% to 30%
+					total_pops = 30000
+					literacy = 0.20 NOT = { literacy = 0.30 }
+					NOT = { has_province_modifier = dev_3 }
+				}
+				remove_province_modifier = dev_1
+				remove_province_modifier = dev_2
+				
+				remove_province_modifier = dev_4
+				remove_province_modifier = dev_5
+				remove_province_modifier = dev_6
+				remove_province_modifier = dev_7
+				add_province_modifier = { name = dev_3 duration = -1 } 
+			}
+		}
+		
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_country_modifier = taiwan_economy }
+			}
+			any_owned = {
+				limit = { #Between 30% to 40%
+					total_pops = 30000
+					literacy = 0.30 NOT = { literacy = 0.40 }
+					NOT = { has_province_modifier = dev_4 }
+				}
+				remove_province_modifier = dev_1
+				remove_province_modifier = dev_2
+				remove_province_modifier = dev_3
+				
+				remove_province_modifier = dev_5
+				remove_province_modifier = dev_6
+				remove_province_modifier = dev_7
+				add_province_modifier = { name = dev_4 duration = -1 } 
+			}
+		}
+		
+		any_country = {
+			limit = { exists = yes }
+			any_owned = {
+				limit = { #Between 40% to 50%
+					total_pops = 30000
+					OR = { 
+						AND = { literacy = 0.40 NOT = { literacy = 0.50 } }
+						owner = { has_country_modifier = taiwan_economy }
+					}
+					NOT = { has_province_modifier = dev_5 }
+				}
+				remove_province_modifier = dev_1
+				remove_province_modifier = dev_2
+				remove_province_modifier = dev_3
+				remove_province_modifier = dev_4
+				
+				remove_province_modifier = dev_6
+				remove_province_modifier = dev_7
+				add_province_modifier = { name = dev_5 duration = -1 } 
+			}
+		}
+		
+		any_country = {
+			limit = { exists = yes }
+			any_owned = {
+				limit = { #Between 50% to 60%
+					total_pops = 30000
+					literacy = 0.50 NOT = { literacy = 0.60 }
+					NOT = { has_province_modifier = dev_6 }
+				}
+				remove_province_modifier = dev_1
+				remove_province_modifier = dev_2
+				remove_province_modifier = dev_3
+				remove_province_modifier = dev_4
+				remove_province_modifier = dev_5
+				
+				remove_province_modifier = dev_7
+				add_province_modifier = { name = dev_6 duration = -1 } 
+			}
+		}
+		
+		any_country = {
+			limit = { exists = yes }
+			any_owned = {
+				limit = { #Above 60%
+					total_pops = 30000
+					literacy = 0.60
+					NOT = { has_province_modifier = dev_7 }
+				}
+				remove_province_modifier = dev_1
+				remove_province_modifier = dev_2
+				remove_province_modifier = dev_3
+				remove_province_modifier = dev_4
+				remove_province_modifier = dev_5
+				remove_province_modifier = dev_6
+				
+				add_province_modifier = { name = dev_7 duration = -1 } 
+			}
+		}
+		
+		####################################
+		### END DEVELOPMENT LEVELS BLOCK ###
+		####################################
+		
+		#Nuked province marker cleanup
+		any_country	= {
+			limit = { exists = yes }
+			any_owned = {
+				limit = {
+					AND = { has_crime = nuke_province NOT = { has_province_modifier = nuke_province_marker } }
+				}
+				add_province_modifier = { name = nuke_province_marker duration = -1 }
+			}
+		}
+		any_country	= {
+			limit = { exists = yes }
+			any_owned = {
+				limit = {
+					AND = { has_province_modifier = nuke_province_marker NOT = { has_crime = nuke_province } }
+				}
+				remove_province_modifier = nuke_province_marker
+			}
+		}
+		
+		#Collectivisation
+		any_country	= {
+			limit = {
+				exists = yes
+				has_country_flag = collectivise_farms
+			}
+			any_owned = {
+				limit = {
+					AND = {
+						OR = {
+							trade_goods = fruit
+							trade_goods = grain
+							trade_goods = sugar
+							trade_goods = tea
+							trade_goods = tobacco
+							trade_goods = coffee
+							trade_goods = cotton
+						}
+						NOT = { has_province_modifier = collectivisation }
+					}
+				}
+				add_province_modifier = { name = collectivisation duration = -1 }
+				add_province_modifier = { name = collectivisation_setup duration = 1825 }
+			}
+
+		}
+		
+		#Remove all capitalists in fully planned economies (communist dictatorships)
+		any_country	= {
+			limit = {
+				exists = yes
+				OR = {
+					government = proletarian_dictatorship
+					government = proletarian_dictatorship1
+				}
+				ruling_party_ideology = communist
+				economic_policy = planned_economy
+				
+				OR = { has_pop_type = capitalists has_pop_type = artisans }
+				
+				war = no
+			}
+			any_pop = {
+				limit = { type = capitalists }
+				militancy = 10
+				pop_type = clerks
+			}
+			any_pop = {
+				limit = { type = artisans }
+				militancy = 5
+				pop_type = craftsmen
+			}
+		}
+		
+		#Concentration Camps
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = death_camp_active
+			}
+			any_owned = { 
+				limit = { total_pops = 500000 NOT = { has_province_modifier = death_camp } }
+				add_province_modifier = { name = death_camp duration = -1 } 
+			}
+		}
+		
+		#Bretton Woods Cleanup
+		any_country	= {
+			limit = {
+				exists = yes
+				has_country_modifier = bretton_system
+			}
+			any_owned = {
+				limit = {
+					AND = { trade_goods = credit NOT = { has_province_modifier = bretton_woods_effect } }
+				}
+				add_province_modifier = { name = bretton_woods_effect duration = -1 }
+			}
+		}
+		
+		#Superstate province modifiers
+		any_country	= {
+			limit = {
+				exists = yes
+				capital_scope = { has_province_modifier = single_market }
+			}
+			any_owned = {
+				limit = {
+					NOT = { has_province_modifier = single_market }
+				}
+				add_province_modifier = { name = single_market duration = -1 }
+			}
+		}
+		any_country	= {
+			limit = {
+				exists = yes
+				capital_scope = { has_province_modifier = currency_union_province }
+			}
+			any_owned = {
+				limit = {
+					NOT = { has_province_modifier = currency_union_province }
+				}
+				add_province_modifier = { name = currency_union_province duration = -1 }
+			}
+		}
+		any_country	= {
+			limit = {
+				exists = yes
+				capital_scope = { has_province_modifier = defence_union }
+			}
+			any_owned = {
+				limit = {
+					NOT = { has_province_modifier = defence_union }
+				}
+				add_province_modifier = { name = defence_union duration = -1 }
+			}
+		}
+		
+		#Economic focus cleanup
+		any_country	= {
+			limit = {
+				exists = yes
+				has_country_flag = existing_country
+				has_country_flag = exportfocus
+			}
+			any_owned = {
+				limit = {
+					AND = { is_colonial = no NOT = { has_province_modifier = exportfocus } }
+				}
+				add_province_modifier = { name = exportfocus duration = -1 }
+			}
+		}
+		any_country	= {
+			limit = {
+				has_country_flag = existing_country
+				has_country_flag = importfocus
+			}
+			any_owned = {
+				limit = {
+					AND = { is_colonial = no NOT = { has_province_modifier = importsubstitutionfocus } }
+				}
+				add_province_modifier = { name = importsubstitutionfocus duration = -1 }
+			}
+		}
+		
+		#freeing forced labourers
+		any_country = {
+            limit = {
+				exists = yes
+                any_owned_province = { has_pop_type = slaves }
+                NOT = { has_country_flag = death_camp_active }
+            }
+            any_owned = {
+                limit = {
+                    has_pop_type = slaves
+                    has_pop_type = labourers
+                }
+                any_pop = { limit = { type = slaves } pop_type = labourers money = 1000 }
+            }
+            any_owned = {
+                limit = {
+                    has_pop_type = slaves
+                    has_pop_type = farmers
+                }
+                any_pop = { limit = { type = slaves } pop_type = farmers money = 1000 }
+            }
+            any_owned = {
+                limit = {
+                    has_pop_type = slaves
+                    NOT = { has_pop_type = farmers has_pop_type = labourers }
+                }
+                any_pop = { limit = { type = slaves } pop_type = farmers money = 1000 }
+            }
+        }
+		
+		#updating missing flags
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = {
+					has_country_flag = existing_country
+				}
+			}
+			set_country_flag = existing_country
+		}
+		any_country = {
+			limit = {
+				exists = no
+				has_country_flag = existing_country
+			}
+			clr_country_flag = existing_country
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_country_flag = has_existed_country }
+			}
+			set_country_flag = has_existed_country
+		}
+		
+		#clean up crisis tension
+		any_country = {
+            limit = {
+				exists = yes
+                OR = {
+                    NOT = { has_global_flag = enable_crises_now }
+                    is_vassal = yes
+                }
+            }
+            any_state  = { flashpoint_tension = -100 }
+        }
+		
+		#Clean up SARs without overlords unless UN tag
+		any_country = {
+			limit = {
+				exists = yes
+				AND = {
+					government = sar_government
+					is_vassal = no
+					war = no
+					NOT = { tag = UNT }
+					NOT = { OR = { ruling_party_ideology = communist ruling_party_ideology = communist_social } }
+				}
+			}
+			government = democracy
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				AND = {
+					government = sar_government
+					is_vassal = no
+					war = no
+					NOT = { tag = UNT }
+					OR = { ruling_party_ideology = communist ruling_party_ideology = communist_social }
+				}
+			}
+			government = proletarian_dictatorship
+		}
+		
+		#Clean up independent colonial/mandate gov types without overlords
+		any_country = {
+			limit = {
+				exists = yes
+				AND = {
+					government = colonial_government
+					is_vassal = no
+					war = no
+				}
+			}
+			government = democracy
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				AND = {
+					government = mandate_government
+					is_vassal = no
+					war = no
+				}
+			}
+			government = democracy
+		}
+		
+		#Cleanup chairman flags
+		any_country = {
+			limit = {
+				exists = no
+				has_country_flag = imf_chairmanship
+			}
+			clr_country_flag = imf_chairmanship
+		}
+		any_country = {
+			limit = {
+				exists = no
+				has_country_flag = ibrd_chairmanship
+			}
+			clr_country_flag = ibrd_chairmanship
+		}
+		any_country = {
+			limit = {
+				exists = no
+				has_country_flag = wto_chairmanship
+			}
+			clr_country_flag = wto_chairmanship
+		}
+	}
+}
+
+country_event = {
+	id = 47777790
+	title = "AI: Monthly Cleanup Check"
+	desc = "AI: Monthly Cleanup Check"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Checking..."
+		
+		any_country = {
+			limit = {
+				exists = yes
+				has_global_flag = nuclear_winter
+				NOT = { has_country_modifier = nuclear_winter }
+			}
+			add_country_modifier = { name = nuclear_winter duration = -1 }
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = nuclear_winter
+				NOT = { has_global_flag = nuclear_winter }
+			}
+			remove_country_modifier = nuclear_winter
+		}
+		
+		#Gradual propaganda rather than a one-off instant big increase in support
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = government_propaganda
+				ruling_party_ideology = conservative
+			}
+			random_owned = {
+				limit = { owner = { wars_of_national_liberation = 1 } }
+				owner = {
+					any_pop = {
+						limit = { literacy = 0.15 }
+						ideology = { factor = 0.005 value = conservative }
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { publishing_rights = state_publishing } }
+				owner = {
+					any_pop = {
+						ideology = { factor = 0.005 value = conservative }
+					}
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = government_propaganda
+				ruling_party_ideology = big_tent
+			}
+			random_owned = {
+				limit = { owner = { wars_of_national_liberation = 1 } }
+				owner = {
+					any_pop = {
+						limit = { literacy = 0.15 }
+						ideology = { factor = 0.005 value = big_tent }
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { publishing_rights = state_publishing } }
+				owner = {
+					any_pop = {
+						ideology = { factor = 0.005 value = big_tent }
+					}
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = government_propaganda
+				ruling_party_ideology = liberal
+			}
+			random_owned = {
+				limit = { owner = { wars_of_national_liberation = 1 } }
+				owner = {
+					any_pop = {
+						limit = { literacy = 0.15 }
+						ideology = { factor = 0.005 value = liberal }
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { publishing_rights = state_publishing } }
+				owner = {
+					any_pop = {
+						ideology = { factor = 0.005 value = liberal }
+					}
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = government_propaganda
+				ruling_party_ideology = progressive
+			}
+			random_owned = {
+				limit = { owner = { wars_of_national_liberation = 1 } }
+				owner = {
+					any_pop = {
+						limit = { literacy = 0.15 }
+						ideology = { factor = 0.005 value = progressive }
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { publishing_rights = state_publishing } }
+				owner = {
+					any_pop = {
+						ideology = { factor = 0.005 value = progressive }
+					}
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = government_propaganda
+				ruling_party_ideology = socialist
+			}
+			random_owned = {
+				limit = { owner = { wars_of_national_liberation = 1 } }
+				owner = {
+					any_pop = {
+						limit = { literacy = 0.15 }
+						ideology = { factor = 0.005 value = socialist }
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { publishing_rights = state_publishing } }
+				owner = {
+					any_pop = {
+						ideology = { factor = 0.005 value = socialist }
+					}
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = government_propaganda
+				ruling_party_ideology = communist_social
+			}
+			random_owned = {
+				limit = { owner = { wars_of_national_liberation = 1 } }
+				owner = {
+					any_pop = {
+						limit = { literacy = 0.15 }
+						ideology = { factor = 0.005 value = communist_social }
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { publishing_rights = state_publishing } }
+				owner = {
+					any_pop = {
+						ideology = { factor = 0.005 value = communist_social }
+					}
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = government_propaganda
+				ruling_party_ideology = communist
+			}
+			random_owned = {
+				limit = { owner = { wars_of_national_liberation = 1 } }
+				owner = {
+					any_pop = {
+						limit = { literacy = 0.15 }
+						ideology = { factor = 0.005 value = communist }
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { publishing_rights = state_publishing } }
+				owner = {
+					any_pop = {
+						ideology = { factor = 0.005 value = communist }
+					}
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = government_propaganda
+				ruling_party_ideology = populist
+			}
+			random_owned = {
+				limit = { owner = { wars_of_national_liberation = 1 } }
+				owner = {
+					any_pop = {
+						limit = { literacy = 0.15 }
+						ideology = { factor = 0.005 value = populist }
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { publishing_rights = state_publishing } }
+				owner = {
+					any_pop = {
+						ideology = { factor = 0.005 value = populist }
+					}
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = government_propaganda
+				ruling_party_ideology = nationalist
+			}
+			random_owned = {
+				limit = { owner = { wars_of_national_liberation = 1 } }
+				owner = {
+					any_pop = {
+						limit = { literacy = 0.15 }
+						ideology = { factor = 0.005 value = nationalist }
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { publishing_rights = state_publishing } }
+				owner = {
+					any_pop = {
+						ideology = { factor = 0.005 value = nationalist }
+					}
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = government_propaganda
+				ruling_party_ideology = traditionalist
+			}
+			random_owned = {
+				limit = { owner = { wars_of_national_liberation = 1 } }
+				owner = {
+					any_pop = {
+						limit = { literacy = 0.15 }
+						ideology = { factor = 0.005 value = traditionalist }
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { publishing_rights = state_publishing } }
+				owner = {
+					any_pop = {
+						ideology = { factor = 0.005 value = traditionalist }
+					}
+				}
+			}
+		}
+		
+		#Sphere interference
+		any_country = {
+			limit = {
+				exists = yes
+				sphere_owner = {
+					has_country_modifier = sphere_interference
+					ruling_party_ideology = conservative
+				}
+			}
+			any_pop = {
+				ideology = { factor = 0.005 value = conservative }
+			}
+			random_owned = {
+				limit = { owner = { ruling_party_ideology = conservative } }
+				owner = { any_pop = { ideology = { factor = 0.005 value = conservative } } }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				sphere_owner = {
+					has_country_modifier = sphere_interference
+					ruling_party_ideology = populist
+				}
+			}
+			any_pop = {
+				ideology = { factor = 0.005 value = populist }
+			}
+			random_owned = {
+				limit = { owner = { ruling_party_ideology = populist } }
+				owner = { any_pop = { ideology = { factor = 0.005 value = populist } } }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				sphere_owner = {
+					has_country_modifier = sphere_interference
+					ruling_party_ideology = nationalist
+				}
+			}
+			any_pop = {
+				ideology = { factor = 0.005 value = nationalist }
+			}
+			random_owned = {
+				limit = { owner = { ruling_party_ideology = nationalist } }
+				owner = { any_pop = { ideology = { factor = 0.005 value = nationalist } } }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				sphere_owner = {
+					has_country_modifier = sphere_interference
+					ruling_party_ideology = traditionalist
+				}
+			}
+			any_pop = {
+				ideology = { factor = 0.005 value = traditionalist }
+			}
+			random_owned = {
+				limit = { owner = { ruling_party_ideology = traditionalist } }
+				owner = { any_pop = { ideology = { factor = 0.005 value = traditionalist } } }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				sphere_owner = {
+					has_country_modifier = sphere_interference
+					ruling_party_ideology = socialist
+				}
+			}
+			any_pop = {
+				ideology = { factor = 0.005 value = socialist }
+			}
+			random_owned = {
+				limit = { owner = { ruling_party_ideology = socialist } }
+				owner = { any_pop = { ideology = { factor = 0.005 value = socialist } } }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				sphere_owner = {
+					has_country_modifier = sphere_interference
+					ruling_party_ideology = communist_social
+				}
+			}
+			any_pop = {
+				ideology = { factor = 0.005 value = communist_social }
+			}
+			random_owned = {
+				limit = { owner = { ruling_party_ideology = communist_social } }
+				owner = { any_pop = { ideology = { factor = 0.005 value = communist_social } } }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				sphere_owner = {
+					has_country_modifier = sphere_interference
+					ruling_party_ideology = communist
+				}
+			}
+			any_pop = {
+				ideology = { factor = 0.005 value = communist }
+			}
+			random_owned = {
+				limit = { owner = { ruling_party_ideology = communist } }
+				owner = { any_pop = { ideology = { factor = 0.005 value = communist } } }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				sphere_owner = {
+					has_country_modifier = sphere_interference
+					ruling_party_ideology = progressive
+				}
+			}
+			any_pop = {
+				ideology = { factor = 0.005 value = progressive }
+			}
+			random_owned = {
+				limit = { owner = { ruling_party_ideology = progressive } }
+				owner = { any_pop = { ideology = { factor = 0.005 value = progressive } } }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				sphere_owner = {
+					has_country_modifier = sphere_interference
+					ruling_party_ideology = liberal
+				}
+			}
+			any_pop = {
+				ideology = { factor = 0.005 value = liberal }
+			}
+			random_owned = {
+				limit = { owner = { ruling_party_ideology = liberal } }
+				owner = { any_pop = { ideology = { factor = 0.005 value = liberal } } }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				sphere_owner = {
+					has_country_modifier = sphere_interference
+					ruling_party_ideology = big_tent
+				}
+			}
+			any_pop = {
+				ideology = { factor = 0.005 value = big_tent }
+			}
+			random_owned = {
+				limit = { owner = { ruling_party_ideology = big_tent } }
+				owner = { any_pop = { ideology = { factor = 0.005 value = big_tent } } }
+			}
+		}
+		
+		#Superstate Flags
+		any_country = {
+			limit = {
+				exists = yes
+				OR = {
+					tag = XGC
+					tag = XEF
+					tag = XEU
+					tag = XCC
+					tag = XAU
+					tag = XEW
+					tag = XEC
+					tag = XSA
+					tag = XSU
+					tag = XMS
+					tag = XAC
+					tag = XAL
+					tag = XMU
+					tag = XAN
+					tag = XCI
+					tag = XME
+					tag = XNA
+					tag = XIO
+					tag = XPI
+					tag = XEA
+					tag = XTC
+					tag = XUM
+					tag = UAR
+					tag = SCA
+				}
+				NOT = { has_country_flag = superstate_flag }
+			}
+			set_country_flag = superstate_flag
+		}
+		
+		#Clean up gov types for Soviet Republics
+		any_country = {
+			limit = {
+				OR = {
+					tag = AZB
+					tag = ARM
+					tag = GEO
+					tag = UKR
+					tag = BYE
+					tag = MOL
+					tag = LAT
+					tag = EST
+					tag = LIT
+					tag = KAZ
+					tag = UZB
+					tag = TAJ
+					tag = TKR
+					tag = KYR
+				}
+				exists = yes
+				vassal_of = RUS
+				RUS = { OR = { government = proletarian_dictatorship government = proletarian_dictatorship1 } }
+				government = proletarian_dictatorship
+			}
+			government = proletarian_dictatorship1
+		}
+		
+		#Set flags for gov type
+		any_country = {
+			limit = { NOT = { has_country_flag = communist_dictatorship } OR = { government = proletarian_dictatorship government = proletarian_dictatorship1 } }
+			set_country_flag = communist_dictatorship
+		}
+		any_country = {
+			limit = { has_country_flag = communist_dictatorship NOT = { OR = { government = proletarian_dictatorship government = proletarian_dictatorship1 } } }
+			clr_country_flag = communist_dictatorship
+		}
+		any_country = {
+			limit = { NOT = { has_country_flag = socialist_republic } government = socialist_democracy }
+			set_country_flag = socialist_republic
+		}
+		any_country = {
+			limit = { has_country_flag = socialist_republic NOT = { government = socialist_democracy } }
+			clr_country_flag = socialist_republic
+		}
+		any_country = {
+			limit = { NOT = { has_country_flag = absolute_monarchy } government = absolute_monarchy }
+			set_country_flag = absolute_monarchy
+		}
+		any_country = {
+			limit = { has_country_flag = absolute_monarchy NOT = { government = absolute_monarchy } }
+			clr_country_flag = absolute_monarchy
+		}
+		any_country = {
+			limit = { NOT = { has_country_flag = hms_republic } OR = { government = hms_government government = hms_government1 } }
+			set_country_flag = hms_republic
+		}
+		any_country = {
+			limit = { has_country_flag = hms_republic NOT = { OR = { government = hms_government government = hms_government1 } } }
+			clr_country_flag = hms_republic
+		}
+		any_country = {
+			limit = { NOT = { has_country_flag = republic } OR = { government = democracy government = democracy1 } }
+			set_country_flag = republic
+		}
+		any_country = {
+			limit = { has_country_flag = republic NOT = { OR = { government = democracy government = democracy1 } } }
+			clr_country_flag = republic
+		}
+		any_country = {
+			limit = { NOT = { has_country_flag = nationalist_dictatorship } government = nationalist_dictatorship }
+			set_country_flag = nationalist_dictatorship
+		}
+		any_country = {
+			limit = { has_country_flag = nationalist_dictatorship NOT = { government = nationalist_dictatorship } }
+			clr_country_flag = nationalist_dictatorship
+		}
+		any_country = {
+			limit = { NOT = { has_country_flag = sectarian_dictatorship } government = sectarian_dictatorship }
+			set_country_flag = sectarian_dictatorship
+		}
+		any_country = {
+			limit = { has_country_flag = sectarian_dictatorship NOT = { government = sectarian_dictatorship } }
+			clr_country_flag = sectarian_dictatorship
+		}
+		any_country = {
+			limit = { NOT = { has_country_flag = theocracy } government = theocracy }
+			set_country_flag = theocracy
+		}
+		any_country = {
+			limit = { has_country_flag = theocracy NOT = { government = theocracy } }
+			clr_country_flag = theocracy
+		}
+		
+		#reform flags
+		any_country = {
+			limit = { minorities_reform = minorities_oppression NOT = { has_country_flag = minorities_oppression_reform } }
+			set_country_flag = minorities_oppression_reform
+		}
+		any_country = {
+			limit = { has_country_flag = minorities_oppression_reform NOT = { minorities_reform = minorities_oppression } }
+			clr_country_flag = minorities_oppression_reform
+		}
+		any_country = {
+			limit = { minorities_reform = minorities_equal_rights NOT = { has_country_flag = minorities_equal_rights_reform } }
+			set_country_flag = minorities_equal_rights_reform
+		}
+		any_country = {
+			limit = { has_country_flag = minorities_equal_rights_reform NOT = { minorities_reform = minorities_equal_rights } }
+			clr_country_flag = minorities_equal_rights_reform
+		}
+		any_country = {
+			limit = { minorities_reform = minorities_affirmative_action NOT = { has_country_flag = minorities_affirmative_action_reform } }
+			set_country_flag =minorities_affirmative_action_reform
+		}
+		any_country = {
+			limit = { has_country_flag = minorities_affirmative_action_reform NOT = { minorities_reform = minorities_affirmative_action } }
+			clr_country_flag = minorities_affirmative_action_reform
+		}
+		
+		#Discern between democratic and non-democratic gov type
+		any_country = {
+			limit = {
+				NOT = { has_country_flag = authoritarian_state }
+				OR = {
+					government = presidential_dictatorship
+					government = proletarian_dictatorship
+					government = proletarian_dictatorship1
+					government = absolute_monarchy
+					government = nationalist_dictatorship
+					government = sectarian_dictatorship
+					government = theocracy
+				}
+			}
+			set_country_flag = authoritarian_state
+		}
+		any_country = {
+			limit = {
+				has_country_flag = authoritarian_state
+				NOT = {
+					OR = {
+						government = presidential_dictatorship
+						government = proletarian_dictatorship
+						government = proletarian_dictatorship1
+						government = absolute_monarchy
+						government = nationalist_dictatorship
+						government = sectarian_dictatorship
+						government = theocracy
+					}
+				}
+			}
+			clr_country_flag = authoritarian_state
+		}
+		any_country = {
+			limit = {
+				NOT = { has_country_flag = democratic_state }
+				OR = {
+					government = democracy
+					government = democracy1
+					government = hms_government
+					government = hms_government1
+					government = socialist_democracy
+				}
+			}
+			set_country_flag = democratic_state
+		}
+		any_country = {
+			limit = {
+				has_country_flag = democratic_state
+				NOT = {
+					OR = {
+						government = democracy
+						government = democracy1
+						government = hms_government
+						government = hms_government1
+						government = socialist_democracy
+					}
+				}
+			}
+			clr_country_flag = democratic_state
+		}
+		
+		################################
+		### Population Growth Trends ###
+		################################
+		
+		#reduce_pop = 1.002 leads to 1.02% increase per year which translates into 2% annual growth per year. 
+		#30,076,000 x 1.002 (repeated 12 times) leads to 30,805,817, which divided by the original number leads to 1.02 per year
+		#30,076,000 x 1.02 (repeated 12 times) leads to 36,662,476, which is an per annum growth rate of 2%
+		#Thus, monthly ticks of reduce_pop = 1.002 should theoretically simulate a 2% pop growth rate per year, which is the average for developing countries during the 20th century.
+		#consequently, monthly ticks of reduce_pop = 0.998 should theoretically simulate a -2% pop growth rate per year which is a demographic crunch (20 years of this rate leads to halved population)
+		#Developed countries experiencing a baby boom will thus have a year increase of 1.017, or 1.0017 per monthly tick
+		
+		#Base growth rates
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_global_flag = nuclear_winter }
+				NOT = { has_country_modifier = contraception_decay }
+				NOT = { has_country_flag = demographic_transition_stage_2_flag }
+				NOT = { has_country_flag = demographic_transition_stage_3_flag }
+				NOT = { has_country_flag = demographic_transition_stage_4_flag }
+				NOT = { has_country_flag = demographic_transition_stage_5_flag }
+				NOT = { has_country_flag = demographic_transition_stage_6_flag }
+			}
+			any_owned = {
+				limit = {
+					NOT = {
+						OR = {
+							has_province_modifier = family_values1
+							has_province_modifier = natalism_1
+							has_crime = nuke_province
+						}
+					}
+				}
+				any_pop = { reduce_pop = 1.0018 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_global_flag = nuclear_winter }
+				NOT = { has_country_modifier = contraception_decay }
+				has_country_flag = demographic_transition_stage_2_flag
+				NOT = { has_country_flag = demographic_transition_stage_3_flag }
+				NOT = { has_country_flag = demographic_transition_stage_4_flag }
+				NOT = { has_country_flag = demographic_transition_stage_5_flag }
+				NOT = { has_country_flag = demographic_transition_stage_6_flag }
+			}
+			any_owned = {
+				limit = {
+					NOT = {
+						OR = {
+							has_province_modifier = family_values1
+							has_province_modifier = natalism_1
+							has_crime = nuke_province
+						}
+					}
+				}
+				any_pop = { reduce_pop = 1.0013 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_global_flag = nuclear_winter }
+				NOT = { has_country_modifier = contraception_decay }
+				has_country_flag = demographic_transition_stage_3_flag
+				NOT = { has_country_flag = demographic_transition_stage_4_flag }
+				NOT = { has_country_flag = demographic_transition_stage_5_flag }
+				NOT = { has_country_flag = demographic_transition_stage_6_flag }
+			}
+			any_owned = {
+				limit = {
+					NOT = {
+						OR = {
+							has_province_modifier = family_values1
+							has_province_modifier = natalism_1
+							has_crime = nuke_province
+						}
+					}
+				}
+				any_pop = { reduce_pop = 1.001 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_global_flag = nuclear_winter }
+				NOT = { has_country_modifier = contraception_decay }
+				has_country_flag = demographic_transition_stage_4_flag
+				NOT = { has_country_flag = demographic_transition_stage_5_flag }
+				NOT = { has_country_flag = demographic_transition_stage_6_flag }
+			}
+			any_owned = {
+				limit = {
+					NOT = {
+						OR = {
+							has_province_modifier = family_values1
+							has_province_modifier = natalism_1
+							has_crime = nuke_province
+						}
+					}
+				}
+				any_pop = { reduce_pop = 0.999 }
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				NOT = { has_global_flag = nuclear_winter }
+				NOT = { has_country_modifier = contraception_decay }
+				has_country_flag = demographic_transition_stage_5_flag
+				NOT = { has_country_flag = demographic_transition_stage_6_flag }
+			}
+			any_owned = {
+				limit = {
+					NOT = {
+						OR = {
+							has_province_modifier = family_values1
+							has_province_modifier = natalism_1
+							has_crime = nuke_province
+						}
+					}
+				}
+				any_pop = { reduce_pop = 0.998 }
+			}
+		}
+		
+		### Natalism ###
+		
+		#sectarian governments and other governments that are oppressive towards minorities grow only primary and accepted pops
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = contraception_decay
+				OR = {
+					government = sectarian_dictatorship
+					AND = { minorities_reform = minorities_oppression NOT = { citizenship_policy = full_citizenship } }
+				}
+			}
+			any_owned = {
+				limit = {
+					NOT = {
+						OR = {
+							has_province_modifier = family_values1
+							has_province_modifier = natalism_1
+							has_crime = nuke_province
+						}
+					}
+				}
+				any_pop = {
+					limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } }
+					reduce_pop = 1.0017
+				}
+			}
+		}
+		#All others have a universal pop growth
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_modifier = contraception_decay
+				NOT = {
+					OR = {
+						government = sectarian_dictatorship
+						AND = { minorities_reform = minorities_oppression NOT = { citizenship_policy = full_citizenship } }
+					}
+				}
+			}
+			any_owned = {
+				limit = {
+					NOT = {
+						OR = {
+							has_province_modifier = family_values1
+							has_province_modifier = natalism_1
+							has_crime = nuke_province
+						}
+					}
+				}
+				any_pop = { reduce_pop = 1.0017 }
+			}
+		}
+		
+		##########################################
+		### END POPULATION GROWTH TRENDS BLOCK ###
+		##########################################
+		
+		#Clean up sphere coup flag
+		any_country = {
+			limit = {
+				has_country_flag = potential_soviet_vassal
+			}
+			clr_country_flag = potential_soviet_vassal
+		}
+
+		################################
+		### Clean up Arab identities ###
+		################################
+		
+		#Set master Arab country flag for later scoping
+		any_country = {
+			limit = {
+				capital_scope = { region = arabia_metaregion }
+				NOT = { has_country_flag = arab_country }
+				NOT = { OR = { tag = ISR tag = FAG } }
+			}
+			set_country_flag = arab_country
+		}
+		
+		#Set cultural arab country flags for later revision
+		any_country = {
+			limit = {
+				primary_culture = arab_gulf
+				NOT = { has_country_flag = arab_gulf_nation }
+			}
+			set_country_flag = arab_gulf_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = berber
+				NOT = { has_country_flag = berber_nation }
+			}
+			set_country_flag = berber_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = arab_mashriqi
+				NOT = { has_country_flag = arab_mashriqi_nation }
+			}
+			set_country_flag = arab_mashriqi_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = arab_nile
+				NOT = { has_country_flag = arab_nile_nation }
+			}
+			set_country_flag = arab_nile_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = arab_hassaniya
+				NOT = { has_country_flag = arab_hassaniya_nation }
+			}
+			set_country_flag = arab_hassaniya_nation
+		}
+		
+		#Clean up country flags and set cultures if the country doesn't exist and its owner is a pan-arab nation		
+		any_country = {
+			limit = {
+				exists = no
+				has_country_flag = arab_country
+				NOT = { has_country_flag = pan_arab_identity }
+				capital_scope = { owner = { has_country_flag = pan_arab_identity } }
+			}
+			set_country_flag = pan_arab_identity
+			clr_country_flag = arab_cultural_identity
+			primary_culture = arab
+			
+			#Force assimilation
+			remove_accepted_culture = arab_gulf 
+			remove_accepted_culture = berber
+			remove_accepted_culture = arab_mashriqi
+			remove_accepted_culture = arab_nile
+			remove_accepted_culture = arab_hassaniya
+		}
+		
+		#Clean up country flags and set cultures back to original if the country doesn't exist and owner is not a pan-arab country
+		any_country = {
+			limit = {
+				exists = no
+				has_country_flag = arab_country
+				has_country_flag = arab_gulf_nation
+				NOT = { has_country_flag = arab_cultural_identity }
+				capital_scope = { owner = { has_country_flag = arab_cultural_identity } }
+			}
+			clr_country_flag = pan_arab_identity
+			set_country_flag = arab_cultural_identity
+			
+			primary_culture = arab_gulf
+			
+			#Force assimilation
+			remove_accepted_culture = arab 
+		}
+		any_country = {
+			limit = {
+				exists = no
+				has_country_flag = arab_country
+				has_country_flag = berber_nation
+				NOT = { has_country_flag = arab_cultural_identity }
+				capital_scope = { owner = { has_country_flag = arab_cultural_identity } }
+			}
+			clr_country_flag = pan_arab_identity
+			set_country_flag = arab_cultural_identity
+			
+			primary_culture = berber
+			
+			#Force assimilation
+			remove_accepted_culture = arab 
+		}
+		any_country = {
+			limit = {
+				exists = no
+				has_country_flag = arab_country
+				has_country_flag = arab_mashriqi_nation
+				NOT = { has_country_flag = arab_cultural_identity }
+				capital_scope = { owner = { has_country_flag = arab_cultural_identity } }
+			}
+			clr_country_flag = pan_arab_identity
+			set_country_flag = arab_cultural_identity
+			
+			primary_culture = arab_mashriqi
+			
+			#Force assimilation
+			remove_accepted_culture = arab 
+		}
+		any_country = {
+			limit = {
+				exists = no
+				has_country_flag = arab_country
+				has_country_flag = arab_nile_nation
+				NOT = { has_country_flag = arab_cultural_identity }
+				capital_scope = { owner = { has_country_flag = arab_cultural_identity } }
+			}
+			clr_country_flag = pan_arab_identity
+			set_country_flag = arab_cultural_identity
+			
+			primary_culture = arab_nile
+			
+			#Force assimilation
+			remove_accepted_culture = arab 
+		}
+		any_country = {
+			limit = {
+				exists = no
+				has_country_flag = arab_country
+				has_country_flag = arab_hassaniya_nation
+				NOT = { has_country_flag = arab_cultural_identity }
+				capital_scope = { owner = { has_country_flag = arab_cultural_identity } }
+			}
+			clr_country_flag = pan_arab_identity
+			set_country_flag = arab_cultural_identity
+			
+			primary_culture = arab_hassaniya
+			
+			#Force assimilation
+			remove_accepted_culture = arab 
+		}
+		
+		#################################
+		###                           ###
+		### EUROPEAN CULTURES CLEANUP ###
+		###                           ###
+		#################################
+		
+		### Set master European country flag for later scoping ###
+		any_country = {
+			limit = {
+				capital_scope = { OR = { region = europe_metaregion region = RUS_metaregion } }
+				NOT = { has_country_flag = european_country }
+			}
+			set_country_flag = european_country
+		}
+		
+		### Set cultural european country flags for later revision ###
+		
+		#Portugal
+		any_country = {
+			limit = {
+				primary_culture = portuguese
+				NOT = { has_country_flag = portuguese_nation }
+			}
+			set_country_flag = portuguese_nation
+		}
+		
+		#Spain
+		any_country = {
+			limit = {
+				primary_culture = spanish
+				NOT = { has_country_flag = spanish_nation }
+			}
+			set_country_flag = spanish_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = catalan
+				NOT = { has_country_flag = catalan_nation }
+			}
+			set_country_flag = catalan_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = basque
+				NOT = { has_country_flag = basque_nation }
+			}
+			set_country_flag = basque_nation
+		}
+		
+		#France
+		any_country = {
+			limit = {
+				primary_culture = french
+				NOT = { has_country_flag = french_nation }
+			}
+			set_country_flag = french_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = breton
+				NOT = { has_country_flag = breton_nation }
+			}
+			set_country_flag = breton_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = occitans
+				NOT = { has_country_flag = occitan_nation }
+			}
+			set_country_flag = occitan_nation
+		}
+		
+		#Netherlands
+		any_country = {
+			limit = {
+				primary_culture = dutch
+				NOT = { has_country_flag = dutch_nation }
+			}
+			set_country_flag = dutch_nation
+		}
+		
+		#Italy
+		any_country = {
+			limit = {
+				primary_culture = italian
+				NOT = { has_country_flag = italian_nation }
+			}
+			set_country_flag = italian_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = insular_mediterranean
+				NOT = { has_country_flag = insular_mediterranean_nation }
+			}
+			set_country_flag = insular_mediterranean_nation
+		}
+		
+		#Germany
+		any_country = {
+			limit = {
+				primary_culture = german
+				NOT = { has_country_flag = german_nation }
+			}
+			set_country_flag = german_nation
+		}
+		
+		#Poland
+		any_country = {
+			limit = {
+				primary_culture = polish
+				NOT = { has_country_flag = polish_nation }
+			}
+			set_country_flag = polish_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = silesians
+				NOT = { has_country_flag = silesian_nation }
+			}
+			set_country_flag = silesian_nation
+		}
+		
+		#Hungary
+		any_country = {
+			limit = {
+				primary_culture = hungarian
+				NOT = { has_country_flag = hungarian_nation }
+			}
+			set_country_flag = hungarian_nation
+		}
+		
+		#Baltics
+		any_country = {
+			limit = {
+				primary_culture = estonian
+				NOT = { has_country_flag = estonian_nation }
+			}
+			set_country_flag = estonian_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = latvian
+				NOT = { has_country_flag = latvian_nation }
+			}
+			set_country_flag = latvian_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = lithuanian
+				NOT = { has_country_flag = lithuanian_nation }
+			}
+			set_country_flag = lithuanian_nation
+		}
+		
+		#Czechoslovakia
+		any_country = {
+			limit = {
+				primary_culture = czech
+				NOT = { has_country_flag = czech_nation }
+			}
+			set_country_flag = czech_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = slovak
+				NOT = { has_country_flag = slovakian_nation }
+			}
+			set_country_flag = slovakian_nation
+		}
+		
+		#Belarus
+		any_country = {
+			limit = {
+				primary_culture = byelorussian
+				NOT = { has_country_flag = byelorussian_nation }
+			}
+			set_country_flag = byelorussian_nation
+		}
+		
+		#Ukraine
+		any_country = {
+			limit = {
+				primary_culture = ukrainian
+				NOT = { has_country_flag = ukrainian_nation }
+			}
+			set_country_flag = ukrainian_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = rusyn
+				NOT = { has_country_flag = rusyn_nation }
+			}
+			set_country_flag = rusyn_nation
+		}
+		
+		#Russia
+		any_country = {
+			limit = {
+				primary_culture = russian
+				NOT = { has_country_flag = russian_nation }
+			}
+			set_country_flag = russian_nation
+		}
+		
+		#Romania
+		any_country = {
+			limit = {
+				primary_culture = romanian
+				NOT = { has_country_flag = romanian_nation }
+			}
+			set_country_flag = romanian_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = aromanians
+				NOT = { has_country_flag = aromanian_nation }
+			}
+			set_country_flag = aromanian_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = roma
+				NOT = { has_country_flag = roma_nation }
+			}
+			set_country_flag = roma_nation
+		}
+		
+		#Bulgaria
+		any_country = {
+			limit = {
+				primary_culture = bulgarian
+				NOT = { has_country_flag = bulgarian_nation }
+			}
+			set_country_flag = bulgarian_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = pomak
+				NOT = { has_country_flag = pomak_nation }
+			}
+			set_country_flag = pomak_nation
+		}
+		
+		#Yugoslavia
+		any_country = {
+			limit = {
+				primary_culture = yugoslav
+				NOT = { has_country_flag = yugoslav_nation }
+			}
+			set_country_flag = yugoslav_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = serb
+				NOT = { has_country_flag = serbian_nation }
+			}
+			set_country_flag = serbian_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = montenegrin
+				NOT = { has_country_flag = montenegrin_nation }
+			}
+			set_country_flag = montenegrin_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = croat
+				NOT = { has_country_flag = croatian_nation }
+			}
+			set_country_flag = croatian_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = bosniak
+				NOT = { has_country_flag = bosnian_nation }
+			}
+			set_country_flag = bosnian_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = slovene
+				NOT = { has_country_flag = slovenian_nation }
+			}
+			set_country_flag = slovenian_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = albanian
+				NOT = { has_country_flag = albanian_nation }
+			}
+			set_country_flag = albanian_nation
+		}
+		
+		#Greece
+		any_country = {
+			limit = {
+				primary_culture = greek
+				NOT = { has_country_flag = greek_nation }
+			}
+			set_country_flag = greek_nation
+		}
+		
+		#Norway
+		any_country = {
+			limit = {
+				primary_culture = norwegian
+				NOT = { has_country_flag = norwegian_nation }
+			}
+			set_country_flag = norwegian_nation
+		}
+		
+		#Sweden
+		any_country = {
+			limit = {
+				primary_culture = swedish
+				NOT = { has_country_flag = swedish_nation }
+			}
+			set_country_flag = swedish_nation
+		}
+		
+		#Denmark
+		any_country = {
+			limit = {
+				primary_culture = danish
+				NOT = { has_country_flag = danish_nation }
+			}
+			set_country_flag = danish_nation
+		}
+		
+		#Finland
+		any_country = {
+			limit = {
+				primary_culture = finnish
+				NOT = { has_country_flag = finnish_nation }
+			}
+			set_country_flag = finnish_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = finno_ugrian
+				NOT = { has_country_flag = finno_ugrian_nation }
+			}
+			set_country_flag = finno_ugrian_nation
+		}
+		
+		#Britain
+		any_country = {
+			limit = {
+				primary_culture = british
+				NOT = { has_country_flag = british_nation }
+			}
+			set_country_flag = british_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = scottish
+				NOT = { has_country_flag = scottish_nation }
+			}
+			set_country_flag = scottish_nation
+		}
+		any_country = {
+			limit = {
+				primary_culture = welsh
+				NOT = { has_country_flag = welsh_nation }
+			}
+			set_country_flag = welsh_nation
+		}
+		
+		#Ireland
+		any_country = {
+			limit = {
+				primary_culture = irish
+				NOT = { has_country_flag = irish_nation }
+			}
+			set_country_flag = irish_nation
+		}
+		
+		### Country flag cleanup ###
+		
+		#Clean up cultural country flags for XEU tag to prevent primary culture fuckery
+		any_country = {
+			limit = {
+				tag = XEU
+				exists = yes
+				OR = {
+					has_country_flag = portuguese_nation
+					has_country_flag = spanish_nation
+					has_country_flag = catalan_nation
+					has_country_flag = basque_nation
+					has_country_flag = french_nation
+					has_country_flag = breton_nation
+					has_country_flag = occitan_nation
+					has_country_flag = dutch_nation
+					has_country_flag = italian_nation
+					has_country_flag = insular_mediterranean_nation
+					has_country_flag = german_nation
+					has_country_flag = polish_nation
+					has_country_flag = silesian_nation
+					has_country_flag = hungarian_nation
+					has_country_flag = estonian_nation
+					has_country_flag = latvian_nation
+					has_country_flag = lithuanian_nation
+					has_country_flag = czech_nation
+					has_country_flag = slovakian_nation
+					has_country_flag = byelorussian_nation
+					has_country_flag = ukrainian_nation
+					has_country_flag = rusyn_nation
+					has_country_flag = russian_nation
+					has_country_flag = romanian_nation
+					has_country_flag = aromanian_nation
+					has_country_flag = roma_nation
+					has_country_flag = bulgarian_nation
+					has_country_flag = pomak_nation
+					has_country_flag = yugoslav_nation
+					has_country_flag = serbian_nation
+					has_country_flag = montenegrin_nation
+					has_country_flag = croatian_nation
+					has_country_flag = bosnian_nation
+					has_country_flag = slovenian_nation
+					has_country_flag = albanian_nation
+					has_country_flag = greek_nation
+					has_country_flag = norwegian_nation
+					has_country_flag = swedish_nation
+					has_country_flag = danish_nation
+					has_country_flag = finnish_nation
+					has_country_flag = finno_ugrian_nation
+					has_country_flag = british_nation
+					has_country_flag = scottish_nation
+					has_country_flag = welsh_nation
+					has_country_flag = irish_nation
+				}
+			}
+			clr_country_flag = portuguese_nation
+			clr_country_flag = spanish_nation
+			clr_country_flag = catalan_nation
+			clr_country_flag = basque_nation
+			clr_country_flag = french_nation
+			clr_country_flag = breton_nation
+			clr_country_flag = occitan_nation
+			clr_country_flag = dutch_nation
+			clr_country_flag = italian_nation
+			clr_country_flag = insular_mediterranean_nation
+			clr_country_flag = german_nation
+			clr_country_flag = polish_nation
+			clr_country_flag = silesian_nation
+			clr_country_flag = hungarian_nation
+			clr_country_flag = estonian_nation
+			clr_country_flag = latvian_nation
+			clr_country_flag = lithuanian_nation
+			clr_country_flag = czech_nation
+			clr_country_flag = slovakian_nation
+			clr_country_flag = byelorussian_nation
+			clr_country_flag = ukrainian_nation
+			clr_country_flag = rusyn_nation
+			clr_country_flag = russian_nation
+			clr_country_flag = romanian_nation
+			clr_country_flag = aromanian_nation
+			clr_country_flag = roma_nation
+			clr_country_flag = bulgarian_nation
+			clr_country_flag = pomak_nation
+			clr_country_flag = yugoslav_nation
+			clr_country_flag = serbian_nation
+			clr_country_flag = montenegrin_nation
+			clr_country_flag = croatian_nation
+			clr_country_flag = bosnian_nation
+			clr_country_flag = slovenian_nation
+			clr_country_flag = albanian_nation
+			clr_country_flag = greek_nation
+			clr_country_flag = norwegian_nation
+			clr_country_flag = swedish_nation
+			clr_country_flag = danish_nation
+			clr_country_flag = finnish_nation
+			clr_country_flag = finno_ugrian_nation
+			clr_country_flag = british_nation
+			clr_country_flag = scottish_nation
+			clr_country_flag = welsh_nation
+			clr_country_flag = irish_nation
+		}
+		
+		#Clean up country flags and set cultures if the country doesn't exist and its owner is XEU
+		any_country = {
+			limit = {
+				exists = no
+				has_country_flag = european_country
+				NOT = { has_country_flag = pan_european_identity }
+				capital_scope = { owner = { has_country_flag = pan_european_identity } }
+			}
+			set_country_flag = pan_european_identity
+			clr_country_flag = european_cultural_identity
+			primary_culture = european
+			
+			#Force assimilation
+			remove_accepted_culture = arab_gulf 
+			remove_accepted_culture = french
+			remove_accepted_culture = breton
+			remove_accepted_culture = occitans
+			remove_accepted_culture = italian
+			remove_accepted_culture = insular_mediterranean
+			remove_accepted_culture = basque
+			remove_accepted_culture = catalan
+			remove_accepted_culture = spanish
+			remove_accepted_culture = byelorussian
+			remove_accepted_culture = russian
+			remove_accepted_culture = polish
+			remove_accepted_culture = ukrainian
+			remove_accepted_culture = serb
+			remove_accepted_culture = bulgarian
+			remove_accepted_culture = croat
+			remove_accepted_culture = bosniak
+			remove_accepted_culture = slovene
+			remove_accepted_culture = irish
+			remove_accepted_culture = british
+			remove_accepted_culture = scottish
+			remove_accepted_culture = welsh
+			remove_accepted_culture = estonian
+			remove_accepted_culture = latvian
+			remove_accepted_culture = lithuanian
+			remove_accepted_culture = hungarian
+			remove_accepted_culture = german
+			remove_accepted_culture = dutch
+			remove_accepted_culture = czech
+			remove_accepted_culture = slovak
+			remove_accepted_culture = greek
+			remove_accepted_culture = danish
+			remove_accepted_culture = finnish
+			remove_accepted_culture = norwegian
+			remove_accepted_culture = finno_ugrian
+			remove_accepted_culture = swedish
+			remove_accepted_culture = albanian
+			remove_accepted_culture = romanian
+			remove_accepted_culture = portuguese
+		}
+		
+		### Reset primary culture in the event owner is not a pan-european identitarian nation or THIS exists and has european as primary ###
+		
+		#Portugal
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = portuguese_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = portuguese
+		}
+		
+		#Spain
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = spanish_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = spanish
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = catalan_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = catalan
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = basque_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = basque
+		}
+		
+		#France
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = french_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = french
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = breton_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = breton
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = occitan_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = occitans
+		}
+		
+		#Netherlands
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = dutch_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = dutch
+		}
+		
+		#Italy
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = italian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = italian
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = insular_mediterranean_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = insular_mediterranean
+		}
+		
+		#Germany
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = german_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = german
+		}
+		
+		#Poland
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = polish_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = polish
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = silesian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = silesians
+		}
+		
+		#Hungary
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = hungarian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = hungarian
+		}
+		
+		#Baltics
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = estonian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = estonian
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = latvian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = latvian
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = lithuanian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = lithuanian
+		}
+		
+		#Czechoslovakia
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = czech_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = czech
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = slovakian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = slovak
+		}
+		
+		#Belarus
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = byelorussian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = byelorussian
+		}
+		
+		#Ukraine
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = ukrainian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = ukrainian
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = rusyn_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = rusyn
+		}
+		
+		#Russia
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = russian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = russian
+		}
+		
+		#Romania
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = romanian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = romanian
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = aromanian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = aromanians
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = roma_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = roma
+		}
+		
+		#Bulgaria
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = bulgarian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = bulgarian
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = pomak_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = pomak
+		}
+		
+		#Yugoslavia
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = yugoslav_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = yugoslav
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = serbian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = serb
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = montenegrin_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = montenegrin
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = croatian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = croat
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = bosnian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = bosniak
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = slovenian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = slovene
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = albanian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = albanian
+		}
+		
+		#Greece
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = greek_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = greek
+		}
+		
+		#Norway
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = norwegian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = norwegian
+		}
+		
+		#Denmark
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = danish_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = danish
+		}
+		
+		#Sweden
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = swedish_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = swedish
+		}
+		
+		#Finland
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = finnish_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = finnish
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = finno_ugrian_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = finno_ugrian
+		}
+		
+		#Britain
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = british_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = british
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = scottish_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = scottish
+		}
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = welsh_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = welsh
+		}
+		
+		#Ireland
+		any_country = {
+			limit = {
+				has_country_flag = european_country
+				has_country_flag = irish_nation
+				OR = {
+					AND = {
+						exists = no
+						capital_scope = { owner = { has_country_flag = european_cultural_identity } }
+					}
+					AND = {
+						exists = yes
+						primary_culture = european
+					}
+				}
+			}
+			primary_culture = irish
+		}
+		
+		#####################################
+		###                               ###
+		### END EUROPEAN CULTURES CLEANUP ###
+		###                               ###
+		#####################################
+		
+		######################
+		### Colonial Flags ###
+		######################
+		
+		### Set flags ###
+		any_country = {
+			limit = {
+				exists = yes
+				AND = {
+					government = colonial_government
+					vassal_of = ENG
+				}
+			}
+			set_country_flag = british_colony
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				AND = {
+					government = colonial_government
+					vassal_of = FRA
+				}
+			}
+			set_country_flag = french_colony
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				AND = {
+					government = colonial_government
+					vassal_of = BEL
+				}
+			}
+			set_country_flag = belgian_colony
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				AND = {
+					government = colonial_government
+					vassal_of = NET
+				}
+			}
+			set_country_flag = dutch_colony
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				AND = {
+					government = colonial_government
+					vassal_of = SPA
+				}
+			}
+			set_country_flag = spanish_colony
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				AND = {
+					government = colonial_government
+					vassal_of = POR
+				}
+			}
+			set_country_flag = portuguese_colony
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				AND = {
+					government = colonial_government
+					vassal_of = FBU
+				}
+			}
+			set_country_flag = francobritish_colony
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				government = colonial_government
+				is_vassal = yes
+			}
+			set_country_flag = colonial_province
+			overlord = { set_country_flag = colonial_overlord }
+			overlord = { clr_country_flag = former_colonial_overlord }
+		}
+		
+		### Clear flags ###
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = british_colony
+				NOT = { vassal_of = ENG }
+			}
+			clr_country_flag = british_colony
+			set_country_flag = former_british_colony
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = french_colony
+				NOT = { vassal_of = FRA }
+			}
+			clr_country_flag = french_colony
+			set_country_flag = former_french_colony
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = belgian_colony
+				NOT = { vassal_of = BEL }
+			}
+			clr_country_flag = belgian_colony
+			set_country_flag = former_belgian_colony
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = dutch_colony
+				NOT = { vassal_of = NET }
+			}
+			clr_country_flag = dutch_colony
+			set_country_flag = former_dutch_colony
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = spanish_colony
+				NOT = { vassal_of = SPA }
+			}
+			clr_country_flag = spanish_colony
+			set_country_flag = former_spanish_colony
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = portuguese_colony
+				NOT = { vassal_of = POR }
+			}
+			clr_country_flag = portuguese_colony
+			set_country_flag = former_portuguese_colony
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = portuguese_colony
+				NOT = { vassal_of = FBU }
+			}
+			clr_country_flag = francobritish_colony
+			set_country_flag = former_francobritish_colony
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = colonial_province
+				is_vassal = no
+			}
+			clr_country_flag = colonial_province
+			set_country_flag = former_colonial_province
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = colonial_overlord
+				NOT = { num_of_vassals = 1 }
+			}
+			clr_country_flag = colonial_overlord
+		}
+		
+		########################
+		### ETHNIC CLEANSING ###
+		########################
+		
+		#Slightly increase primary culture pop growth during pop replacement
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = ethnic_cleansed
+			}
+			any_owned = {
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = pop_replacement_province_modifier }
+						OR = { is_primary_culture = yes is_accepted_culture = yes }
+					}
+					reduce_pop = 1.025
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				has_country_flag = promote_colonial_migration_active
+			}
+			any_owned = {
+				any_pop = {
+					limit = {
+						location = { is_colonial = yes }
+						OR = { is_primary_culture = yes is_accepted_culture = yes }
+					}
+					reduce_pop = 1.015
+				}
+			}
+		}
+		
+		#Reduce non-accepted pops during genocides
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_flag = ethnic_cleansed has_country_modifier = ethnic_cleansing }
+			}
+			any_owned = {
+				limit = { owner = { NOT = { cold_war_doctrine = 1 } NOT = { has_country_flag = death_camp_active } } }
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = ethnic_cleansing_province_modifier }
+						AND = { is_primary_culture = no is_accepted_culture = no }
+					}
+					reduce_pop = 0.99
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_flag = ethnic_cleansed has_country_modifier = ethnic_cleansing }
+			}
+			any_owned = {
+				limit = { owner = { NOT = { cold_war_doctrine = 1 } has_country_flag = death_camp_active } }
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = ethnic_cleansing_province_modifier }
+						AND = { is_primary_culture = no is_accepted_culture = no }
+					}
+					reduce_pop = 0.99
+				}
+			}
+		}
+		
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_flag = ethnic_cleansed has_country_modifier = ethnic_cleansing }
+			}
+			any_owned = {
+				limit = { owner = { cold_war_doctrine = 1 NOT = { has_country_flag = death_camp_active } } }
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = ethnic_cleansing_province_modifier }
+						AND = { is_primary_culture = no is_accepted_culture = no }
+					}
+					reduce_pop = 0.99
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_flag = ethnic_cleansed has_country_modifier = ethnic_cleansing }
+			}
+			any_owned = {
+				limit = { owner = { cold_war_doctrine = 1 has_country_flag = death_camp_active } }
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = ethnic_cleansing_province_modifier }
+						AND = { is_primary_culture = no is_accepted_culture = no }
+					}
+					reduce_pop = 0.98
+				}
+			}
+		}
+		
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_flag = ethnic_cleansed has_country_modifier = ethnic_cleansing }
+			}
+			any_owned = {
+				limit = { owner = { assymetric_warfare = 1 NOT = { has_country_flag = death_camp_active } } }
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = ethnic_cleansing_province_modifier }
+						AND = { is_primary_culture = no is_accepted_culture = no }
+					}
+					reduce_pop = 0.98
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_flag = ethnic_cleansed has_country_modifier = ethnic_cleansing }
+			}
+			any_owned = {
+				limit = { owner = { assymetric_warfare = 1 has_country_flag = death_camp_active } }
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = ethnic_cleansing_province_modifier }
+						AND = { is_primary_culture = no is_accepted_culture = no }
+					}
+					reduce_pop = 0.97
+				}
+			}
+		}
+		
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_flag = ethnic_cleansed has_country_modifier = ethnic_cleansing }
+			}
+			any_owned = {
+				limit = { owner = { fourth_generation_warfare = 1 NOT = { has_country_flag = death_camp_active } } }
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = ethnic_cleansing_province_modifier }
+						AND = { is_primary_culture = no is_accepted_culture = no }
+					}
+					reduce_pop = 0.97
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_flag = ethnic_cleansed has_country_modifier = ethnic_cleansing }
+			}
+			any_owned = {
+				limit = { owner = { fourth_generation_warfare = 1 has_country_flag = death_camp_active } }
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = ethnic_cleansing_province_modifier }
+						AND = { is_primary_culture = no is_accepted_culture = no }
+					}
+					reduce_pop = 0.96
+				}
+			}
+		}
+		
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_flag = ethnic_cleansed has_country_modifier = ethnic_cleansing }
+			}
+			any_owned = {
+				limit = { owner = { modern_asymmetric_warfare = 1 NOT = { has_country_flag = death_camp_active } } }
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = ethnic_cleansing_province_modifier }
+						AND = { is_primary_culture = no is_accepted_culture = no }
+					}
+					reduce_pop = 0.96
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_flag = ethnic_cleansed has_country_modifier = ethnic_cleansing }
+			}
+			any_owned = {
+				limit = { owner = { modern_asymmetric_warfare = 1 has_country_flag = death_camp_active } }
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = ethnic_cleansing_province_modifier }
+						AND = { is_primary_culture = no is_accepted_culture = no }
+					}
+					reduce_pop = 0.95
+				}
+			}
+		}
+		
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_flag = ethnic_cleansed has_country_modifier = ethnic_cleansing }
+			}
+			any_owned = {
+				limit = { owner = { full_spectrum_dominance = 1 NOT = { has_country_flag = death_camp_active } } }
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = ethnic_cleansing_province_modifier }
+						AND = { is_primary_culture = no is_accepted_culture = no }
+					}
+					reduce_pop = 0.95
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_flag = ethnic_cleansed has_country_modifier = ethnic_cleansing }
+			}
+			any_owned = {
+				limit = { owner = { full_spectrum_dominance = 1 has_country_flag = death_camp_active } }
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = ethnic_cleansing_province_modifier }
+						AND = { is_primary_culture = no is_accepted_culture = no }
+					}
+					reduce_pop = 0.90
+				}
+			}
+		}
+		
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_flag = ethnic_cleansed has_country_modifier = ethnic_cleansing }
+			}
+			any_owned = {
+				limit = { owner = { fifth_generation_warfare = 1 NOT = { has_country_flag = death_camp_active } } }
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = ethnic_cleansing_province_modifier }
+						AND = { is_primary_culture = no is_accepted_culture = no }
+					}
+					reduce_pop = 0.85
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				OR = { has_country_flag = ethnic_cleansed has_country_modifier = ethnic_cleansing }
+			}
+			any_owned = {
+				limit = { owner = { fifth_generation_warfare = 1 has_country_flag = death_camp_active } }
+				any_pop = {
+					limit = {
+						location = { has_province_modifier = ethnic_cleansing_province_modifier }
+						AND = { is_primary_culture = no is_accepted_culture = no }
+					}
+					reduce_pop = 0.75
+				}
+			}
+		}
+		
+		############################
+		### END ETHNIC CLEANSING ###
+		############################
+		
+		#enabling crisis
+		random_country = {
+			limit = {
+				exists = yes
+				NOT = { has_global_flag = enable_crises_now }
+				year = 1965
+			}
+			set_global_flag = enable_crises_now
+		}
+		
+		#ghost units monthly cleanup
+		any_country = {
+			limit = {
+				NOT = { exists = yes }
+                capital_scope = { NOT = { province_control_days = 120 } }
+                OR = {
+                    is_mobilised = yes
+					has_country_flag = has_existed_country
+                    total_amount_of_ships = 1
+                }
+			}
+			annex_to = THIS
+		}
+		
+		#cleanup vassals with nonexistent overlords
+		any_country = {
+			limit = {
+				is_vassal = yes
+				exists = yes
+				overlord = { exists = no }
+			}
+			country_event = 47777788
+		}
+		
+		#cleanup overlords with nonexistent vassals - disabled by default
+		#any_country = {
+		#	limit = {
+		#		is_vassal = yes
+		#		exists = no
+		#		overlord = { exists = yes }
+		#	}
+		#	country_event = 47777788
+		#}
+		
+		#make CLN unable to be interacted with by ai
+		any_country = {
+			limit = {
+				exists = yes
+			}
+			relation = { who = THIS value = -400 }
+			diplomatic_influence = { who = THIS value = -400 }
+		}
+		
+		#Civilize nonexistent countries
+		any_country = {
+			limit = {
+				exists = no
+				civilized = no
+			}
+			civilized = yes
+		}
+		
+		#Cleanup SML and SOM tags
+		any_country = {
+			limit = {
+				tag = SML
+				owns = 1868
+				is_vassal = no
+				SOM = { exists = no }
+			}
+			change_tag = SOM
+		}
+	}
+}
+
+country_event = {
+	id = 47777791
+	title = "AI: Yearly Cleanup Check"
+	desc = "AI: Yearly Cleanup Check"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Checking..."
+		
+		#upgrade rebels
+		any_country = {
+			limit = { exists = yes }
+			random_owned = {
+				limit = {
+					owner = {
+						year = 1960
+						NOT = { has_global_flag = rebel_tech_1960 }
+					}
+				}
+				owner = {
+					REB = {
+						activate_technology = strategic_bomber
+						activate_technology = icbm
+						activate_technology = guerrilla
+						activate_technology = antitank_weapons
+						activate_technology = second_generation_jet_fighters
+						activate_technology = proxy_war
+					}
+					set_global_flag = rebel_tech_1960
+				}
+			}
+		}
+		any_country = {
+			limit = { exists = yes }
+			random_owned = {
+				limit = {
+					owner = {
+						year = 1980
+						NOT = { has_global_flag = rebel_tech_1980 }
+					}
+				}
+				owner = {
+					set_global_flag = rebel_tech_1980
+					REB = {
+						activate_technology = submarine_launched_ballistic_missile
+						activate_technology = mechanized_infantry
+						activate_technology = main_battle_tank
+						activate_technology = surface_to_air_missile
+						activate_technology = close_air_support
+						activate_technology = mutual_assured_destruction
+					}
+				}
+			}
+		}
+		any_country = {
+			limit = { exists = yes }
+			random_owned = {
+				limit = {
+					owner = {
+						year = 2000
+						NOT = { has_global_flag = rebel_tech_2000 }
+					}
+				}
+				owner = {
+					set_global_flag = rebel_tech_2000
+					REB = {
+						activate_technology = missile_launch_facility
+						activate_technology = special_forces
+						activate_technology = modern_rifles
+						activate_technology = assymetric_warfare
+						activate_technology = arms_race_doctrine
+					}
+				}
+			}
+		}
+		any_country = {
+			limit = { exists = yes }
+			random_owned = {
+				limit = {
+					owner = {
+						year = 2020
+						NOT = { has_global_flag = rebel_tech_2020 }
+					}
+				}
+				owner = {
+					set_global_flag = rebel_tech_2020
+					REB = {
+						activate_technology = military_gps_system
+						activate_technology = fourth_generation_warfare
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+owner = ETH
+controller = ETH # Anything typed here will be added to all selected province history files
+add_core = SOM # Anything typed here will be added to all selected province history files
+trade_goods = cattle
+life_rating = 35
+terrain = semi_desert
+colonial = 0
+1992.1.1 = { 
+    owner = SOM
+    controller = SOM
+    add_core = SOM
+    life_rating = 35
+    colonial = 0
+}

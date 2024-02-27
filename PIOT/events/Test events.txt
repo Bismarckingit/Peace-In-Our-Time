@@ -1,0 +1,251 @@
+#Test Event
+country_event = {
+	id = 88880
+	title = "Test Event"
+	desc = "Test Event"
+	picture = "GOLD"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Testing is fun!"
+war = {
+	target = RUS
+	attacker_goal = { casus_belli = assert_hegemony }
+	defender_goal = { casus_belli = assert_hegemony }
+	call_ally = yes
+}
+	}
+}
+
+#Test Event
+country_event = {
+	id = 88881
+	title = "Literacy Event"
+	desc = "This event increases literacy for this country due to the 2015 start date being selected. This event exists because it's just faster and easier to do this by event than by tweaking all the country files."
+	picture = "GOLD"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Yay literacy!"
+		#Increase global literacy
+		any_pop = {
+			literacy = 0.2
+		}
+	}
+}
+
+#Test Event
+country_event = {
+	id = 88882
+	title = "Test Event"
+	desc = "Test Event"
+	picture = "GOLD"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Testing is fun!"
+
+#Set flag for Monarchy Rebels
+any_country = {
+limit = { OR = { government = absolute_monarchy government = hms_government government = hms_government1 } }
+set_country_flag = pre_existing_monarchy
+}
+
+	}
+}
+
+#Test Event
+country_event = {
+	id = 88883
+	title = "AI Literacy Event"
+	desc = "This event is for all AI countries and only AI countries. If you're seeing this event... something is wrong."
+	picture = "GOLD"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Yay Literacy!"
+		any_country = {
+			limit = { exists = yes capital_scope = { continent = europe } }
+			any_pop = {
+				literacy = 0.2
+			}
+		}
+		any_country = {
+			limit = { exists = yes capital_scope = { continent = north_america } }
+			any_pop = {
+				literacy = 0.2
+			}
+		}
+		any_country = {
+			limit = { exists = yes capital_scope = { continent = south_america } }
+			any_pop = {
+				literacy = 0.15
+			}
+		}
+		any_country = {
+			limit = { exists = yes capital_scope = { continent = asia } }
+			any_pop = {
+				literacy = 0.2
+			}
+		}
+		any_country = {
+			limit = { exists = yes capital_scope = { continent = mena } }
+			any_pop = {
+				literacy = 0.15
+			}
+		}
+		any_country = {
+			limit = { exists = yes capital_scope = { continent = africa } }
+			any_pop = {
+				literacy = 0.15
+			}
+		}
+		any_country = {
+			limit = { exists = yes capital_scope = { continent = oceania } }
+			any_pop = {
+				literacy = 0.2
+			}
+		}
+
+	}
+}
+
+#Test Event
+country_event = {
+	id = 88884
+	title = "Test Event"
+	desc = "Test Event"
+	picture = "GOLD"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Testing is fun!"
+
+		any_owned = { 
+			limit = { is_core = SCO }
+add_province_modifier = { name = devolved_local_government duration = -1 }
+		}
+
+#THIS has releasable SAR governments
+owner = { 
+
+any_country = { 
+		limit = { 
+			NOT = { tag = THIS } 
+			exists = no
+			any_core = { owned_by = THIS } 
+		} 
+		THIS = { set_country_flag = has_releasable_sar }
+	}
+
+}
+
+	}
+
+}
+
+#Test Event
+country_event = {
+	id = 88885
+	title = "Test Event"
+	desc = "Test Event"
+	picture = "GOLD"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Testing is fun!"
+
+random_owned = { limit = { is_core = SCO } add_province_modifier = { name = allow_devolution duration = 3650 } }
+
+#Mark the country which will be released
+owner = { 
+
+any_country = { 
+		limit = { 
+			NOT = { tag = THIS } 
+			exists = no
+			any_core = { has_province_modifier = allow_devolution owned_by = THIS } 
+		} 
+		country_event = 10011
+	}
+
+}
+
+	}
+
+}
+
+#Test Event
+country_event = {
+	id = 88886
+	title = "Test Event"
+	desc = "Test Event"
+	picture = "GOLD"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Testing is fun!"
+		
+		any_country = {
+			limit = { tech_school = XEU_tech_school1 }
+			country_event = 88887
+		}
+		
+	}
+
+}
+
+#Test Event
+country_event = {
+	id = 88887
+	title = "Test Event"
+	desc = "Test Event"
+	picture = "GOLD"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Testing is fun!"
+		XEU = { inherit = THIS }
+	}
+
+}
+
+#Test Event
+country_event = {
+	id = 88888
+	title = "Test Event"
+	desc = "Test Event"
+	picture = "GOLD"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Testing is fun!"
+		GER = { inherit = BAV }
+	}
+
+}
+
+#Test Event
+country_event = {
+	id = 88889
+	title = "Election Year"
+	desc = "$YEAR$ is election year for many countries including ours, and as such it's time to elect our new leadership!"
+	picture = "election_crowd"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Let's begin the campaigning!"
+		election = yes
+	}
+
+}

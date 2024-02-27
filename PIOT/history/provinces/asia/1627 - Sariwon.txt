@@ -1,0 +1,14 @@
+owner = JAP
+controller = JAP
+add_core = KOR # Anything typed here will be added to all selected province history files
+trade_goods = iron
+life_rating = 35
+terrain = hilly_farmland
+1950.1.1 = { owner = NKO controller = NKO } 
+1992.1.1 = { 
+    owner = NKO
+    controller = NKO
+    add_core = NKO
+    life_rating = 35
+    state_building = { level = 3 building = steel_factory upgrade = yes } 
+}

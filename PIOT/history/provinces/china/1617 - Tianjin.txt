@@ -1,0 +1,22 @@
+owner = CHI
+controller = CHI # Anything typed here will be added to all selected province history files
+add_core = CHI
+add_core = KMT
+add_core = SXI
+trade_goods = grain
+life_rating = 35
+terrain = good_farmland
+naval_base = 1
+colonial = 0
+1950.1.1 = { owner = CHI controller = CHI } 
+1992.1.1 = { 
+    owner = CHI
+    controller = CHI
+    add_core = CHI
+    life_rating = 35
+    colonial = 0
+    state_building = { level = 1 building = canned_food_factory upgrade = yes } 
+    state_building = { level = 1 building = cement_factory upgrade = yes } 
+    state_building = { level = 1 building = coal_fuel_factory upgrade = yes } 
+    state_building = { level = 1 building = machine_parts_factory upgrade = yes } 
+}

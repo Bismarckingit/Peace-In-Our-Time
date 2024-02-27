@@ -1,0 +1,77 @@
+
+
+#========================= H E A D E R =========================
+
+capital = 1320
+primary_culture = hindi
+culture = bengali
+religion = hindu
+government = absolute_monarchy
+plurality = 10
+nationalvalue = nv_islamic
+literacy = 0.5
+civilized = yes 
+prestige = 1
+schools = traditional_academic
+oob = "SNT.txt"
+
+
+#========================= H O U S E - O F - L O R D S =========================
+
+ruling_party = SNT_conservative_92
+upper_house = {
+big_tent = 0
+progressive = 0
+traditionalist = 40
+conservative = 60
+liberal = 0
+socialist = 0
+communist = 0
+communist_social = 0
+populist = 0
+nationalist = 0
+}
+# Political Reforms
+political_opinions = appointed_opinion
+minorities_reform = minorities_equal_rights
+immigration_policy = naturalization
+civil_service = politicised_service
+political_parties = parties_restricted
+conscription_policy = no_draft
+publishing_rights = censored_publishing
+union_rights = state_controlled_unions
+voting_system = first_past_the_post
+vote_franschise = harassed_voting
+public_meetings = limited_meetings penal_system = capital_punishment
+# Social Reforms
+safety_regulations = no_safety
+pensions = no_pensions
+education = private_education
+health_care = no_health_care
+security_reform = basic_security
+child_care = no_child_care
+unemployment_subsidies = no_subsidies
+pollution = no_controls
+wage_reform = unregulated_hours
+public_housing_reform = no_public_housing
+
+# Technologies
+infantry = 1
+cold_war_doctrine = 1
+international_financial_institutions = 1
+gold_standard = 1
+radio_network = 1
+compulsory_primary_education = 1
+containment = 1
+decolonization = 1
+radio = 1
+modern_roads = 1
+modern_shipyard = 1
+modern_shipbuilding = 1
+# Starting Consciousness
+consciousness = 0
+nonstate_consciousness = 0
+schools = army_tech_school
+
+#========================= END OF FILE =========================
+

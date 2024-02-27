@@ -1,0 +1,925 @@
+#Recently won War
+country_event = {
+	id = 1512208
+	title = "Victorious War"
+	desc = EVTDESC1512208
+	picture = "win_war_party_hit"
+
+	trigger = {
+
+		war = no
+
+		has_recently_lost_war = no
+
+		has_country_flag = country_at_war
+
+		has_country_flag = this_won_CB
+		NOT = { has_country_flag = this_lost_CB }
+
+	}
+
+	option = {
+		name = "The people praise our government for the victory!"
+		clr_country_flag = country_at_war
+		
+		#Remove prolonged war modifiers
+		clr_country_flag = new_war
+		clr_country_flag = prolonged_war_1
+		clr_country_flag = prolonged_war_2
+		clr_country_flag = prolonged_war_3
+		clr_country_flag = prolonged_war_4
+		clr_country_flag = prolonged_war_5
+		clr_country_flag = prolonged_war_6
+		clr_country_flag = prolonged_war_7
+		clr_country_flag = prolonged_war_8
+		clr_country_flag = prolonged_war_9
+		clr_country_flag = prolonged_war_10
+		remove_country_modifier = new_war
+		remove_country_modifier = prolonged_war_1
+		remove_country_modifier = prolonged_war_2
+		remove_country_modifier = prolonged_war_3
+		remove_country_modifier = prolonged_war_4
+		remove_country_modifier = prolonged_war_5
+		remove_country_modifier = prolonged_war_6
+		remove_country_modifier = prolonged_war_7
+		remove_country_modifier = prolonged_war_8
+		remove_country_modifier = prolonged_war_9
+		remove_country_modifier = prolonged_war_10
+		
+		#Clear UN peace flag
+		clr_country_flag = UN_demands_peace_flag
+		clr_country_flag = country_that_UN_demands_peace_flag
+		remove_country_modifier = called_allies_un
+		remove_country_modifier = stop_un_spam
+		remove_country_modifier = resolution_vetoed_unsc
+		
+		#Clear flags for war genocides
+		clr_country_flag = war_genocide
+		clr_country_flag = under_existential_threat
+		
+		#Clear AI is more trigger happy with nukes flag
+		clr_country_flag = more_willing_nuke_behaviour
+		
+		#Clear capitulation flag for the AI
+		clr_country_flag = nation_has_capitulated
+		
+		#Clear Colonial Overlord markers
+		clr_country_flag = colonial_overlord_at_war
+
+		#Clear aggressor flag
+		clr_country_flag = this_is_aggressor
+
+		#Clear CB bypass flag
+		clr_country_flag = bypass_normal_CB_requirements
+
+		#Remove CB markers
+		clr_country_flag = this_won_CB
+		clr_country_flag = this_lost_CB
+
+		#Remove strategic bombardment flag
+		clr_country_flag = strategic_bombardment
+
+		#Great Patriotic War gives postwar exhaustion
+
+		random_owned = { 
+			limit = { owner = { has_country_modifier = fanatic_army } }
+			owner = { remove_country_modifier = fanatic_army war_exhaustion = 50 any_pop = { dominant_issue = { value = pacifism factor = 0.25 } } }
+		}
+
+		#Reset satellites
+		clr_country_flag = destroy_satelllites
+		
+		#Remove constricting trade
+		remove_country_modifier = constricting_international_trade
+		remove_country_modifier = constricted_international_trade
+		
+		#Jingoism grows based on gov type
+		random_owned = {
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } militancy = -10 dominant_issue = { value = jingoism factor = 0.1 } } }
+		}
+		
+		random_owned = {
+			limit = { owner = { government = sectarian_dictatorship } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } militancy = -10 dominant_issue = { value = jingoism factor = 0.1 } } }
+		}
+		
+		random_owned = {
+			limit = { owner = { government = theocracy } }
+			owner = { any_pop = { limit = { is_state_religion = yes } militancy = -10 dominant_issue = { value = jingoism factor = 0.1 } } }
+		}
+
+		#Substantial ideology gain based on gov type
+		#Default increase
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = conservative } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.15 value = conservative } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = big_tent } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.15 value = big_tent } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = socialist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.15 value = socialist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = traditionalist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.15 value = traditionalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = populist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.15 value = populist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = nationalist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.15 value = nationalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = progressive } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.15 value = progressive } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = liberal } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.15 value = liberal } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = communist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.15 value = communist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = communist_social } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.15 value = communist_social } } }
+		}
+		
+		#Sectarian Regime - boost by primary culture group
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = conservative } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = 0.15 value = conservative } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = socialist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = 0.15 value = socialist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = nationalist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = 0.15 value = nationalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = populist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = 0.15 value = populist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = traditionalist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = 0.15 value = traditionalist } } }
+		}
+		
+		#Theocracy - boost by religion
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = conservative } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = 0.15 value = conservative } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = big_tent } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = 0.15 value = big_tent } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = traditionalist } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = 0.15 value = traditionalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = populist } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = 0.15 value = populist } } }
+		}
+		
+		#Clear nuke and chemical flags
+		any_owned = {
+			limit = { NOT = { OR = { has_province_modifier = nuke_high has_province_modifier = nuke_medium has_province_modifier = nuke_low } } }
+			clr_province_flag = disease
+		}
+		any_owned = {
+			limit = { NOT = { OR = { has_province_modifier = chemical_high has_province_modifier = chemical_medium has_province_modifier = chemical_low } } }
+			clr_province_flag = disease1
+		}
+
+	}
+
+}
+
+#Recently Lost War
+country_event = {
+	id = 1512206
+	title = "Disastrous War"
+	desc = EVTDESC1512206
+	picture = "lost_war_party_hit"
+
+	trigger = {
+
+		war = no
+
+		NOT = { has_country_flag = this_won_CB }
+		has_country_flag = this_lost_CB
+
+		has_country_flag = country_at_war
+
+	}
+
+	option = {
+		name = "The people blame the government for the defeat!"
+		clr_country_flag = country_at_war
+		
+		#Remove prolonged war modifiers
+		clr_country_flag = new_war
+		clr_country_flag = prolonged_war_1
+		clr_country_flag = prolonged_war_2
+		clr_country_flag = prolonged_war_3
+		clr_country_flag = prolonged_war_4
+		clr_country_flag = prolonged_war_5
+		clr_country_flag = prolonged_war_6
+		clr_country_flag = prolonged_war_7
+		clr_country_flag = prolonged_war_8
+		clr_country_flag = prolonged_war_9
+		clr_country_flag = prolonged_war_10
+		remove_country_modifier = new_war
+		remove_country_modifier = prolonged_war_1
+		remove_country_modifier = prolonged_war_2
+		remove_country_modifier = prolonged_war_3
+		remove_country_modifier = prolonged_war_4
+		remove_country_modifier = prolonged_war_5
+		remove_country_modifier = prolonged_war_6
+		remove_country_modifier = prolonged_war_7
+		remove_country_modifier = prolonged_war_8
+		remove_country_modifier = prolonged_war_9
+		remove_country_modifier = prolonged_war_10
+		
+		#Clear UN peace flag
+		clr_country_flag = UN_demands_peace_flag
+		clr_country_flag = country_that_UN_demands_peace_flag
+		remove_country_modifier = called_allies_un
+		remove_country_modifier = stop_un_spam
+		remove_country_modifier = resolution_vetoed_unsc
+		
+		#Clear flags for war genocides
+		clr_country_flag = war_genocide
+		clr_country_flag = under_existential_threat
+		
+		#Clear AI is more trigger happy with nukes flag
+		clr_country_flag = more_willing_nuke_behaviour
+		
+		#Clear capitulation flag for the AI
+		clr_country_flag = nation_has_capitulated
+
+		#Clear Colonial Overlord markers
+		clr_country_flag = colonial_overlord_at_war
+
+		#Clear aggressor flag
+		clr_country_flag = this_is_aggressor
+
+		#Clear CB bypass flag
+		clr_country_flag = bypass_normal_CB_requirements
+
+		#Remove CB markers
+		clr_country_flag = this_won_CB
+		clr_country_flag = this_lost_CB
+
+		#Remove strategic bombardment flag
+		clr_country_flag = strategic_bombardment
+
+		#Great Patriotic War gives postwar exhaustion
+
+		random_owned = { 
+			limit = { owner = { has_country_modifier = fanatic_army } }
+			owner = { remove_country_modifier = fanatic_army war_exhaustion = 50 any_pop = { dominant_issue = { value = pacifism factor = 0.25 } } }
+		}
+
+		#Reset satellites
+		clr_country_flag = destroy_satelllites
+		
+		#Remove constricting trade
+		remove_country_modifier = constricting_international_trade
+		remove_country_modifier = constricted_international_trade
+
+		#Pacifism grows based on gov type
+		random_owned = {
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } } }
+			owner = {
+				any_pop = { 
+					limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } }
+					dominant_issue = { value = pacifism factor = 0.25 } 
+					scaled_militancy = {
+						factor = 10
+						issue = jingoism
+					}
+				}
+			}
+		}
+		
+		random_owned = {
+			limit = { owner = { government = sectarian_dictatorship } }
+			owner = {
+				any_pop = { 
+					limit = { is_culture_group = THIS }
+					dominant_issue = { value = pacifism factor = 0.25 } 
+					scaled_militancy = {
+						factor = 10
+						issue = jingoism
+					}
+				}
+			}
+		}
+		
+		random_owned = {
+			limit = { owner = { government = theocracy } }
+			owner = {
+				any_pop = { 
+					limit = { is_state_religion = yes }
+					dominant_issue = { value = pacifism factor = 0.25 } 
+					scaled_militancy = {
+						factor = 10
+						issue = jingoism
+					}
+				}
+			}
+		}
+
+		#Substantial ideology decrease based on gov type
+		#Default decrease
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = conservative } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.15 value = conservative } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = big_tent } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.15 value = big_tent } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = socialist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.15 value = socialist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = traditionalist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.15 value = traditionalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = populist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.15 value = populist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = nationalist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.15 value = nationalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = progressive } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.15 value = progressive } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = liberal } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.15 value = liberal } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = communist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.15 value = communist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = communist_social } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.15 value = communist_social } } }
+		}
+		
+		#Sectarian Regime - decrease by primary culture group
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = conservative } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = -0.15 value = conservative } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = socialist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = -0.15 value = socialist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = nationalist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = -0.15 value = nationalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = populist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = -0.15 value = populist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = traditionalist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = -0.15 value = traditionalist } } }
+		}
+		
+		#Theocracy - decrease by religion
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = conservative } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = -0.15 value = conservative } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = big_tent } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = -0.15 value = big_tent } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = traditionalist } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = -0.15 value = traditionalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = populist } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = -0.15 value = populist } } }
+		}
+
+	}
+
+}
+
+#At war flag
+country_event = {
+	id = 1512207
+	title = "$COUNTRY$ is at War"
+	desc = EVTDESC1512207
+	picture = "at_war_flag"
+
+	trigger = {
+
+		war = yes
+
+		NOT = { has_country_flag = country_at_war }
+
+	}
+
+	option = {
+		name = "May the best country win, which is us!"
+		set_country_flag = country_at_war
+		
+		#Start the clock for prolonged war modifiers that increase war exhaustion
+		add_country_modifier = { name = new_war duration = 365 }
+		set_country_flag = new_war
+		
+		random_owned = {
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } } }
+			owner = {
+				any_pop = { 
+					limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } }
+					dominant_issue = { value = pro_military factor = 0.05 }
+					scaled_militancy = {
+						factor = 10
+						issue = pacifism
+					}
+				}
+			}
+		}
+		
+		random_owned = {
+			limit = { owner = { government = sectarian_dictatorship } }
+			owner = {
+				any_pop = { 
+					limit = { is_culture_group = THIS }
+					dominant_issue = { value = pro_military factor = 0.05 }
+					scaled_militancy = {
+						factor = 10
+						issue = pacifism
+					}
+				}
+			}
+		}
+		
+		random_owned = {
+			limit = { owner = { government = theocracy } }
+			owner = {
+				any_pop = { 
+					limit = { is_state_religion = yes }
+					dominant_issue = { value = pro_military factor = 0.05 }
+					scaled_militancy = {
+						factor = 10
+						issue = pacifism
+					}
+				}
+			}
+		}
+		
+		#Inform the world of war if in the UNGA and is either an SP or GP
+		random_owned = {
+			limit = { 
+				owner = { 
+					is_vassal = no 
+					has_country_modifier = united_nations_ga_member 
+					OR = { is_greater_power = yes is_secondary_power = yes } 
+					war_countries = { has_country_modifier = united_nations_ga_member OR = { is_greater_power = yes is_secondary_power = yes } }
+				}
+			}
+			owner = { UNO = { country_event = 2020104 } }
+		}
+		
+		#Clear UN peace flag
+		clr_country_flag = UN_demands_peace_flag
+		clr_country_flag = country_that_UN_demands_peace_flag
+		remove_country_modifier = called_allies_un
+		remove_country_modifier = stop_un_spam
+		remove_country_modifier = resolution_vetoed_unsc
+
+		#Clear peacetime martial law
+		remove_country_modifier = martial_law
+
+		#What meeting laws to revert back to
+
+		random_owned = { 
+			limit = { owner = { has_country_flag = return_to_free_meetings } }
+			owner = { political_reform = free_meetings clr_country_flag = return_to_free_meetings }
+		}
+
+		random_owned = { 
+			limit = { owner = { has_country_flag = return_to_limited_meetings } }
+			owner = { political_reform = limited_meetings clr_country_flag = return_to_limited_meetings }
+		}
+
+		#What press laws to revert back to
+			
+		random_owned = { 
+			limit = { owner = { has_country_flag = return_to_responsible_publishing  } }
+			owner = { political_reform = responsible_publishing clr_country_flag = return_to_responsible_publishing }
+		}
+
+		random_owned = { 
+			limit = { owner = { has_country_flag = return_to_unregulated_publishing} }
+			owner = { political_reform = free_publishing clr_country_flag = return_to_unregulated_publishing }
+		}
+
+		random_owned = { 
+			limit = { owner = { has_country_flag = return_to_firewall_publishing } }
+			owner = { political_reform = censored_publishing clr_country_flag = return_to_firewall_publishing }
+		}
+
+	}
+
+}
+
+#Stalemate in ongoing war - THIS is aggressor
+country_event = {
+	id = 1512280
+	title = "Inconclusive War"
+	desc = EVTDESC1512280
+	picture = "draw_war_party_hit"
+
+	trigger = {
+		war = no
+		has_country_flag = country_at_war
+		
+		#Country is an aggressor
+		has_country_flag = this_is_aggressor
+		
+		#Country did not fulfil or accept any wargoals
+		OR = { 
+		
+			AND = { has_country_flag = this_won_CB has_country_flag = this_lost_CB }
+		
+			AND = { 
+				NOT = { has_country_flag = this_won_CB }
+				NOT = { has_country_flag = this_lost_CB }
+			}
+		
+		}
+	}
+
+	option = {
+		name = "We will prevail eventually!"
+		clr_country_flag = country_at_war
+		
+		#Remove prolonged war modifiers
+		clr_country_flag = new_war
+		clr_country_flag = prolonged_war_1
+		clr_country_flag = prolonged_war_2
+		clr_country_flag = prolonged_war_3
+		clr_country_flag = prolonged_war_4
+		clr_country_flag = prolonged_war_5
+		clr_country_flag = prolonged_war_6
+		clr_country_flag = prolonged_war_7
+		clr_country_flag = prolonged_war_8
+		clr_country_flag = prolonged_war_9
+		clr_country_flag = prolonged_war_10
+		remove_country_modifier = new_war
+		remove_country_modifier = prolonged_war_1
+		remove_country_modifier = prolonged_war_2
+		remove_country_modifier = prolonged_war_3
+		remove_country_modifier = prolonged_war_4
+		remove_country_modifier = prolonged_war_5
+		remove_country_modifier = prolonged_war_6
+		remove_country_modifier = prolonged_war_7
+		remove_country_modifier = prolonged_war_8
+		remove_country_modifier = prolonged_war_9
+		remove_country_modifier = prolonged_war_10
+		
+		#Clear UN peace flag
+		clr_country_flag = UN_demands_peace_flag
+		clr_country_flag = country_that_UN_demands_peace_flag
+		remove_country_modifier = called_allies_un
+		remove_country_modifier = stop_un_spam
+		remove_country_modifier = resolution_vetoed_unsc
+		
+		#Clear flags for war genocides
+		clr_country_flag = war_genocide
+		clr_country_flag = under_existential_threat
+		
+		#Clear AI is more trigger happy with nukes flag
+		clr_country_flag = more_willing_nuke_behaviour
+		
+		#Clear capitulation flag for the AI
+		clr_country_flag = nation_has_capitulated
+
+		#Clear Colonial Overlord markers
+		clr_country_flag = colonial_overlord_at_war
+
+		#Clear aggressor flag
+		clr_country_flag = this_is_aggressor
+
+		#Clear CB bypass flag
+		clr_country_flag = bypass_normal_CB_requirements
+
+		#Remove CB markers
+		clr_country_flag = this_won_CB
+		clr_country_flag = this_lost_CB
+
+		#Remove strategic bombardment flag
+		clr_country_flag = strategic_bombardment
+
+		#Great Patriotic War gives postwar exhaustion
+
+		random_owned = { 
+			limit = { owner = { has_country_modifier = fanatic_army } }
+			owner = { remove_country_modifier = fanatic_army war_exhaustion = 50 any_pop = { dominant_issue = { value = pacifism factor = 0.25 } } }
+		}
+
+		#Reset Satellites
+		clr_country_flag = destroy_satelllites
+		
+		#Remove constricting trade
+		remove_country_modifier = constricting_international_trade
+		remove_country_modifier = constricted_international_trade
+
+		
+
+		#Slight ideology decrease based on gov type
+		#Default decrease
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = conservative } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.05 value = conservative } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = big_tent } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.05 value = big_tent } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = socialist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.05 value = socialist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = traditionalist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.05 value = traditionalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = populist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.05 value = populist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = nationalist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.05 value = nationalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = progressive } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.05 value = progressive } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = liberal } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.05 value = liberal } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = communist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.05 value = communist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = communist_social } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = -0.05 value = communist_social } } }
+		}
+		
+		#Sectarian Regime - decrease by primary culture group
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = conservative } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = -0.05 value = conservative } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = socialist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = -0.05 value = socialist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = nationalist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = -0.05 value = nationalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = populist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = -0.05 value = populist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = traditionalist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = -0.05 value = traditionalist } } }
+		}
+		
+		#Theocracy - decrease by religion
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = conservative } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = -0.05 value = conservative } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = big_tent } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = -0.05 value = big_tent } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = traditionalist } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = -0.05 value = traditionalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = populist } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = -0.05 value = populist } } }
+		}
+
+	}
+
+}
+
+#Stalemate in ongoing war - THIS is defender
+country_event = {
+	id = 15122801
+	title = "Peace has Returned"
+	desc = EVTDESC15122801
+	picture = "draw_war_party_hit"
+
+	trigger = {
+		war = no
+		has_country_flag = country_at_war
+		
+		#Country is not an aggressor
+		NOT = { has_country_flag = this_is_aggressor }
+		
+		#Country did not fulfil or accept any wargoals
+		AND = { 
+			NOT = { has_country_flag = this_won_CB }
+			NOT = { has_country_flag = this_lost_CB }
+		}
+	}
+
+	option = {
+		name = "We have weathered the storm!"
+		clr_country_flag = country_at_war
+		
+		#Remove prolonged war modifiers
+		clr_country_flag = new_war
+		clr_country_flag = prolonged_war_1
+		clr_country_flag = prolonged_war_2
+		clr_country_flag = prolonged_war_3
+		clr_country_flag = prolonged_war_4
+		clr_country_flag = prolonged_war_5
+		clr_country_flag = prolonged_war_6
+		clr_country_flag = prolonged_war_7
+		clr_country_flag = prolonged_war_8
+		clr_country_flag = prolonged_war_9
+		clr_country_flag = prolonged_war_10
+		remove_country_modifier = new_war
+		remove_country_modifier = prolonged_war_1
+		remove_country_modifier = prolonged_war_2
+		remove_country_modifier = prolonged_war_3
+		remove_country_modifier = prolonged_war_4
+		remove_country_modifier = prolonged_war_5
+		remove_country_modifier = prolonged_war_6
+		remove_country_modifier = prolonged_war_7
+		remove_country_modifier = prolonged_war_8
+		remove_country_modifier = prolonged_war_9
+		remove_country_modifier = prolonged_war_10
+		
+		#Clear UN peace flag
+		clr_country_flag = UN_demands_peace_flag
+		clr_country_flag = country_that_UN_demands_peace_flag
+		remove_country_modifier = called_allies_un
+		remove_country_modifier = stop_un_spam
+		remove_country_modifier = resolution_vetoed_unsc
+		
+		#Clear flags for war genocides
+		clr_country_flag = war_genocide
+		clr_country_flag = under_existential_threat
+		
+		#Clear AI is more trigger happy with nukes flag
+		clr_country_flag = more_willing_nuke_behaviour
+		
+		#Clear capitulation flag for the AI
+		clr_country_flag = nation_has_capitulated
+
+		#Clear Colonial Overlord markers
+		clr_country_flag = colonial_overlord_at_war
+
+		#Clear aggressor flag
+		clr_country_flag = this_is_aggressor
+
+		#Clear CB bypass flag
+		clr_country_flag = bypass_normal_CB_requirements
+
+		#Remove CB markers
+		clr_country_flag = this_won_CB
+		clr_country_flag = this_lost_CB
+
+		#Remove strategic bombardment flag
+		clr_country_flag = strategic_bombardment
+
+		#Great Patriotic War gives postwar exhaustion
+
+		random_owned = { 
+			limit = { owner = { has_country_modifier = fanatic_army } }
+			owner = { remove_country_modifier = fanatic_army war_exhaustion = 25 any_pop = { dominant_issue = { value = pacifism factor = 0.125 } } }
+		}
+
+		#Reset Satellites
+		clr_country_flag = destroy_satelllites
+		
+		#Remove constricting trade
+		remove_country_modifier = constricting_international_trade
+		remove_country_modifier = constricted_international_trade
+
+		#Slight ideology gain based on gov type
+		#Default increase
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = conservative } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.05 value = conservative } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = big_tent } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.05 value = big_tent } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = socialist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.05 value = socialist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = traditionalist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.05 value = traditionalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = populist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.05 value = populist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = nationalist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.05 value = nationalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = progressive } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.05 value = progressive } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = liberal } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.05 value = liberal } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = communist } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.05 value = communist } } }
+		}
+		random_owned = { 
+			limit = { owner = { NOT = { OR = { government = sectarian_dictatorship government = theocracy } } ruling_party_ideology = communist_social } }
+			owner = { any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } ideology = { factor = 0.05 value = communist_social } } }
+		}
+		
+		#Sectarian Regime - boost by primary culture group
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = conservative } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = 0.05 value = conservative } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = socialist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = 0.05 value = socialist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = nationalist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = 0.05 value = nationalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = populist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = 0.05 value = populist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = sectarian_dictatorship ruling_party_ideology = traditionalist } } }
+			owner = { any_pop = { limit = { is_culture_group = THIS } ideology = { factor = 0.05 value = traditionalist } } }
+		}
+		
+		#Theocracy - boost by religion
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = conservative } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = 0.05 value = conservative } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = big_tent } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = 0.05 value = big_tent } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = traditionalist } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = 0.05 value = traditionalist } } }
+		}
+		random_owned = { 
+			limit = { owner = { AND = { government = theocracy ruling_party_ideology = populist } } }
+			owner = { any_pop = { limit = { is_state_religion = yes } ideology = { factor = 0.05 value = populist } } }
+		}
+
+	}
+
+}

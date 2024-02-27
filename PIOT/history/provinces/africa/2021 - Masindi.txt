@@ -1,0 +1,14 @@
+owner = UGA
+controller = UGA
+add_core = UGA
+trade_goods = grain
+life_rating = 35
+terrain = jungle_farmland
+colonial = 0
+1992.1.1 = { 
+    owner = UGA
+    controller = UGA
+    add_core = UGA
+    life_rating = 35
+    colonial = 0
+}

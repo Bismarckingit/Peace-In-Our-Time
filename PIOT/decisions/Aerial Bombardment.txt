@@ -1,0 +1,28 @@
+political_decisions = {
+
+aerial_bombardment = {
+	picture = "aerial_bombardment"
+		potential = {
+			strategic_bomber = 1
+			NOT = { has_country_modifier = renounced_war_rights }
+			NOT = { has_country_flag = aerial_bombardment_ability }
+			OR = { is_secondary_power = yes is_greater_power = yes }
+		}
+		alert = yes
+		allow = {
+			NOT = { is_disarmed = yes }
+			NOT = { war_policy = pacifism }
+			money = 5000000
+			military_score = 750
+		}
+		effect = {
+			money = -500000
+			set_country_flag = aerial_bombardment_ability
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+	
+	}
+
+}

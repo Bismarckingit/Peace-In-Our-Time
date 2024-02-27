@@ -1,0 +1,13 @@
+owner = ICL
+controller = ICL
+add_core = ICL
+trade_goods = fish
+life_rating = 35
+terrain = special_reykjavik
+naval_base = 1
+colonial = 0
+state_building = {
+	level = 1
+	building = canned_food_factory
+	upgrade = yes
+}

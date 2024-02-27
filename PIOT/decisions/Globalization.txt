@@ -1,0 +1,187 @@
+political_decisions = {
+	#Become a Socialist Democracy
+	become_a_socialist_democracy = {
+		picture = "become_a_socialist_democracy"
+		potential = {
+		
+			#Either Russia did Perestroika or the Cold War is over
+			OR = {
+				RUS = { has_country_flag = begin_reforms_of_ussr }
+				NOT = { has_global_flag = blocsenabled }
+			}
+		
+			#Communist Government
+			OR = { government = proletarian_dictatorship government = proletarian_dictatorship1 }
+			OR = { ruling_party_ideology = communist ruling_party_ideology = communist_social }
+			
+			NOT = { has_country_flag = become_a_socialist_democracy }
+			
+		}
+		allow = {
+			average_consciousness = 7
+			average_militancy = 7
+			
+			#Only after the 1990s
+			globalization = 1
+			
+			war = no
+			has_recently_lost_war = no
+			NOT = { is_disarmed = yes }
+			
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+				sphere_owner = {
+					OR = {
+						has_country_modifier = bretton_system 
+						has_country_flag = market_communism
+					}
+				}
+				overlord = {
+					OR = {
+						has_country_modifier = bretton_system
+						has_country_flag = market_communism
+					}
+				}
+			}
+			
+		}
+		effect = {
+			country_event = 8023300 # communist_plebiscite.txt
+			
+			set_country_flag = become_a_socialist_democracy
+			
+			any_pop = {
+				scaled_militancy = {
+					factor = 5
+					ideology = communist
+				}
+			}
+			
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_country_modifier = communist_bloc_leader
+			}
+		}
+	}
+	
+	#Adopt Market Socialist Reforms
+	market_communism = {
+		picture = "market_communism"
+		potential = {
+		
+			#Not the USSR, PRC, DAI, LUA as they have their own unique events
+			NOT = { tag = RUS }
+			NOT = { tag = CHI }
+			NOT = { tag = DAI }
+			NOT = { tag = LUA }
+			
+			#North Korea remained communist
+			NOT = { tag = NKO }
+			
+			#Communist Government
+			OR = { government = proletarian_dictatorship government = proletarian_dictatorship1 }
+			ruling_party_ideology = communist
+		
+			#Either any GP did Perestroika or the Cold War is over
+			OR = {
+				any_greater_power = { 
+					OR = { government = proletarian_dictatorship government = proletarian_dictatorship1 } 
+					ruling_party_ideology = communist_social 
+				}
+				AND = {
+					NOT = { has_global_flag = blocsenabled }
+					has_global_flag = cold_warusa #USA victory
+				}
+			}
+			
+			NOT = { has_country_flag = market_communism }
+			
+		}
+		allow = {
+			#Only after the 1990s
+			market_communism = 1
+			
+			war = no
+			
+			OR = {
+				AND = {
+					is_secondary_power = yes
+					average_consciousness = 3
+					average_militancy = 3
+				}
+				AND = {
+					is_greater_power = yes
+					average_consciousness = 3
+					average_militancy = 3
+				}
+				sphere_owner = {
+					OR = {
+						has_country_modifier = bretton_system 
+						has_country_flag = market_communism
+						ruling_party_ideology = communist_social
+					}
+					relation = { who = THIS value = 150 }
+				}
+				overlord = {
+					OR = {
+						has_country_modifier = bretton_system
+						has_country_flag = market_communism
+						ruling_party_ideology = communist_social
+					}
+				}
+			}
+			
+		}
+		effect = {
+		
+			set_country_flag = market_communism
+			
+			prestige = 50
+			ruling_party_ideology = communist_social
+			
+			any_pop = {
+				scaled_militancy = {
+					factor = 10
+					ideology = communist
+				}
+			}
+			
+			#Communist states are displeased
+			any_country = {
+				limit = { ruling_party_ideology = communist }
+				relation = { who = THIS value = -100 }
+			}
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	uk_war_debt = {
+		picture = "uk_war_debt"
+		potential = {
+			tag = USA
+			NOT = { year = 1992 }
+			NOT = { has_country_modifier = uk_war_debt }
+			ENG = { money = 5000000 } # TODO add condition if GBR does not decolonlialize
+			NOT = { check_variable = { which = "uk_war_debt" value = 5 } }
+		}
+		allow = {
+			NOT = { money = 200000 }
+			war = no
+		}
+		effect = {
+			change_variable  = { which = "uk_war_debt" value = 1 }
+			add_country_modifier = { name = uk_war_debt duration = 700 } # every second year
+			treasury = 100000
+			ENG = { country_event = 15611 } 
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+}

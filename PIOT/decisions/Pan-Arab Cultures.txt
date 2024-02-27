@@ -1,0 +1,144 @@
+political_decisions = {
+
+	#Change to Arab primary
+	change_arab = {
+		picture = "change_arab"
+		potential = {
+			NOT = { tag = ISI }
+			NOT = { tag = UAR }
+			NOT = { tag = XUM }
+
+			NOT = { has_country_flag = pan_arab_identity }
+
+			capital_scope = { OR = { continent = mena is_core = SUD } }
+
+			OR = { 
+				primary_culture = arab_gulf 
+				primary_culture = berber
+				primary_culture = arab_mashriqi
+				primary_culture = arab_nile
+				primary_culture = arab_hassaniya
+			}
+
+			NOT = { primary_culture = arab }
+		}
+		allow = {
+			election = no
+			OR = {
+				ruling_party_ideology = nationalist
+				ruling_party_ideology = populist
+				ruling_party_ideology = socialist
+				ruling_party_ideology = communist
+				ruling_party_ideology = communist_social
+				AND = {
+					is_vassal = yes
+					overlord = { primary_culture = arab }
+				}
+			}
+		}
+		effect = {
+		
+			primary_culture = arab
+			
+			#Force assimilation
+			remove_accepted_culture = arab_gulf 
+			remove_accepted_culture = berber
+			remove_accepted_culture = arab_mashriqi
+			remove_accepted_culture = arab_nile
+			remove_accepted_culture = arab_hassaniya
+			
+			set_country_flag = pan_arab_identity
+			clr_country_flag = arab_cultural_identity
+		}
+		
+		ai_will_do = { 
+			factor = 1 
+		}
+	}
+
+	#Change to Cultural Arab
+	remove_arab = {
+		picture = "cultural_identity_arab"
+		potential = {
+			NOT = { tag = ISI }
+			NOT = { tag = UAR }
+			NOT = { tag = XUM }
+
+			NOT = { has_country_flag = arab_cultural_identity }
+
+			capital_scope = { OR = { continent = mena is_core = SUD } }
+
+			primary_culture = arab
+
+			OR = {
+				pop_majority_culture = arab_gulf 
+				pop_majority_culture = berber
+				pop_majority_culture = arab_mashriqi
+				pop_majority_culture = arab_nile
+				pop_majority_culture = arab_hassaniya
+			}
+		}
+
+		allow = {
+			election = no
+			OR = {
+				ruling_party_ideology = traditionalist
+				ruling_party_ideology = conservative
+				ruling_party_ideology = liberal
+				ruling_party_ideology = progressive
+				ruling_party_ideology = big_tent
+			}
+			OR = {
+				is_vassal = no
+				AND = {
+					is_vassal = yes
+					overlord = { NOT = { primary_culture = arab } }
+				}
+			}
+		}
+
+		effect = {
+			clr_country_flag = pan_arab_identity
+			set_country_flag = arab_cultural_identity
+
+			random_owned = { 
+				limit = { owner = { NOT = { minorities_reform = minorities_oppression } } } 
+				owner = { political_reform = minorities_oppression }
+			}
+				
+			random_owned = { 
+				limit = { owner = { pop_majority_culture = arab_gulf } } 
+				owner = { primary_culture = arab_gulf }
+			}
+
+			random_owned = { 
+				limit = { owner = { pop_majority_culture = berber } } 
+				owner = { primary_culture = berber }
+			}
+
+			random_owned = { 
+				limit = { owner = { pop_majority_culture = arab_mashriqi } } 
+				owner = { primary_culture = arab_mashriqi }
+			}
+
+			random_owned = { 
+				limit = { owner = { pop_majority_culture = arab_nile } } 
+				owner = { primary_culture = arab_nile }
+			}
+
+			random_owned = { 
+				limit = { owner = { pop_majority_culture = arab_hassaniya } } 
+				owner = { primary_culture = arab_hassaniya }
+			}
+
+			#Force assimilation
+			remove_accepted_culture = arab
+
+		}
+
+		ai_will_do = { 
+			factor = 1 
+		}
+	}
+
+}
