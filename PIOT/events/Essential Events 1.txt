@@ -297,39 +297,6 @@ is_triggered_only = yes
 		}
 }
 
-#Release KMT
-country_event = {
-	id = 444
-	title = "The Nationalist Government has fled to Taiwan"
-	desc = "General Chiang has led a successful evacuation of the Nationalist forces to the island of Taiwan to plot a new campaign to reseize the mainland."
-	picture = "kmt_end_of_instability"
-	
-	
-	trigger = {
-		NOT = { year = 1955 }
-		exists = CHI
-		CHI = { OR = { government = proletarian_dictatorship government = proletarian_dictatorship1 } }
-		NOT = { has_country_flag = releasekmt }
-		tag = TAI
-		NOT = { exists = KMT }
-	}
-	
-	option = {
-		name = "We shall push on!"
-change_tag = KMT
-government = presidential_dictatorship
-country_event = 800050
-		CHI = { any_owned = { 
-			limit = { OR = { province_id = 1485 province_id = 1499 province_id = 2576 province_id = 2562 } }
-			secede_province = KMT
-		} }
-KMT = { end_war = ETS }
-KMT = { any_owned = { limit = { is_core = ETS } secede_province = CHI } }
-		CHI = { country_event = 90904 }
-		set_country_flag = releasekmt
-		}
-}
-
 #Test Event
 country_event = {
 	id = 8888
@@ -342,32 +309,6 @@ country_event = {
 	option = {
 		name = "Testing is fun!"
 		remove_country_modifier = relations_timer 
-			}
-}
-
-country_event = {
-	id = 8889
-	title = "End of the Portugese Empire"
-	desc = "The end of the Portugese Empire."
-	picture = "endofpor"
-	
-	
-	trigger = {
-		tag = POR
-		has_country_flag = nonapplicableinactivated
-		OR = { government = democracy year = 1970 }
-	NOT = { AND = { exists = ANG exists = MOZ exists = GUB } }
-		NOT = { has_country_flag = endofpor }
-
-	}
-	
-	option = {
-		name = "This is it!"
-		release = ANG
-		release = MOZ
-		release = GUB
-		release = TIM
-		set_country_flag = endofpor
 			}
 }
 
@@ -1893,7 +1834,7 @@ any_owned = { limit = { total_pops = 125000 } add_province_modifier = { name = a
 #War Crimes Trial - start
 country_event = {
 	id = 1412136
-title = "UN demands punishment for $COUNTRY$ war crimes"
+title = "League of Nations demands punishment for $COUNTRY$ war crimes"
 	desc = EVTDESC1412136
 	picture = "defeat_day"
 	
@@ -1912,7 +1853,7 @@ NOT = { has_country_modifier = un_watch_list }
 mean_time_to_happen = { months = 6 }
 
 option = {
-name = "We are now in the hands of the UNSC!"
+name = "We are now in the hands of the League!"
 any_country = { limit = { has_country_modifier = unsc_permanent_member } country_event = 1412137 }
 add_country_modifier = { name = un_watch_list duration = 2190 }
 		}
@@ -3036,7 +2977,7 @@ owner = { any_pop = { ideology = { factor = -0.05 value = communist_social } } }
 
 }
 
-#UN Sanctions - Diplomatic
+#League Sanctions - Diplomatic
 country_event = {
 	id = 1412175
 title = "Diplomatic Sanctions imposed on $COUNTRY$"
@@ -3068,14 +3009,14 @@ modifier = { factor = 0.6 has_global_flag = UNSG_normal }
 }
 
 option = {
-name = "Deny the UN's accusations!"
+name = "Deny the League's accusations!"
 prestige = -25
 add_country_modifier = { name = un_diplo_sanc duration = -1 }
 		}
 
 }
 
-#UN Sanctions - Political
+#League Sanctions - Political
 country_event = {
 	id = 1412176
 title = "Political Sanctions imposed on $COUNTRY$"
@@ -3117,7 +3058,7 @@ any_owned = { limit = { NOT = { is_core = THIS } } add_province_modifier = { nam
 
 }
 
-#UN Sanctions - Economic
+#League Sanctions - Economic
 country_event = {
 	id = 1412177
 title = "Economic Sanctions imposed on $COUNTRY$"
@@ -3157,7 +3098,7 @@ add_country_modifier = { name = un_econ_sanc duration = -1 }
 
 }
 
-#UN Sanctions - End
+#League Sanctions - End
 country_event = {
 	id = 1412178
 title = "UN Sanctions on $COUNTRY$ lifted"
@@ -3359,62 +3300,6 @@ remove_country_modifier = undhr_sanctions
 		}
 
 }
-
-#Truman Doctrine
-country_event = {
-	id = 1412186
-title = "The Truman Doctrine"
-	desc = EVTDESC1412186
-	picture = "truman_doctrine"
-
-fire_only_once = yes
-
-trigger = { 
-tag = USA
-government = democracy
-has_global_flag = blocsenabled
-NOT = { has_country_flag = truman_doctrine }
-year = 1947
-war = no
-RUS = { rank = 2 }
-	}
-
-mean_time_to_happen = { 
-months = 3
-}
-
-option = {
-name = "We will be the Arsenal of Democracy against Communism!"
-prestige = 100
-any_country = { limit = { NOT = { ruling_party_ideology = communist } } relation = { who = THIS value = 25 } }
-any_country = { limit = { ai = no } country_event = 1412187 }
-set_country_flag = truman_doctrine
-ai_chance = { factor = 0.95 }
-		}
-
-option = {
-name = "We will not renounce our neutrality in international affairs"
-prestige = -50
-any_country = { limit = { ruling_party_ideology = communist } relation = { who = THIS value = 25 } }
-ai_chance = { factor = 0.05 }
-		}
-
-}
-
-#Truman Doctrine - inform players
-country_event = {
-	id = 1412187
-title = "The Truman Doctrine"
-	desc = EVTDESC1412186
-	picture = "truman_doctrine"
-
-is_triggered_only = yes
-
-option = {
-name = "They are now the free world's policeman"
-		}
-}
-
 #Helsinki Accords - inform players
 country_event = {
 	id = 1412188
@@ -3677,54 +3562,6 @@ set_global_flag = future_age
 		}
 }
 
-#Free City of Danzig
-country_event = {
-	id = 1412197
-	title = "The Danzig Question"
-	desc = EVTDESC1412197
-	picture = "fcod"
-
-	fire_only_once = yes
-
-	trigger = { 
-		tag = POL
-		year = 1946
-		NOT = { year = 1990 }
-
-		government = democracy
-		is_vassal = no
-		war = no
-		
-		is_possible_vassal = DZG
-	}
-
-	mean_time_to_happen = { 
-		months = 3
-	}
-	
-	option = {
-		name = "Keep hold of the Danzig"
-		ai_chance = { factor = 0.9 }
-	}
-
-	option = {
-		name = "Restore the sovereignty of Danzig"
-		prestige = 100
-		
-		690 = { remove_core = POL }
-		
-		release = DZG
-		DZG = { 
-			government = democracy 
-			country_event = 800054 
-			ruling_party_ideology = conservative 
-		}
-		
-		ai_chance = { factor = 0.1 }
-	}
-
-}
-
 #End war with non-existent nations
 country_event = {
 	id = 1412203
@@ -3872,64 +3709,6 @@ country_event = {
 
 }
 
-#Attack on USS Liberty
-country_event = {
-	id = 1412208
-title = "USS Liberty incident"
-	desc = EVTDESC1412208
-	picture = "uss_liberty"
-
-fire_only_once = yes
-
-trigger = { 
-tag = USA
-government = democracy
-rank = 2
-NOT = { war_with = ISR }
-NOT = { year = 1990 }
-ISR = { war_with = EGY }
-year = 1966
-}
-
-mean_time_to_happen = { 
-months = 1
-	}
-
-option = {
-name = "Blame the Arabs"
-
-relation = { who = EGY value = -25 }
-
-prestige = 20
-
-ai_chance = { factor = 1 
-modifier = { OR = { ruling_party_ideology = nationalist ruling_party_ideology = populist } factor = 0 }
-}
-		}
-
-option = {
-name = "Punish the Israelis"
-
-prestige = -20
-remove_accepted_culture = jewish
-
-ISR = { add_casus_belli = {
-	target = USA
-	type = cut_down_to_size 
-	months = 12
-} }
-
-diplomatic_influence = { who = ISR value = -100 }
-
-relation = { who = ISR value = -100 }
-
-ai_chance = { factor = 1 
-modifier = { NOT = { OR = { ruling_party_ideology = nationalist ruling_party_ideology = populist } } factor = 0 }
-}
-
-		}
-
-}
 
 #Green Energy Level 1
 country_event = {
@@ -4175,104 +3954,6 @@ name = "Remain English"
 
 }
 
-#Faroe Independence Referendum 1946
-country_event = {
-	id = 1412215
-	title = "Faroese Independence Referendum of $YEAR$"
-	desc = EVTDESC1412215
-	picture = "far_indy"
-
-	fire_only_once = yes
-
-	trigger = {
-		tag = DEN
-		year = 1946
-		NOT = { year = 1990 }
-		
-		government = hms_government
-		war = no
-		is_vassal = no
-
-		is_possible_vassal = FAR
-
-	}
-
-	mean_time_to_happen = { 
-		months = 9
-	}
-
-	option = {
-		name = "Refuse Independence"
-		prestige = -20
-		set_country_flag = far_dominion
-		ai_chance = { factor = 0.9 }
-	}
-	
-	option = {
-		name = "Grant Independence"
-		prestige = 20
-		release = FAR
-		FAR = { government = hms_government country_event = 800054 }
-		ai_chance = { factor = 0.1 }
-	}
-
-}
-
-#Faroe Islands Self-Rule
-country_event = {
-	id = 1412216
-	title = "Home Rule for the Faroe Islands"
-	desc = EVTDESC1412216
-	picture = "far_indy2"
-
-	fire_only_once = yes
-
-	trigger = {
-		tag = DEN
-		year = 1948
-		NOT = { year = 1990 } 
-		
-		OR = { government = hms_government government = hms_government1 government = democracy government = democracy1 }
-		war = no
-		is_vassal = no
-
-		is_possible_vassal = FAR
-
-		has_country_flag = far_dominion
-
-	}
-
-	mean_time_to_happen = { 
-		months = 6
-	}
-
-	option = {
-		name = "Grant Self-Rule"
-		release_vassal = FAR
-		FAR = { 
-			government = sar_government 
-			set_country_flag = former_devolved_nation
-			country_event = 800054 
-			ruling_party_ideology = conservative
-			any_pop = { 
-				ideology = {
-					factor = 0.1
-					value = conservative
-				} 
-			}
-		}
-		ai_chance = { factor = 0.9 }
-	}
-
-	option = {
-		name = "Retain Direct Rule"
-		prestige = 25
-		badboy = 5
-		ai_chance = { factor = 0.1 }
-	}
-
-}
-
 #Keep the Empire - All Colonial Provinces add modifier
 country_event = {
 	id = 1412217
@@ -4455,144 +4136,6 @@ country_event = {
 	}
 
 }
-
-#Greenland Self-Rule
-country_event = {
-	id = 1412220
-	title = "Home Rule for Greenland"
-	desc = EVTDESC1412220
-	picture = "greenland_indy"
-
-	fire_only_once = yes
-
-	trigger = {
-		tag = DEN
-		year = 1979
-		NOT = { year = 1990 } 
-
-		OR = { government = hms_government government = hms_government1 government = democracy government = democracy1 }
-		war = no
-		is_vassal = no
-
-		is_possible_vassal = GRN
-
-		#Previously released Faroe Islands as an SAR
-		is_our_vassal = FAR
-	}
-
-	mean_time_to_happen = { 
-		months = 6
-	}
-
-	option = {
-		name = "Grant Self-Rule"
-		release_vassal = GRN
-		GRN = {
-			government = sar_government 
-			set_country_flag = former_devolved_nation
-			country_event = 800054 
-			ruling_party_ideology = conservative
-			any_pop = { 
-				ideology = {
-					factor = 0.1
-					value = conservative
-				}
-			}
-		}
-		ai_chance = { factor = 0.9 }
-	}
-
-	option = {
-		name = "Retain Direct Rule"
-		prestige = 50
-		badboy = 5
-		ai_chance = { factor = 0.1 }
-	}
-
-}
-
-#What to do with Taiwan if KMT wins
-country_event = {
-	id = 1412221
-title = "The Taiwan Question"
-	desc = EVTDESC1412221
-	picture = "taiwan_question"
-
-fire_only_once = yes
-
-trigger = {
-
-tag = KMT
-
-war = no
-
-TAI = { exists = yes }
-
-CHI = { exists = no }
-
-is_our_vassal = TAI	
-
-}
-
-mean_time_to_happen = { 
-months = 1
-	}
-
-option = {
-name = "Integrate into $COUNTRY$"
-inherit = TAI
-ai_chance = { factor = 0.7 }
-		}
-
-option = {
-name = "Grant self-rule"
-prestige = 100
-TAI = { government = sar_government }
-TAI = { any_owned = { add_core = TAI } }
-ai_chance = { factor = 0.2 }
-		}
-
-option = {
-name = "Cede sovereignty to Japan"
-prestige = 200
-relation = { who = JAP value = 200 }
-relation = { who = USA value = 200 }
-TAI = { any_owned = { remove_core = KMT add_core = TAI } }
-JAP = { inherit = TAI }
-JAP = { country_event = 1412222 }
-ai_chance = { factor = 0.1 }
-		}
-
-}
-
-#What to do with Taiwan if KMT wins - JAPAN
-country_event = {
-	id = 1412222
-title = "The Taiwan Question"
-	desc = EVTDESC1412222
-	picture = "taiwan_question"
-
-is_triggered_only = yes
-
-option = {
-name = "Integrate into $COUNTRY$"
-prestige = -50
-inherit = TAI
-any_owned = { limit = { is_core = TAI } add_core = JAP any_pop = { militancy = 8 } }
-ai_chance = { factor = 0.5 }
-		}
-
-option = {
-name = "Grant self-rule"
-prestige = 50
-release_vassal = TAI
-TAI = { government = sar_government }
-TAI = { any_pop = { militancy = 5 } }
-ai_chance = { factor = 0.5 }
-		}
-
-}
-
 #Transboundary Haze - Start
 country_event = {
 	id = 1412223
@@ -5257,42 +4800,6 @@ relation = { who = CHI value = -50 }
 release_vassal = HKG
 HKG = { government = hms_government }
 diplomatic_influence = { who = HKG value = 200 }
-ai_chance = { factor = 0.9 }
-		}
-}
-
-#Yugoslavia split from USSR
-country_event = {
-	id = 1412232
-title = "Soviet-Yugoslav Split?"
-	desc = "As the USSR is now winding up their satellite states in Eastern Europe, should we take the opportunity to distance ourselves from the USSR again, like we did in 1948?"
-	picture = "end_game_yug"
-
-fire_only_once = yes
-
-trigger = {
-tag = YUG
-in_sphere = RUS
-OR = { government = proletarian_dictatorship government = proletarian_dictatorship1 }
-has_global_flag = blocsenabled
-RUS = { ruling_party_ideology = communist_social }
-RUS = { OR = { government = proletarian_dictatorship government = proletarian_dictatorship1 } }
-}
-
-mean_time_to_happen = { 
-months = 1
-	}
-
-option = {
-name = "Retain ties with the USSR"
-prestige = -25
-ai_chance = { factor = 0.1 }
-		}
-
-option = {
-name = "Split with the USSR again"
-prestige = 25
-RUS = { diplomatic_influence = { who = YUG value = -200 } }
 ai_chance = { factor = 0.9 }
 		}
 }
