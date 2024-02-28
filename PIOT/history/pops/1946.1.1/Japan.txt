@@ -933,6 +933,11 @@
 }
 #Edo - Edo (8436000/2109000 POPS)
 1649 = {
+	soldiers = {
+		culture = japanese
+		religion = shinto
+		size = 250000
+	}
 	aristocrats = {
 		culture = japanese
 		religion = shinto 

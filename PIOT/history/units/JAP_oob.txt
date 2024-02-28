@@ -1,7 +1,1125 @@
+
+army = {
+	name = "Japan Seoul Army"
+	location = 1624
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr12"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr13"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr14"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr15"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr16"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr17"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr18"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr19"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr20"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr21"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr22"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = cavalry
+		home = 1649
+	}
+}
 army = {
 	name = "Japan Edo Army"
 	location = 1649
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr12"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr13"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr14"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr15"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr16"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr17"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr18"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr19"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr20"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr21"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr22"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = cavalry
+		home = 1649
+	}
 }
+army = {
+	name = "Japan Kyoto Army"
+	location = 1657
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr12"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr13"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr14"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr15"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr16"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr17"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr18"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr19"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr20"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr21"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr22"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = cavalry
+		home = 1649
+	}
+}
+army = {
+	name = "Japan Osaka Army"
+	location = 1655
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr12"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr13"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr14"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr15"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr16"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr17"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr18"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr19"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr20"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr21"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr22"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = cavalry
+		home = 1649
+	}
+}
+army = {
+	name = "Japan Nagasaki Army"
+	location = 1661
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr12"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr13"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr14"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr15"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr16"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr17"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr18"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr19"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr20"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr21"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr22"
+		type = bomber
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = cavalry
+		home = 1649
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = cavalry
+		home = 1649
+	}
+}
+
 CHI = {
 	level = 5
 	value = 200
