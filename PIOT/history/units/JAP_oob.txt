@@ -2,3 +2,27 @@ army = {
 	name = "Japan Edo Army"
 	location = 1649
 }
+CHI = {
+	level = 5
+	value = 200
+	influence_value = 100
+	military_access = yes
+}
+MCK = {
+	level = 5
+	value = 200
+	influence_value = 100
+	military_access = yes
+}
+IMN = {
+	level = 5
+	value = 200
+	influence_value = 100
+	military_access = yes
+}
+KWA = {
+	level = 5
+	value = 200
+	influence_value = 100
+	military_access = yes
+}
