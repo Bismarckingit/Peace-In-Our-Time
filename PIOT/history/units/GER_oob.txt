@@ -1,0 +1,2575 @@
+
+army = {
+	name = "Wehrmacht Stendal Army"
+	location = 557
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht Stralsund Army"
+	location = 548
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht Plzen Army"
+	location = 629
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht Chemnitz Army"
+	location = 560
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht Erfurt Army"
+	location = 554
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht Schwerin Army"
+	location = 544
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht Magdeburg Army"
+	location = 553
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht Weimar Army"
+	location = 561
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht Magdeburg Army"
+	location = 553
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht Prague Army"
+	location = 625
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht Munich Army"
+	location = 549
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr12"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr13"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr14"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr15"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr16"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr17"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr18"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr19"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr20"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr21"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr22"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht Nuremburg Army"
+	location = 595
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr12"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr13"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr14"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr15"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr16"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr17"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr18"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr19"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr20"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr21"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr22"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht Bremen Army"
+	location = 539
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr12"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr13"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr14"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr15"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr16"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr17"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr18"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr19"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr20"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr21"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr22"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht Cologne Army"
+	location = 575
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr12"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr13"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr14"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr15"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr16"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr17"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr18"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr19"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr20"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr21"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr22"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr10"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr11"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht 695 Army"
+	location = 695
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+}
+army = {
+	name = "Wehrmacht Pritzwalk Army"
+	location = 551
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 549
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 549
+	}
+}
+
+army = {
+	name = "Wehrmacht Halle Army"
+	location = 556
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 559
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 559
+	}
+}
