@@ -1258,7 +1258,7 @@ army = {
 }
 army = {
 	name = "Russia Bratislava Army"
-	location = 633
+	location = 1088
 	regiment = {
 		name= "Regiment nr1"
 		type = bomber
@@ -1540,7 +1540,7 @@ navy = {
 }
 navy = {
 	name = "Soviet Maritime Fleet"
-	location = 994
+	location = 1082
 	ship = {
 		name= "SS Leningrad"
 		type = transportship
