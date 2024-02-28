@@ -15,28 +15,14 @@ SPA = {
 	truce_until = 1955.1.1
 }
 
-#Occupation Zones
-OG2 = {
+#Colonies/Mandates
+FAG = {
 	level = 5
 	value = 200
 	influence_value = 100
 	military_access = yes
 }
-OG3 = {
-	value = 200
-	military_access = yes
-}
-OG4 = {
-	value = 200
-	military_access = yes
-}
-ROA = {
-	value = 200
-	military_access = yes
-}
-
-#Colonies/Mandates
-FAG = {
+ICU = {
 	level = 5
 	value = 200
 	influence_value = 100
@@ -177,6 +163,7 @@ ETH = {
 	influence_value = 25
 	military_access = yes
 }
+
 army = {
 	name = "France Algiers Army"
 	location = 1700
@@ -350,7 +337,7 @@ navy = {
 	name = "French First Fleet"
 	location = 470
 	ship = {
-		name= "Béarn"
+		name= "B arn"
 		type = carrier
 	}
 	ship = {
@@ -390,7 +377,7 @@ navy = {
 		type = modern_frigate
 	}
 	ship = {
-		name= "Commandant Dominé"
+		name= "Commandant Domin "
 		type = modern_frigate
 	}
 	ship = {
@@ -422,7 +409,7 @@ navy = {
 		type = transportship
 	}
 	ship = {
-		name= "Félix Roussel"
+		name= "F lix Roussel"
 		type = transportship
 	}
 	ship = {
@@ -430,7 +417,7 @@ navy = {
 		type = transportship
 	}
 	ship = {
-		name= "Franche-Comté"
+		name= "Franche-Comt "
 		type = transportship
 	}
 	ship = {
@@ -438,7 +425,7 @@ navy = {
 		type = transportship
 	}
 	ship = {
-		name= "Île-de-Batz"
+		name= " le-de-Batz"
 		type = transportship
 	}
 	ship = {

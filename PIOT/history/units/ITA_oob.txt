@@ -14,7 +14,19 @@ YUG = {
 RUS = {
 	truce_until = 1950.1.1
 }
-
+#colonies
+LBY = {
+	level = 5
+	value = 200
+	influence_value = 100
+	military_access = yes
+}
+ETH = {
+	level = 5
+	value = 200
+	influence_value = 100
+	military_access = yes
+}
 army = {
 	name = "Divisione fanteria Aosta"
 	location = 762
