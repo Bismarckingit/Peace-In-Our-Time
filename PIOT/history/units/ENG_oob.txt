@@ -349,6 +349,12 @@ JAK = {
 	influence_value = 25
 	military_access = yes
 }
+POL = {
+	level = 5
+	value = 200
+	influence_value = 25
+	military_access = yes
+}
 AZK = {
 	level = 5
 	value = 200

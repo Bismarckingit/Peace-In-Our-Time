@@ -2573,3 +2573,27 @@ army = {
 		home = 559
 	}
 }
+DZG = {
+	level = 5
+	value = 200
+	influence_value = 100
+	military_access = yes
+}
+SLV = {
+	level = 5
+	value = 200
+	influence_value = 100
+	military_access = yes
+}
+ROM = {
+	level = 5
+	value = 200
+	influence_value = 100
+	military_access = yes
+}
+HUN = {
+	level = 5
+	value = 200
+	influence_value = 100
+	military_access = yes
+}
