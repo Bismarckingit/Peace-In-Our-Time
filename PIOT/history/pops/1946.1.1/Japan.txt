@@ -936,7 +936,7 @@
 	soldiers = {
 		culture = japanese
 		religion = shinto
-		size = 250000
+		size = 500000
 	}
 	aristocrats = {
 		culture = japanese

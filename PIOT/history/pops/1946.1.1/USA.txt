@@ -20018,7 +20018,7 @@
 	soldiers = {
 		culture = german
 		religion = secularism
-		size = 1124
+		size = 1000000
 	 } 
 	aristocrats = {
 		culture = european
@@ -20103,7 +20103,7 @@
 	farmers = {
 		culture = german
 		religion = catholic 
-		size = 403902
+		size = 1211706
 	 } 
 	artisans = {
 		culture = german
@@ -20636,7 +20636,7 @@
 		size = 12777
 	 } 
 }
-#Mannheim - Baden-W�rttemberg (840000/210000 POPS)
+#Mannheim - Baden-W rttemberg (840000/210000 POPS)
 569 = {
 	officers = {
 		culture = german
@@ -20739,7 +20739,7 @@
 		size = 25737
 	 } 
 }
-#Stuttgart - Baden-W�rttemberg (840000/210000 POPS)
+#Stuttgart - Baden-W rttemberg (840000/210000 POPS)
 589 = {
 	officers = {
 		culture = german
@@ -20842,7 +20842,7 @@
 		size = 25737
 	 } 
 }
-#Heilbronn - Baden-W�rttemberg (840000/210000 POPS)
+#Heilbronn - Baden-W rttemberg (840000/210000 POPS)
 590 = {
 	officers = {
 		culture = german
