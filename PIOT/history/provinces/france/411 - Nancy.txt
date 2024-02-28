@@ -5,6 +5,7 @@ trade_goods = iron
 life_rating = 35
 terrain = good_farmland
 railroad = 1
+fort = 4
 colonial = 0
 state_building = {
 	level = 1

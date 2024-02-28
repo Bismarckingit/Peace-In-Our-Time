@@ -1247,7 +1247,7 @@
 	 } 
 
 }
-#Bougie - Skikda, Jijel, Béjaïa, Tizi Ouzou (949000237250 POPS)
+#Bougie - Skikda, Jijel, B ja a, Tizi Ouzou (949000237250 POPS)
 1701 = {
 	soldiers = {
 		culture = berber
@@ -1293,7 +1293,7 @@
 	 }  
 
 }
-#Setif - Bouïra, Setif,Bordj Bou Arréridj (750000187500 POPS)
+#Setif - Bou ra, Setif,Bordj Bou Arr ridj (750000187500 POPS)
 1702 = {
 	officers = {
 		culture = french
@@ -1678,7 +1678,7 @@
 	 }  
 
 }
-#Mascara - Saïda, Sidi Bel Abbès, Mascara (475000118750 POPS)
+#Mascara - Sa da, Sidi Bel Abb s, Mascara (475000118750 POPS)
 1707 = {
 	soldiers = {
 		culture = berber
@@ -1906,7 +1906,7 @@
 	 }  
 
 }
-#Biskra - Biskra, Batna, Tébessa, Khenchela (770000192500 POPS)
+#Biskra - Biskra, Batna, T bessa, Khenchela (770000192500 POPS)
 1710 = {
 	soldiers = {
 		culture = berber
@@ -1999,7 +1999,7 @@
 	 }  
 
 }
-#Laghwat - Tiaret , Médéa, Djelfa, Laghouat (888000222000 POPS)
+#Laghwat - Tiaret , M d a, Djelfa, Laghouat (888000222000 POPS)
 1713 = {
 	soldiers = {
 		culture = berber
@@ -6492,7 +6492,7 @@
 		size = 27
 	 } 
 }
-#Nola - Nana-Mambéré, Mambéré-Kadéï, Sangha-Mbaéré (22500056250 POPS)
+#Nola - Nana-Mamb r , Mamb r -Kad  , Sangha-Mba r  (22500056250 POPS)
 1966 = {
 	officers = {
 		culture = baya_mandjia
@@ -6580,7 +6580,7 @@
 		size = 34
 	 } 
 }
-#Bouar - Ouham-Pendé (13900034750 POPS)
+#Bouar - Ouham-Pend  (13900034750 POPS)
 1967 = {
 	officers = {
 		culture = baya_mandjia
@@ -12015,7 +12015,7 @@
 	soldiers = {
 		culture = french
 		religion = catholic 
-		size = 13625
+		size = 500000
 	 } 
 	soldiers = {
 		culture = french
@@ -17750,7 +17750,7 @@
 		size = 18813
 	 } 
 }
-#Karlsruhe - Baden-Württemberg (840000210000 POPS)
+#Karlsruhe - Baden-W rttemberg (840000210000 POPS)
 586 = {
 	officers = {
 		culture = german
@@ -17853,7 +17853,7 @@
 		size = 25737
 	 } 
 }
-#Freiburg - Baden-Württemberg (840000210000 POPS)
+#Freiburg - Baden-W rttemberg (840000210000 POPS)
 587 = {
 	officers = {
 		culture = german
@@ -17956,7 +17956,7 @@
 		size = 25737
 	 } 
 }
-#Konstanz - Baden-Württemberg (840000210000 POPS)
+#Konstanz - Baden-W rttemberg (840000210000 POPS)
 588 = {
 	officers = {
 		culture = german
@@ -18059,7 +18059,7 @@
 		size = 25737
 	 } 
 }
-#Tubingen - Baden-Württemberg (840000210000 POPS)
+#Tubingen - Baden-W rttemberg (840000210000 POPS)
 591 = {
 	officers = {
 		culture = german
@@ -18162,7 +18162,7 @@
 		size = 25737
 	 } 
 }
-#Ulm - Baden-Württemberg (840000210000 POPS)
+#Ulm - Baden-W rttemberg (840000210000 POPS)
 593 = {
 	officers = {
 		culture = german
@@ -18265,7 +18265,7 @@
 		size = 25737
 	 } 
 }
-#Sigmaringen - Baden-Württemberg (840000210000 POPS)
+#Sigmaringen - Baden-W rttemberg (840000210000 POPS)
 594 = {
 	officers = {
 		culture = german
@@ -18720,7 +18720,7 @@
 		size = 4679
 	 } 
 }
-#Saint-Martin & Saint Barthélemy (60001500 POPS)
+#Saint-Martin & Saint Barth lemy (60001500 POPS)
 3283 = {
 	officers = {
 		culture = french

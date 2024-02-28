@@ -93,7 +93,135 @@ leader = {
         background = unfulfilled_potential
         prestige = 0.2
 }
-
+army = {
+	name = "Red 1082 Army"
+	location = 1082
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 1008
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 1008
+	}
+}
 army = {
 	name = "Russia Moscow Army"
 	location = 1008
