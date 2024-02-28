@@ -1,5 +1,6 @@
 owner = POL
 controller = POL
+add_core = POL
 add_core = BYE # Anything typed here will be added to all selected province history files
 trade_goods = grain
 life_rating = 35
