@@ -4,11 +4,26 @@ OG5 = {
 }
 
 army = {
-	name = "Poland Warsaw Army"
+	name = "Polish Home Army"
 	location = 706
 	regiment = {
 		name= "Regiment nr1"
-		type = irregular
+		type = infantry
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
 		home = 706
 	}
 	regiment = {
@@ -18,16 +33,22 @@ army = {
 	}
 	regiment = {
 		name= "Regiment nr1"
-		type = mechanized_infantry
+		type = infantry
 		home = 706
 	}
-}
-army = {
-	name = "Poland Stettin Army"
-	location = 546
 	regiment = {
 		name= "Regiment nr1"
-		type = irregular
+		type = infantry
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
 		home = 706
 	}
 	regiment = {
@@ -37,16 +58,12 @@ army = {
 	}
 	regiment = {
 		name= "Regiment nr1"
-		type = mechanized_infantry
+		type = bomber
 		home = 706
 	}
-}
-army = {
-	name = "Poland Breslau Army"
-	location = 682
 	regiment = {
-		name= "Regiment nr1"
-		type = irregular
+		name= "Regiment nr2"
+		type = bomber
 		home = 706
 	}
 	regiment = {
@@ -55,8 +72,114 @@ army = {
 		home = 706
 	}
 	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 706
+	}
+	regiment = {
 		name= "Regiment nr1"
 		type = mechanized_infantry
 		home = 706
 	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 706
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 706
+	}
 }
+

@@ -2361,7 +2361,7 @@
 	soldiers = {
 		culture = polish
 		religion = catholic 
-		size = 1214
+		size = 120000
 	 } 
 	soldiers = {
 		culture = polish
