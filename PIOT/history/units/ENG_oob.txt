@@ -13,25 +13,8 @@ RUS = {
 }
 
 #Colonies/Mandates
-TRI = {
-	level = 5
-	value = 200
-	influence_value = 100
-	military_access = yes
-}
+
 SUD = {
-	level = 5
-	value = 200
-	influence_value = 100
-	military_access = yes
-}
-ERI = {
-	level = 5
-	value = 200
-	influence_value = 100
-	military_access = yes
-}
-SML = {
 	level = 5
 	value = 200
 	influence_value = 100
@@ -188,25 +171,6 @@ PPN = {
 	military_access = yes
 }
 
-#Occupation Zones
-OG3 = {
-	level = 5
-	value = 200
-	influence_value = 100
-	military_access = yes
-}
-OG2 = {
-	value = 200
-	military_access = yes
-}
-OG4 = {
-	value = 200
-	military_access = yes
-}
-ROA = {
-	value = 200
-	military_access = yes
-}
 
 NOR = {
 	level = 5
@@ -553,13 +517,6 @@ LEB = {
 	influence_value = 25
 	military_access = yes
 }
-ETH = {
-	level = 5
-	value = 120
-	influence_value = 25
-	military_access = yes
-}
-
 leader = {
         name = "Alan Brooke"
         date = 1945.12.31
