@@ -43,45 +43,6 @@ army = {
 		home = 57
 	}
 }
-army = {
-	name = "Canada Emden Army"
-	location = 543
-	regiment = {
-		name= "Regiment nr1"
-		type = irregular
-		home = 57
-	}
-	regiment = {
-		name= "Regiment nr1"
-		type = infantry
-		home = 57
-	}
-	regiment = {
-		name= "Regiment nr2"
-		type = infantry
-		home = 57
-	}
-	regiment = {
-		name= "Regiment nr1"
-		type = mechanized_infantry
-		home = 57
-	}
-	regiment = {
-		name= "Regiment nr2"
-		type = mechanized_infantry
-		home = 57
-	}
-	regiment = {
-		name= "Regiment nr1"
-		type = tank
-		home = 57
-	}
-	regiment = {
-		name= "Regiment nr1"
-		type = artillery
-		home = 57
-	}
-}
 navy = {
 	name = "Royal Canadian Navy"
 	location = 71
