@@ -361,6 +361,759 @@ army = {
 	}	
 }
 army = {
+	name = "French Response Army"
+	location = 425
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = mechanized_infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = tank
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = tank
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = tank
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = tank
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = tank
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr6"
+		type = tank
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr7"
+		type = tank
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr8"
+		type = tank
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr9"
+		type = tank
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr4"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr5"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = bomber
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = bomber
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = cavalry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = cavalry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = cavalry
+		home = 425
+	}
+}
+army = {
+	name = "Paris Garrison"
+	location = 425
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}	
+}
+army = {
+	name = "Brussels Garrison"
+	location = 387
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}	
+}
+army = {
+	name = "Liege Garrison"
+	location = 395
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}	
+}
+army = {
+	name = "Charleville Garrison"
+	location = 405
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}	
+}
+army = {
+	name = "Namur Garrison"
+	location = 392
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}	
+}
+army = {
+	name = "Verdun Garrison"
+	location = 413
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr2"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr3"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = infantry
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}
+	regiment = {
+		name= "Regiment nr1"
+		type = artillery
+		home = 425
+	}	
+}
+army = {
 	name = "Colmar Garrison"
 	location = 410
 	regiment = {
