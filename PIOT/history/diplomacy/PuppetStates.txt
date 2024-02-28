@@ -30,6 +30,13 @@ vassal = {
 	start_date = 1945.1.1
 	end_date = 1975.4.22
 }
+#Poland-Danzig
+vassal = {
+	first = POL
+	second = DZG
+	start_date = 1945.1.1
+	end_date = 1975.4.22
+}
 ### Colonies ###
 
 # French Colonies
