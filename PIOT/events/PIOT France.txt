@@ -129,7 +129,6 @@ country_event = {
 	trigger = {
 		tag = FRA
 		election = no
-		year = 1947
 		has_country_flag = french_decisive_election
 		OR = { ruling_party_ideology = nationalist ruling_party_ideology = traditionalist ruling_party_ideology = populist }
 		}
@@ -137,7 +136,7 @@ country_event = {
 	option = {
 		name = "EVTOPTA000105"
 		clr_country_flag = french_decisive_election
-		set_country_flag = action_francaise_france
+		set_country_flag = french_right
 		}
 	}
 country_event = {
@@ -159,5 +158,105 @@ country_event = {
 		name = "EVTOPTA000106"
 		clr_country_flag = french_decisive_election
 		set_country_flag = france_united_left
+		}
+	}
+#####FRENCH RIGHT CIVIL WAR
+country_event = {
+	id = 107
+	title = "EVTNAME000107"
+	desc = "EVTDESC000107"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		has_country_flag = french_right
+		NOT = { has_global_flag = french_civil_war }
+		month = 3
+		}
+	option = {
+		name = "EVTOPTA000107"
+		set_global_flag = french_civil_war
+		425 = { secede_province = UFR }
+		any_owned = { limit = { OR = { is_core = BRI NOT = { is_core = FRA } }  } secede_province = UFR }
+		UFR = { government = proletarian_dictatorship political_reform = none_voting }
+		war = {
+			target = UFR
+			defender_goal = { casus_belli = civil_war }
+			attacker_goal = { casus_belli = civil_war }
+			}
+		}
+	}
+country_event = {
+	id = 108
+	title = "EVTNAME000108"
+	desc = "EVTDESC000108"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = FRA
+		has_global_flag = french_civil_war
+		has_country_flag = french_right
+		UFR = { exists = no }
+		}
+	option = {
+		name = "EVTOPTA000108"
+		prestige = 50
+		all_core = { remove_core = UFR }
+		set_country_flag = french_right_win
+		}
+	}
+	#IN CASE COMMUNISTS WIN
+country_event = {
+	id = 109
+	title = "EVTNAME000109"
+	desc = "EVTDESC000109"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	mean_time_to_happen ={ days = 1 }
+	trigger = {
+		tag = UFR
+		FRA = { exists = no has_country_flag = french_right }
+		has_global_flag = french_civil_war
+		}
+	option = {
+		name = "EVTOPTA000109"
+		prestige = 50
+		change_tag = FRA
+		remove_country_flag = french_right
+		set_country_flag = french_left_win
+		}
+	}
+country_event = {
+	id = 111
+	title = "EVTNAME000111"
+	desc = "EVTDESC000111"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = FRA
+		has_country_flag = french_right_win
+		}
+	option = {
+		name = "EVTOPTA000111"
+		government = absolute_monarchy
+		political_reform = none_voting
+		}
+	option = {
+		name = "EVTOPTB000111"
+		government = nationalist_dictatorship
+		political_reform = none_voting
+		}
+	option = {
+		name = "EVTOPTC000111"
+		government = sectarian_dictatorship
+		political_reform = none_voting
+		}
+	option = {
+		name = "EVTOPTD000111"
+		government = presidential_dictatorship
+		political_reform = none_voting
 		}
 	}
