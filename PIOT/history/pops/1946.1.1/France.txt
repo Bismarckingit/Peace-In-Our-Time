@@ -12015,7 +12015,7 @@
 	soldiers = {
 		culture = french
 		religion = catholic 
-		size = 700000
+		size = 350000
 	 } 
 	soldiers = {
 		culture = french
@@ -14738,7 +14738,7 @@
 	soldiers = {
 		culture = french
 		religion = catholic 
-		size = 3295
+		size = 350000
 	 } 
 	soldiers = {
 		culture = french

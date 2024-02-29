@@ -262,102 +262,102 @@ army = {
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr2"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr3"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr2"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr3"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}	
 }
 army = {
@@ -495,102 +495,102 @@ army = {
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr2"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr3"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr2"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr3"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}	
 }
 army = {
@@ -599,102 +599,102 @@ army = {
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr2"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr3"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr2"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr3"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}	
 }
 army = {
@@ -703,102 +703,102 @@ army = {
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr2"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr3"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr2"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr3"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = infantry
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}
 	regiment = {
 		name= "Regiment nr1"
 		type = artillery
-		home = 425
+		home = 451
 	}	
 }
 army = {

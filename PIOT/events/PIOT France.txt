@@ -1,0 +1,163 @@
+#######FRENCH REPUBLIC STARTING EVENTS VERY WIP#############
+#ID RANGE 100s
+#FRENCH STATUS AT START
+country_event = {
+	id = 101
+	title = "EVTNAME000101"
+	desc = "EVTDESC000101"
+	picture = "end_of_the_french_empire"
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		year = 1946
+	}
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "EVTOPTA000101"
+		set_country_flag = french_demoralization
+		add_country_modifier = { name = french_demoralization duration = 14600 }
+		any_pop = {
+				limit = { is_colonial = no }
+				ideology = { factor = 0.5 value = communist }
+				}
+		any_pop = {
+				limit = { is_colonial = no }
+				ideology = { factor = 0.5 value = nationalist }
+				}
+		any_pop = {
+				limit = { is_colonial = no }
+				ideology = { factor = 0.2 value = traditionalist }
+				}
+		any_pop = {
+				limit = { is_colonial = no }
+				ideology = { factor = 0.2 value = populist }
+				}
+		any_pop = { limit = { location = { is_colonial = no } OR = { is_primary_culture = yes is_accepted_culture = yes } } scaled_militancy = { factor = 10 ideology = populist } }
+		any_pop = { limit = { location = { is_colonial = no } OR = { is_primary_culture = yes is_accepted_culture = yes } } scaled_militancy = { factor = 10 ideology = nationalist } }
+		any_pop = { limit = { location = { is_colonial = no } OR = { is_primary_culture = yes is_accepted_culture = yes } } scaled_militancy = { factor = 10 ideology = traditionalist } }
+		any_pop = { limit = { location = { is_colonial = no } OR = { is_primary_culture = yes is_accepted_culture = yes } } scaled_militancy = { factor = 10 ideology = communist } }
+		}
+	}
+country_event = {
+	id = 102
+	title = "EVTNAME000102"
+	desc = "EVTDESC000102"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		year = 1946
+		has_country_flag = french_demoralization
+		}
+	mean_time_to_happen = { days = 1 }
+		option = {
+		name = "EVTOPTA000101"
+		set_country_flag = french_great_war
+		add_country_modifier = { name = french_great_war duration = -1 }
+		any_pop = {
+				limit = { type = soldiers }
+				ideology = { factor = 0.4 value = nationalist }
+				militancy = 4
+				consciousness = 1
+				}
+		any_pop = {
+				limit = { type = officers }
+				ideology = { factor = 0.8 value = traditionalist }
+				militancy = 7
+				consciousness = 1
+				}
+		}
+	}
+country_event = {
+	id = 103
+	title = "EVTNAME000103"
+	desc = "EVTDESC000103"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		year = 1947
+		month = 7
+		has_country_flag = french_great_war
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000103"
+		set_country_flag = french_decisive_election
+		election = yes
+		add_country_modifier = { name = leadership_chaos duration = 3650 }
+		add_country_modifier = { name = revolution_chaos duration = 3650 }
+		}
+	}
+	
+	### THREE POSSIBILITIES - REPUBLIC SAVED, ACTION FRANCAISE, UNITED LEFT
+	
+country_event = {
+	id = 104
+	title = "EVTNAME000104"
+	desc = "EVTDESC000104"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		election = no
+		year = 1947
+		has_country_flag = french_decisive_election
+		OR = { ruling_party_ideology = conservative ruling_party_ideology = big_tent ruling_party_ideology = socialist ruling_party_ideology = liberal ruling_party_ideology = progressive }
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000104"
+		clr_country_flag = french_decisive_election
+		set_country_flag = french_republic_saved
+		prestige = 20
+		}
+	}
+country_event = {
+	id = 105
+	title = "EVTNAME000105"
+	desc = "EVTDESC000105"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		election = no
+		year = 1947
+		has_country_flag = french_decisive_election
+		OR = { ruling_party_ideology = nationalist ruling_party_ideology = traditionalist ruling_party_ideology = populist }
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000105"
+		clr_country_flag = french_decisive_election
+		set_country_flag = action_francaise_france
+		}
+	}
+country_event = {
+	id = 106
+	title = "EVTNAME000106"
+	desc = "EVTDESC000106"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		election = no
+		year = 1947
+		has_country_flag = french_decisive_election
+		OR = { ruling_party_ideology = communist ruling_party_ideology = communist_social ruling_party_ideology = populist }
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000106"
+		clr_country_flag = french_decisive_election
+		set_country_flag = france_united_left
+		}
+	}
