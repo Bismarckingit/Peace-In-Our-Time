@@ -2,6 +2,7 @@ owner = GER
 controller = GER
 add_core = GER
 add_core = AUS
+add_core = ROA
 trade_goods = other_minerals
 life_rating = 35
 terrain = hilly_farmland
