@@ -248,6 +248,10 @@ country_event = {
 		name = "EVTOPTB000111"
 		government = nationalist_dictatorship
 		political_reform = none_voting
+		political_reform = ruling_party_opinion
+		political_reform = politicized_service
+		political_reform = state_publishing
+		political_reform = no_trade_unions
 		}
 	option = {
 		name = "EVTOPTC000111"
@@ -257,6 +261,585 @@ country_event = {
 	option = {
 		name = "EVTOPTD000111"
 		government = presidential_dictatorship
+		set_country_flag = french_republic_saved
 		political_reform = none_voting
 		}
 	}
+#Monarchial France - Monarchial line to choose
+country_event = {
+	id = 112
+	title = "EVTNAME000112"
+	desc = "EVTDESC000112"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = FRA
+		OR = {
+		government = hms_government
+		government = hms_government_1
+		government = absolute_monarchy
+			}
+		}
+	option = {
+		name = "EVTOPTA000112"
+		set_country_flag = bourbon_france
+		prestige = 25
+		badboy = 5
+		ruling_party_ideology = traditionalist
+		political_reform = ruling_party_opinion
+		political_reform = politicized_service
+		political_reform = state_publishing
+		political_reform = no_trade_unions
+		any_pop = {
+				limit = { is_colonial = no }
+				ideology = { factor = 0.2 value = traditionalist }
+				}
+		any_pop = { limit = { location = { is_colonial = no } OR = { is_primary_culture = yes is_accepted_culture = yes } } scaled_militancy = { factor = 10 ideology = socialist } }
+		any_pop = { limit = { location = { is_colonial = no } OR = { is_primary_culture = yes is_accepted_culture = yes } } scaled_militancy = { factor = 10 ideology = communist } }
+		}
+	option = {
+		name = "EVTOPTB000112"
+		set_country_flag = bonaparte_france
+		prestige = 50
+		badboy = 10
+		ruling_party_ideology = populist
+		political_reform = ruling_party_opinion
+		political_reform = politicized_service
+		political_reform = state_publishing
+		political_reform = no_trade_unions
+		any_pop = {
+				limit = { is_colonial = no }
+				ideology = { factor = 0.2 value = populist }
+				}
+				any_pop = { limit = { location = { is_colonial = no } OR = { is_primary_culture = yes is_accepted_culture = yes } } scaled_militancy = { factor = 5 ideology = traditionalist } }
+				any_pop = { limit = { location = { is_colonial = no } OR = { is_primary_culture = yes is_accepted_culture = yes } } scaled_militancy = { factor = 5 ideology = socialist } }
+				any_pop = { limit = { location = { is_colonial = no } OR = { is_primary_culture = yes is_accepted_culture = yes } } scaled_militancy = { factor = 5 ideology = communist } }
+				any_pop = { limit = { location = { is_colonial = no } OR = { is_primary_culture = yes is_accepted_culture = yes } } scaled_militancy = { factor = 5 ideology = conservative } }
+			}
+	option = {
+		name = "EVTOPTC000112"
+		set_country_flag = orleaniste_france
+		government = hms_government
+		prestige = 10
+		ruling_party_ideology = conservative
+		political_reform = free_voting
+		any_pop = {
+				limit = { is_colonial = no }
+				ideology = { factor = 0.2 value = conservative }
+				}
+		any_pop = {
+				limit = { is_colonial = no }
+				ideology = { factor = 0.2 value = liberal }
+				}
+		}
+	}
+########BOURBONS
+country_event = {
+	id = 113
+	title = "EVTNAME000113"
+	desc = "EVTDESC000113"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_country_flag = bourbon_france
+		OR = {
+		government = hms_government
+		government = absolute_monarchy
+		government = hms_government_1
+		}
+	}
+	option = {
+		name = "EVTOPTA000113"
+		badboy = 15
+		add_accepted_culture = basque
+		add_accepted_culture = catalan
+		SPA = { all_core = add_core = FRA }
+		}
+	option = {
+		name = "EVTOPTB000113"
+		badboy = -5
+		prestige = -15
+		}
+	}
+country_event = {
+	id = 114
+	title = "EVTNAME000114"
+	desc = "EVTDESC000114"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_country_flag = bourbon_france
+		OR = {
+		government = hms_government
+		government = absolute_monarchy
+		government = hms_government_1
+		}
+	}
+	option = {
+		name = "EVTOPTA000114"
+		badboy = 10
+		SCI = { all_core = add_core = FRA }
+		}
+	option = {
+		name = "EVTOPTB000114"
+		badboy = -5
+		prestige = -15
+		}
+	}	
+country_event = {
+	id = 115
+	title = "EVTNAME000115"
+	desc = "EVTDESC000115"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 10 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_country_flag = bourbon_france
+		SCI = { all_core = { owned_by = FRA } }
+		OR = {
+		government = absolute_monarchy
+		government = hms_government
+		government = hms_government_1
+		}
+	}
+	option = {
+		name = "EVTOPTA000115"
+		badboy = -5
+		release_vassal = SCI
+		}
+	option = {
+		name = "EVTOPTB000115"
+		any_owned = { limit = { is_core = SCI } add_province_modifier = { name = nationalist_agitation duration = 3650 } }
+		}
+	}
+country_event = {
+	id = 116
+	title = "EVTNAME000116"
+	desc = "EVTDESC000116"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 10 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_country_flag = bourbon_france
+		SPA = { all_core = { owned_by = FRA } }
+		OR = {
+		government = absolute_monarchy
+		government = hms_government
+		government = hms_government_1
+		}
+	}
+	option = {
+		name = "EVTOPTA000116"
+		badboy = -5
+		all_core = { limit = { is_core = CAT } remove_core = SPA }
+		all_core = { limit = { is_core = EUS } remove_core = SPA }
+		all_core = { limit = { is_core = SPA } remove_core = FRA }
+		release_vassal = SPA
+		}
+	option = {
+		name = "EVTOPTB000116"
+		any_owned = { limit = { is_core = SPA } add_province_modifier = { name = nationalist_agitation duration = 3650 } }
+		set_country_flag = bourbon_france_spain
+		}
+	}
+country_event = {
+	id = 117
+	title = "EVTNAME000117"
+	desc = "EVTDESC000117"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 10 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_country_flag = bourbon_france_spain
+		SPA = { all_core = { owned_by = FRA } }
+		OR = {
+			government = absolute_monarchy
+			government = hms_government
+			government = hms_government_1
+			}
+		NOT = { 
+			any_owned = { limit = { is_core = SPA } has_province_modifier = nationalist_agitation }
+			}
+		}
+	option = {
+		name = "EVTOPTA000117"
+		prestige = 50
+		add_accepted_culture = spanish
+		}
+	}
+#########BONAPARTES
+country_event = {
+	id = 118
+	title = "EVTNAME000118"
+	desc = "EVTDESC000118"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_country_flag = bonaparte_france
+		OR = {
+		government = hms_government
+		government = absolute_monarchy
+		government = hms_government_1
+		}
+	}
+	option = {
+		name = "EVTOPTA000113"
+		set_country_flag = bonaparte_cult_offensive
+		remove_country_modifier = french_great_war
+		add_country_modifier = { name = bonaparte_cult_offensive duration = -1 }
+		}
+	option = {
+		name = "EVTOPTB000113"
+		}
+	}
+country_event = {
+	id = 119
+	title = "EVTNAME000119"
+	desc = "EVTDESC000119"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_country_flag = bonaparte_france
+		OR = {
+		government = hms_government
+		government = absolute_monarchy
+		government = hms_government_1
+			}
+		}
+	option = {
+		name = "EVTOPTA000119"
+		set_country_flag = bonaparte_ambition
+		add_country_modifier = { name = bonaparte_ambition duration = -1 }
+		prestige = 50
+		}
+	option = {
+		name = "EVTOPTB000119"
+		prestige = -10
+		}
+	}
+country_event = {
+	id = 121
+	title = "EVTNAME000121"
+	desc = "EVTDESC000121"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		OR = {
+			GER = { all_core = { owned_by = FRA } }
+			GER = { in_sphere = FRA vassal_of = FRA }
+			}
+		}
+	option = {
+		name = "EVTOPTA000121"
+		set_country_flag = claim_greater_france
+		inherit = GER
+		PRU_570 = { add_core = FRA remove_core = GER }
+		PRU_575 = { add_core = FRA remove_core = GER }
+		BEL_394 = { add_core = FRA remove_core = GER }
+		BEL_387 = { add_core = FRA remove_core = GER }
+		NET_379 = { add_core = FRA remove_core = GER }
+		609 = { add_core = FRA remove_core = GER }
+		608 = { add_core = FRA remove_core = GER }
+		607 = { add_core = FRA remove_core = GER }
+		any_owned = { limit = { is_core = GER } secede_province = GER }
+		create_vassal = GER
+		}
+	option = {
+		name = "EVTOPTB000121"
+		set_country_flag = claim_greater_france		
+		inherit = GER
+		PRU_570 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		PRU_575 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		BEL_394 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		BEL_387 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		NET_379 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		609 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		608 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		607 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		release_vassal = FDR
+		release_vassal = SGF
+		release_vassal = AUS
+		release_vassal = NGF
+		release_vassal = DDR
+		}
+	option = {
+		name = "EVTOPTC000121"
+		set_country_flag = claim_greater_france		
+		inherit = GER
+		PRU_570 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		PRU_575 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		BEL_394 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		BEL_387 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		NET_379 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		609 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		608 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		607 = { add_core = FRA remove_core = GER remove_core = FDR remove_core = SGF }
+		release_vassal = AUS
+		release_vassal = BAV
+		release_vassal = HAN
+		release_vassal = DDR
+		release_vassal = NGF
+		release_vassal = SGF
+		release_vassal = DDR
+		}
+	}
+country_event = {
+	id = 000122
+	title = "EVTNAME000122"
+	desc = "EVTDESC000122"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = FRA
+		has_country_flag = bonaparte_france
+		has_country_flag = bonaparte_ambition
+		year = 1956
+		OR = {
+		government = hms_government
+		government = absolute_monarchy
+		government = hms_government_1
+			}
+		}
+	option = {
+		name = "EVTOPTA000122"
+		BEL = { all_core = { add_core = FRA } }
+		NET_379 = { add_core = FRA }
+		war = {
+			target = BEL
+			attacker_goal = { casus_belli = conquest }
+			}
+		war = {
+			target = LUX 
+			attacker_goal = { casus_belli = conquest }
+			}
+		war = {
+			target = NET
+			attacker_goal = { casus_belli = conquest }
+			}
+			}
+	option = {
+		name = "EVTOPTB000122"
+		prestige = -10
+		}
+	}
+country_event = {
+	id = 000123
+	title = "EVTNAME000123"
+	desc = "EVTDESC000123"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = FRA
+		has_country_flag = bonaparte_france
+		has_country_flag = bonaparte_ambition
+		year = 1963
+		month = 4
+		OR = {
+		government = hms_government
+		government = absolute_monarchy
+		government = hms_government_1
+			}
+		}
+	option = {
+		name = "EVTOPTA000123"
+		war = {
+			target = SPA
+			attacker_goal = { casus_belli = conquest }
+			}
+		war = {
+			target = POR 
+			attacker_goal = { casus_belli = conquest }
+			}
+			}
+	option = {
+		name = "EVTOPTB000122"
+		prestige = -10
+		}
+	}
+country_event = {
+	id = 000124
+	title = "EVTNAME000124"
+	desc = "EVTDESC000124"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = FRA
+		has_country_flag = bonaparte_france
+		has_country_flag = bonaparte_ambition
+		year = 1972
+		month = 7
+		OR = {
+		government = hms_government
+		government = absolute_monarchy
+		government = hms_government_1
+			}
+		}
+	option = {
+		name = "EVTOPTA000124"
+		war = {
+			target = ITA
+			attacker_goal = { casus_belli = conquest }
+			}
+		war = {
+			target = SIC 
+			attacker_goal = { casus_belli = conquest }
+			}
+		war = { 
+			target = PDN
+			attacker_goal = { casus_belli = conquest }
+			}
+		war = {
+			target = PAP
+			attacker_goal = { casus_belli = conquest }
+			}
+			}
+	option = {
+		name = "EVTOPTB000124"
+		prestige = -10
+		}
+	}
+country_event = {
+	id = 000125
+	title = "EVTNAME000125"
+	desc = "EVTDESC000125"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = FRA
+		NOT = { has_country_flag = bourbon_france }
+		SPA = { exists = no }
+		owns = 487
+		}
+	option = {
+		name = "EVTOPTA000125"
+		CAT = { all_core = { add_core = FRA } }
+		release_vassal = SPA
+			}
+	option = {
+		name = "EVTOPTB000125"
+		badboy = 5
+		CAT = { all_core = { add_core = FRA } }
+		release_vassal = EUS
+		release_vassal = GAL
+		release_vassal = SPA
+		}
+	option = { 
+		name = "EVTOPTC000125"
+		badboy = 10
+		CAT = { all_core = { add_core = FRA } }
+		EUS = { all_core = { add_core = FRA } }
+		release_vassal = ADL
+		release_vassal = GAL
+		release_vassal = SPA
+		}
+	option = {
+		name = "EVTOPTD000125"
+		badboy = 15
+		CAT = { all_core = { add_core = FRA } }
+		EUS = { all_core = { add_core = FRA } }
+		any_owned = { limit = { is_core = SPA } add_province_modifier = { name = nationalist_agitation duration = 3650 } }
+		}
+	}
+country_event = {
+	id = 000126
+	title = "EVTNAME000126"
+	desc = "EVTDESC000126"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = FRA
+		NET = { exists = no }
+		owns = 487
+		}
+	option = {
+		name = "EVTOPTA000126"
+		NET_379 = { remove_core = NET }
+		release_vassal = NET
+			}
+	option = {
+		name = "EVTOPTB000126"
+		badboy = 10
+		NET = { all_core = { add_core = FRA } }
+		any_owned = { limit = { is_core = NET } add_province_modifier = { name = nationalist_agitation duration = 3650 } }
+		}
+	}
+country_event = {
+	id = 000127
+	title = "EVTNAME000127"
+	desc = "EVTDESC000127"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = FRA
+		PAP = { exists = no }
+		owns = 749
+		}
+	option = {
+		name = "EVTOPTA000127"
+		PAP_752 = { add_core = PAP }
+		release_vassal = PAP
+		PAP = { government = theocracy }
+			}
+	option = {
+		name = "EVTOPTB000127"
+		badboy = 10
+		749 = { add_core = FRA }
+		any_owned = { limit = { is_core = ITA } add_province_modifier = { name = nationalist_agitation duration = 3650 } }
+		}
+	}
+country_event = {
+	id = 000128
+	title = "EVTNAME000128"
+	desc = "EVTDESC000128"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = FRA
+		PDN = { exists = no }
+		ITA = { exists = no }
+		owns = 726
+		}
+	option = {
+		name = "EVTOPTA000128"
+		721 = { add_core = FRA remove_core = ITA }
+		release_vassal = ITA
+			}
+	option = {
+		name = "EVTOPTB000128"
+		badboy = 5
+		721 = { add_core = FRA remove_core = PDN }
+		release_vassal = PDN
+		release_vassal = SIC
+		}
+	option = {
+		name = "EVTOPTC000128"
+		badboy = 15
+		AUS_780 = { add_core = FRA }
+		721 = { add_core = FRA }
+		release_vassal = VEN
+		release_vassal = PDN
+		release_vassal = SIC
+		}
+	}
+	

@@ -8364,3 +8364,18 @@ french_great_war = {
 	land_unit_start_experience = 15
 	leadership_modifier = -0.75
 }
+bonaparte_cult_offensive = {
+	land_organisation = -0.20
+	org_regain = 0.50
+	mobilisation_size = 0.10
+	army_tech_research_bonus = 0.15
+	navy_tech_research_bonus = -0.10
+	land_unit_start_experience = 15
+	leadership_modifier = 0.75
+}
+bonaparte_ambition = {
+	cb_generation_speed_modifier = 0.35
+	influence_modifier = -0.1
+	diplomatic_points_modifier = -0.1
+	badboy = 0.01
+}	
