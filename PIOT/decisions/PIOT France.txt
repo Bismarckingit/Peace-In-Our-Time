@@ -1,0 +1,46 @@
+political_decisions = {
+	claim_greater_france = {
+		picture = "claim_greater_france"
+		potential = {
+			tag = FRA
+			NOT = { has_country_flag = claim_greater_france }
+		}
+
+		allow = {
+			part_of_sphere = no
+			has_unclaimed_cores = no
+		OR = {
+			AND = {
+				OR = {
+				government = hms_government
+				government = absolute_monarchy
+				government = hms_government_1
+				}
+			has_country_flag = bonaparte_france
+				}
+			AND = {
+			government = nationalist_dictatorship
+			NOT = { has_country_flag = axis_france }
+			}
+			government = proletarian_dictatorship
+			government = presidential_dictatorship
+			government = sectarian_dictatorship
+			}
+			is_vassal = no
+			prestige = 45
+		}
+
+		effect = {
+			badboy = 20
+			set_country_flag = claim_greater_france
+			PRU_570 = { add_core = FRA }
+			PRU_575 = { add_core = FRA }
+			BEL_394 = { add_core = FRA }
+			BEL_387 = { add_core = FRA }
+			NET_379 = { add_core = FRA }
+			609 = { add_core = FRA }
+			608 = { add_core = FRA }
+			607 = { add_core = FRA }
+			}
+		}
+	}
