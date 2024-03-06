@@ -44,3 +44,107 @@ political_decisions = {
 			}
 		}
 	}
+	french_ambition_belgium = {
+		picture = "claim_greater_france"
+		potential = {
+			tag = FRA
+			NOT = { has_country_flag = claim_greater_france }
+			NOT = { has_country_flag = french_ambition_belgium }
+			has_country_flag = axis_france
+		}
+
+		allow = {
+			part_of_sphere = no
+			has_unclaimed_cores = no
+			is_vassal = no
+			is_greater_power = yes
+			prestige = 45
+		}
+
+		effect = {
+			badboy = 10
+			set_country_flag = french_ambition_belgium
+			BEL = { all_core = { add_core = FRA } }
+			relation = { who = ENG value = -200 }
+			relation = { who = BEL value = -200 }
+			}
+		}
+	france_reinstate_claims_colonies = {
+		picture = "claim_greater_france"
+		potential = {
+			tag = FRA
+			NOT = { has_country_flag = france_reinstate_claims_colonies }
+			NOT = {
+			relation = { who = ENG value = 0 }
+			}
+			OR = {
+				government = nationalist_dictatorship
+				AND = {
+				government = absolute_monarchy
+				has_country_flag = bonaparte_france
+				}
+				government = sectarian_dictatorship
+				government = presidential_dictatorship
+				}
+		}
+
+		allow = {
+			part_of_sphere = no
+			has_unclaimed_cores = no
+			is_vassal = no
+			is_greater_power = yes
+			prestige = 45
+		}
+
+		effect = {
+			badboy = 10
+			set_country_flag = france_reinstate_claims_colonies
+			QUE = { all_core = { add_core = FRA } }
+			HAI = { all_core = { add_core = FRA } }
+			relation = { who = ENG value = -200 }
+			relation = { who = USA value = -200 }
+			relation = { who = CAN value = -200 }
+			}
+		}	
+	commie_france_benelux = {
+		picture = "claim_greater_france"
+		potential = {
+			tag = FRA
+			NOT = { has_country_flag = commie_france_benelux }
+				government = proletarian_dictatorship
+		}
+
+		allow = {
+			is_greater_power = yes
+			prestige = 45
+			OR = {
+			NET = { in_sphere = FRA government = proletarian_dictatorship }
+			NET = { all_core = { owned_by = FRA } }
+			}
+			OR = {
+			LUX = { in_sphere = FRA government = proletarian_dictatorship }
+			LUX = { all_core = { owned_by = FRA } }
+			}
+			OR = {
+			BEL = { in_sphere = FRA government = proletarian_dictatorship }
+			BEL = { all_core = { owned_by = FRA } }
+			}
+		}
+
+		effect = {
+			badboy = 10
+			set_country_flag = commie_france_benelux
+			inherit = BEL
+			inherit = NET
+			inherit = LUX
+			LUX = { all_core = { add_core = FRA } }
+			WLL = { all_core = { add_core = FRA } }
+			BEL = { all_core = { limit = { NOT = { is_core = FRA } } add_core = BNL } }
+			NET = { all_core = { limit = { NOT = { is_core = FRA } } add_core = BNL } }
+			release_vassal = BNL
+			relation = { who = ENG value = -200 }
+			relation = { who = USA value = -200 }
+			relation = { who = CAN value = -200 }
+			}
+		}
+	}

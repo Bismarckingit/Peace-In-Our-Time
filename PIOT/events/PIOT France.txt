@@ -890,6 +890,7 @@ country_event = {
 		OR = {
 		government = nationalist_dictatorship
 		government = sectarian_dictatorship
+		government = proletarian_dictatorship
 		}
 	}
 	option = {
@@ -933,8 +934,12 @@ country_event = {
 	desc = "EVTDESC000133"
 	picture = "nwo2_de_gaulle_fifth_republic"
 	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
 	trigger = {
 		tag = ENG
+		NOT = {
+		relation = { who = FRA value = 100 }
+		}
 		FRA = { OR = { government = nationalist_dictatorship government = sectarian_dictatorship } }
 		}
 	option = {
@@ -949,8 +954,8 @@ country_event = {
 	}
 country_event = {
 	id = 134
-	title = "EVTNAME000133"
-	desc = "EVTDESC000133"
+	title = "EVTNAME000134"
+	desc = "EVTDESC000134"
 	picture = "nwo2_de_gaulle_fifth_republic"
 	is_triggered_only = yes
 	option = {
@@ -960,4 +965,205 @@ country_event = {
 		casus_belli = { target = ENG type = dismantle_nation }
 		}
 	}
-		
+######COMMUNIST FRANCE
+country_event = {
+	id = 135
+	title = "EVTNAME000135"
+	desc = "EVTDESC000135"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+		trigger = {
+			tag = FRA
+			government = proletarian_dictatorship
+			}
+	option = {
+		name = "EVTOPTA000135"
+		set_country_flag = comintern_france
+		relation = { who = RUS value = 200 }
+		relation = { who = GER value = 25 }
+		relation = { who = ENG value = -75 }
+		relation = { who = USA value = -80 }
+		}
+	option = {
+		name = "EVTOPTB000135"
+		set_country_flag = axis_france
+		relation = { who = RUS value = 100 }
+		relation = { who = GER value = 200 }
+		relation = { who = ENG value = -150 }
+		relation = { who = USA value = -170 }
+		}
+	option = {
+		name = "EVTOPTC000135"
+		relation = { who = ENG value = -25 }
+		relation = { who = GER value = 25 }
+		relation = { who = RUS value = 50 }
+		relation = { who = USA value = 25 }
+		}
+	}
+country_event = {
+	id = 136
+	title = "EVTNAME000136"
+	desc = "EVTDESC000136"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+		trigger = {
+			year = 1953
+			month = 5
+			tag = FRA
+			government = proletarian_dictatorship
+			AOF = { exists = yes vassal_of = THIS }
+			}
+	option = {
+		name = "EVTOPTA000136"
+		badboy = 5
+		prestige = 75
+		AOF = { government = proletarian_dictatorship }
+		}
+	option = {
+		name = "EVTOPTB000136"
+		release_vassal = AOF
+		AOF = { government = proletarian_dictatorship }
+		}
+	option = {
+		name = "EVTOPTC000136"
+		inherit = AOF
+		release_vassal = GAB
+		release_vassal = MAU
+		release_vassal = SEN
+		release_vassal = MLI
+		release_vassal = IVC
+		release_vassal = BUF
+		release_vassal = BEN
+		release_vassal = NIG
+		GAB = { government = proletarian_dictatorship }
+		MAU = { government = proletarian_dictatorship }
+		SEN = { government = proletarian_dictatorship }
+		MLI = { government = proletarian_dictatorship }
+		IVC = { government = proletarian_dictatorship }
+		BUF = { government = proletarian_dictatorship }
+		BEN = { government = proletarian_dictatorship }
+		NIG = { government = proletarian_dictatorship }
+		}
+	}
+country_event = {
+	id = 000137
+	title = "EVTNAME000137"
+	desc = "EVTDESC000137"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		government = proletarian_dictatorship
+		has_country_flag = comintern_france
+		year = 1967
+		}
+	option = {
+		name = "EVTOPTA000137"
+		badboy = 3 
+		casus_belli = { 
+			target = SPA type = install_communist_gov_cb
+			months = 10 
+			}
+		war = {
+			target = SPA
+			attacker_goal = { casus_belli = install_communist_gov_cb }
+			}
+		}
+	option = {
+		name = "EVTOPTB000137"
+		badboy = -2
+		}
+	}
+	#####REMIND ME TO TURN THIS INTO A PROCEDURAL GENERATION OF FRENCH PUPPETS
+country_event = {
+	id = 000138
+	title = "EVTNAME000138"
+	desc = "EVTDESC000138"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		government = proletarian_dictatorship
+		has_country_flag = comintern_france
+		SPA = { in_sphere = FRA NOT = { vassal_of = FRA } government = proletarian_dictatorship }
+		}
+	option = {
+		name = "EVTOPTA000138"
+		prestige = 50
+		create_vassal = SPA
+		}
+	}
+country_event = {
+	id = 000139
+	title = "EVTNAME000139"
+	desc = "EVTDESC000139"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		government = proletarian_dictatorship
+		has_country_flag = comintern_france
+		SPA = { in_sphere = FRA vassal_of = FRA }
+		POR = { in_sphere = FRA }
+		}
+	option = {
+		name = "EVTOPTA000139"
+		badboy = 10
+		POR = { country_event = 000141 }
+		}
+	option = {
+		name = "EVTOPTB000139"
+		}
+	}
+country_event = {
+	id = 000141
+	title = "EVTNAME000141"
+	desc = "EVTDESC000141"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA000141"
+		all_core = { add_core = IBU }
+		SPA = { all_core = { add_core = IBU } change_tag = IBU add_accepted_culture = portuguese inherit = POR }
+		ai_chance = { factor = 1 }
+		}
+	option = {
+		name = "EVTOPTB000141"
+		FRA = { diplomatic_influence = { who = POR value = -200 } relation = { who = POR value = -200 }
+				casus_belli = { target = POR type = make_puppet months = 12 }
+				war = {
+						target = POR 
+						attacker_goal = { casus_belli = make_puppet }
+						}
+			}
+		}
+	}
+########### FRENCH REPUBLIC
+country_event = {
+	id = 000142
+	title = "EVTNAME000142"
+	desc = "EVTDESC000142"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = FRA 
+		OR = {
+		government = democracy
+		government = democracy_1
+		AND = {
+		OR = {
+		government = hms_government
+		government = hms_government_1
+		}
+		NOT = { has_country_flag = bourbon_france }
+		NOT = { has_country_flag = bonaparte_france }
+		}
+		}
+		has_country_flag = french_republic_saved
+		}
+	
