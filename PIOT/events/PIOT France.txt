@@ -1166,4 +1166,12 @@ country_event = {
 		}
 		has_country_flag = french_republic_saved
 		}
-	
+	option = {
+		name = "EVTOPTA000142"
+		set_country_flag = repress_germans
+		any_pop = { limit = { culture = german } militancy = 5 consciousness = 5 }
+		}
+	option = {
+		name = "EVTOPTB000142"
+		}
+	}
