@@ -147,4 +147,48 @@ political_decisions = {
 			relation = { who = CAN value = -200 }
 			}
 		}
+	reconstruct_little_entente = {
+		picture = "protect_czechoslovakia"
+		potential = {
+			tag = FRA
+			NOT = { has_country_flag = reconstruct_little_entente }
+				OR = {
+					government = democracy
+					government = democracy1
+					}
+				has_country_flag = french_republic_saved
+		}
+
+		allow = {
+			is_greater_power = yes
+			prestige = 45
+			OR = {
+			POL = { in_sphere = FRA NOT = { government = nationalist_dictatorship } NOT = { government = proletarian_dictatorship } }
+			}
+			OR = {
+			CZE = { in_sphere = FRA NOT = { government = nationalist_dictatorship } NOT = { government = proletarian_dictatorship } }
+			CZE = { exists = no }
+			}
+			OR = {
+			YUG = { in_sphere = FRA NOT = { government = nationalist_dictatorship } NOT = { government = proletarian_dictatorship } }
+			YUG = { exists = no }
+			}
+			OR = {
+			ROM = { in_sphere = FRA NOT = { government = nationalist_dictatorship } NOT = { government = proletarian_dictatorship } }
+			ROM = { exists = no }
+			}
+		}
+
+		effect = {
+			set_country_flag = reconstruct_little_entente
+			prestige = 500
+			POL = { add_country_modifier = { name = french_advisors duration = -1 } }
+			CZE = { add_country_modifier = { name = french_advisors duration = -1 } }
+			YUG = { add_country_modifier = { name = french_advisors duration = -1 } }
+			ROM = { add_country_modifier = { name = french_advisors duration = -1 } }
+			relation = { who = ENG value = 200 }
+			relation = { who = GER value = -200 }
+			relation = { who = RUS value = -150 }
+			}
+		}
 	}

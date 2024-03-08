@@ -1150,6 +1150,7 @@ country_event = {
 	desc = "EVTDESC000142"
 	picture = "nwo2_de_gaulle_fifth_republic"
 	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
 	trigger = {
 		tag = FRA 
 		OR = {
@@ -1168,10 +1169,243 @@ country_event = {
 		}
 	option = {
 		name = "EVTOPTA000142"
-		set_country_flag = repress_germans
+		set_country_flag = reaffirm_polish_guarantee
+		wealth = -250000
+		POL = { country_event = 000143 }
 		any_pop = { limit = { culture = german } militancy = 5 consciousness = 5 }
+		diplomatic_influence = { who = POL value = 200 }
+		ai_chance = { factor = 1 }
 		}
 	option = {
 		name = "EVTOPTB000142"
+		}
+	}
+country_event = {
+	id = 000143
+	title = "EVTNAME000143"
+	desc = "EVTDESC000143"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA000143"
+		prestige = 100
+		any_pop = { limit = { culture = polish } ideology = { factor = 0.3 value = conservative } }
+		add_country_modifier = { name = french_advisors duration = -1 }
+		}
+	}
+#######FRENCH COLONIAL CRISES
+country_event = {
+	id = 000144
+	title = "EVTNAME000144"
+	desc = "EVTDESC000144"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		NOT = { government = nationalist_dictatorship }
+		year = 1949
+		month = 3 
+		FLG = { vassal_of = FRA }
+		}
+	option = {
+		name = "EVTOPTA000144"
+		set_country_flag = abrogated_native_code
+		prestige = -75
+		FLG = { set_primary_culture = berber add_accepted_culture = arab remove_accepted_culture = french change_tag = ALG }
+		}
+	option = {
+		name = "EVTOPTB000144"
+		set_country_flag = native_code_enforced
+		FLG = { country_event = 145 }
+		prestige = 25
+		}
+	}
+country_event = {
+	id = 000145
+	title = "EVTNAME000145"
+	desc = "EVTDESC000145"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA000145"
+		any_owned = { limit = { is_core = ALG } add_province_modifier = { nationalist_agitation duration = -1 } }
+		}
+	}
+country_event = {
+	id = 000146
+	title = "EVTNAME000146"
+	desc = "EVTDESC000146"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		OR = {
+		ALG = { vassal_of = FRA }
+		ALG = { all_core = { owned_by = FRA } }
+		}
+		year = 1955
+		month = 7
+		}
+	option = {
+		name = "EVTOPTA000146"
+		prestige = -50
+		any_owned = { limit = { is_core = ALG } secede_province = ALG }
+		release_vassal = ALG
+		casus_belli = { target = ALG type = colonial_war months = 100 }
+		war = {
+			target = ALG
+			attacker_goal = { casus_belli = colonial_war }
+			}
+		}
+	option = {
+		name = "EVTOPTB000146"
+		prestige = -25
+		any_owned = { limit = { is_core = ALG } secede_province = ALG remove_core = FRA }
+		release_vassal = ALG
+		}
+	}
+country_event = {
+	id = 000147
+	title = "EVTNAME000147"
+	desc = "EVTDESC000147"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		OR = {
+		ALG = { vassal_of = FRA }
+		ALG = { all_core = { owned_by = FRA } }
+		}
+		year = 1960
+		month = 7
+		}
+	option = {
+		name = "EVTOPTA000147"
+		prestige = -100
+		any_owned = { limit = { is_core = ALG } secede_province = ALG }
+		release_vassal = ALG
+		casus_belli = { target = ALG type = colonial_war months = 100 }
+		war = {
+			target = ALG
+			attacker_goal = { casus_belli = colonial_war }
+			}
+		}
+	option = {
+		name = "EVTOPTB000147"
+		prestige = -50
+		any_owned = { limit = { is_core = ALG } secede_province = ALG remove_core = FRA }
+		release_vassal = ALG
+		}
+	}
+country_event = {
+	id = 000148
+	title = "EVTNAME000148"
+	desc = "EVTDESC000148"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		OR = {
+		ALG = { vassal_of = FRA }
+		ALG = { all_core = { owned_by = FRA } }
+		}
+		year = 1965
+		month = 7
+		}
+	option = {
+		name = "EVTOPTA000148"
+		prestige = -200
+		any_owned = { limit = { is_core = ALG } secede_province = ALG }
+		release_vassal = ALG
+		casus_belli = { target = ALG type = colonial_war months = 100 }
+		war = {
+			target = ALG
+			attacker_goal = { casus_belli = colonial_war }
+			}
+		}
+	option = {
+		name = "EVTOPTB000148"
+		prestige = -100
+		any_owned = { limit = { is_core = ALG } secede_province = ALG remove_core = FRA }
+		release_vassal = ALG
+		}
+	}
+country_event = {
+	id = 000149
+	title = "EVTNAME000149"
+	desc = "EVTDESC000149"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		FLG = { vassal_of = FRA }
+		year = 1950
+		month = 4
+		}
+	option = {
+		name = "EVTOPTA000149"
+		badboy = 2.5
+		prestige = -75
+		}
+	option = {
+		name = "EVTOPTB000149"
+		prestige = -25
+		release_vassal = FLG
+		FLG = { change_tag = ALG set_primary_culture = berber remove_accepted_culture = french }
+		}
+	}
+country_event = {
+	id = 000151
+	title = "EVTNAME000151"
+	desc = "EVTDESC000151"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		FLG = { vassal_of = FRA }
+		year = 1955
+		month = 6
+		}
+	option = {
+		name = "EVTOPTA000149"
+		badboy = 5
+		prestige = -175
+		}
+	option = {
+		name = "EVTOPTB000149"
+		prestige = -25
+		release_vassal = FLG
+		FLG = { change_tag = ALG set_primary_culture = berber remove_accepted_culture = french }
+		}
+	}	
+country_event = {
+	id = 000152
+	title = "EVTNAME000152"
+	desc = "EVTDESC000152"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		FLG = { vassal_of = FRA }
+		year = 1960
+		month = 1
+		}
+	option = {
+		name = "EVTOPTA000149"
+		badboy = 15
+		prestige = -325
+		}
+	option = {
+		name = "EVTOPTB000149"
+		prestige = -25
+		release_vassal = FLG
+		FLG = { change_tag = ALG set_primary_culture = berber remove_accepted_culture = french }
 		}
 	}
