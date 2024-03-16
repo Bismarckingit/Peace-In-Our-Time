@@ -1409,3 +1409,82 @@ country_event = {
 		FLG = { change_tag = ALG set_primary_culture = berber remove_accepted_culture = french }
 		}
 	}
+country_event = {
+	id = 000153
+	title = "EVTNAME000153"
+	desc = "EVTDESC000153"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		ICU = { vassal_of = FRA }
+		year = 1961
+		month = 7
+		}
+	option = {
+		name = "EVTOPTA000153"
+		badboy = 3
+		ICU = { release = DAI release = CAM release = KUA }
+		DAI = { inherit = ICU }
+		casus_belli = { target = DAI casus_belli = colonial_war months = 15 }
+		war = {
+			target = DAI 
+			attacker_goal = { casus_belli = colonial_war }
+			}
+		casus_belli = { target = CAM casus_belli = colonial_war months = 15 }
+		war = {
+			target = CAM 
+			attacker_goal = { casus_belli = colonial_war }
+			}
+		casus_belli = { target = KUA casus_belli = colonial_war months = 15 }
+		war = {
+			target = KUA 
+			attacker_goal = { casus_belli = colonial_war }
+			}
+		}
+	option = {
+		name = "EVTOPTB000153"
+		prestige = -25
+		badboy = -2
+		ICU = { release = DAI release = CAM release = KUA }
+		DAI = { inherit = ICU }
+	}
+}
+country_event = {
+	id = 000154
+	title = "EVTNAME000154"
+	desc = "EVTDESC000154"
+	picture = "nwo2_de_gaulle_fifth_republic"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		OR = {
+		DAI = { all_core = { owned_by = FRA } }
+		DAI = { vassal_of = FRA }
+		}
+		OR = {
+		KUA = { all_core = { owned_by = FRA } }
+		KUA = { vassal_of = FRA } 
+		}
+		OR = {
+		CAM = { all_core = { owned_by = FRA } }
+		CAM = { vassal_of = FRA }
+		}
+	}
+	option = {
+		name = "EVTOPTA000154"
+		inherit = DAI
+		inherit = KUA
+		inherit = CAM
+		DAI = { all_core = { add_core = ICU } }
+		KUA = { all_core = { add_core = ICU } }
+		CAM = { all_core = { add_core = ICU } }
+		release_vassal = ICU
+		}
+	option = {
+		name = "EVTOPTB000154"
+		any_owned = { limit = { OR = { is_core = DAI is_core = KUA is_core = CAM } } add_province_modifier = { name = nationalist_agitation duration = 3650 } }
+		}
+	}
