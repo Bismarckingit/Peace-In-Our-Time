@@ -8379,3 +8379,50 @@ bonaparte_ambition = {
 	diplomatic_points_modifier = -0.1
 	badboy = 0.01
 }	
+french_advisors = {
+	army_tech_research_bonus = 0.05
+	land_unit_start_experience = 10
+	mobilisation_size = 0.20
+}
+wehrmacht_regime = {
+	army_tech_research_bonus = 0.05
+	land_unit_start_experience = 10
+	global_pop_consciousness_modifier = 0.05
+	global_pop_militancy_modifier = 0.05
+}
+defunded_wehrmacht = {
+	land_organisation = -0.50
+	org_regain = -0.20
+	mobilisation_size = -0.10
+	army_tech_research_bonus = -0.10
+	navy_tech_research_bonus = -0.05
+	land_unit_start_experience = -15
+	leadership_modifier = -0.75
+}
+wehrmacht_expanded = {
+	land_organisation = 0.25
+	org_regain = 0.20
+	mobilisation_size = 0.10
+	army_tech_research_bonus = 0.10
+	navy_tech_research_bonus = 0.05
+	land_unit_start_experience = 15
+	leadership_modifier = 0.75
+}
+elections_denied = {
+	political_reform_desire = 0.4
+	global_pop_consciousness_modifier = 0.05
+	global_pop_militancy_modifier = 0.05
+}
+elections_promised = {
+	political_reform_desire = -0.2
+	global_pop_consciousness_modifier = -0.05
+	global_pop_militancy_modifier = -0.05
+}
+junkers_angered = {
+	RGO_output = -0.10
+	global_pop_consciousness_modifier = 0.05
+}
+junker_estates = {
+	RGO_output = 0.10
+	global_pop_consciousness_modifier = -0.05
+}

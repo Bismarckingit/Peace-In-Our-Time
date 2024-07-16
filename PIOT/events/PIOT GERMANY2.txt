@@ -1,0 +1,300 @@
+#####INTRO EVENT - SETS UP IDEOLOGICAL DIVIDE - ADDS DEBUFF
+country_event = {
+	id = 301
+	title = "EVTNAME000301"
+	desc = "EVTDESC000301"
+	picture = "german_autumn"
+	fire_only_once = yes
+
+	trigger = {
+		tag = GER
+		year = 1946
+	}
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "EVTOPTA000301"
+		set_country_flag = german_interrim
+		add_country_modifier = { name = wehrmacht_regime duration = 3650 }
+		any_pop = {
+				limit = { has_pop_culture = german }
+				ideology = { factor = 0.8 value = nationalist }
+				}
+			}
+	}
+#######GERMAN FINANCIAL CRASH - HAPPENS IN 1948 - SETS UP POWER STRUGGLE
+country_event = {
+	id = 302
+	title = "EVTNAME000302"
+	desc = "EVTDESC000302"
+	picture = "german_autumn"
+	fire_only_once = yes
+
+	trigger = {
+		tag = GER
+		year = 1948
+	}
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "EVTOPTA000302"
+		set_country_flag = german_hyperinflation
+		add_country_modifier = { name = hyperinflation duration = 7650 }
+		any_pop = {
+			limit = { is_colonial = no }
+			ideology = { factor = 0.2 value = nationalist }
+			}
+		any_pop = { limit = { has_pop_culture = german } scaled_militancy = { factor = 3 ideology = { value = nationalist factor = 0.8 } } }
+		country_event = 303
+		}
+	}
+#########FIRST POWER STRUGGLE EVENT - THE BANKING CRISIS	
+country_event = {
+	id = 303
+	title = "EVTNAME000303"
+	desc = "EVTDESC000303"
+	picture = "german_autumn"
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA000303"
+		wealth = 1000000
+		any_pop = { limit = { pop_type = capitalists } militancy = 10 }
+		change_variable = { which = n_rad value = -1 }
+		change_variable = { which = w_control value = 1 }
+		}
+	option = {
+		name = "EVTOPTB000303"
+		wealth = -100000
+		any_pop = { limit = { is_primary_culture = yes } ideology = { factor = 0.3 value = nationalist } }
+		change_variable = { which = n_rad value = 1 }
+		change_variable = { which = w_control value = 1 }
+		}
+	option = {
+		name = "EVTOPTC000303"
+		any_pop = { limit = { is_primary_culture = yes } ideology = { factor = 0.6 value = nationalist } }
+		change_variable = { which = n_rad value = 2 }
+		change_variable = { which = w_control value = -1 }
+		}
+	}
+country_event = {
+	id = 305
+	title = "EVTNAME000305"
+	desc = "EVTDESC000305"
+	picture = "german_autumn"
+	fire_only_once = yes
+	trigger = { 
+		tag = GER 
+		year = 1950 
+		month = 7
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000305"
+		wealth = -1000000
+		add_country_modifier = { name = wehrmacht_expanded duration = 7650 }
+		any_pop = { limit = { pop_type = officers } militancy = -10 }
+		any_pop = { limit = { pop_type = soldiers } militancy = -10 }
+		change_variable = { which = n_rad value = -1 }
+		change_variable = { which = w_control value = 3 }
+		}
+	option = {
+		name = "EVTOPTB000305"
+		any_pop = { limit = { is_primary_culture = yes } ideology = { factor = 0.3 value = nationalist } }
+		change_variable = { which = n_rad value = 1 }
+		change_variable = { which = w_control value = 1 }
+		}
+	option = {
+		name = "EVTOPTC000305"
+		wealth = 1000000
+		add_country_modifier = { name = defunded_wehrmacht duration = 7650 }
+		any_pop = { limit = { pop_type = officers } militancy = 10 }
+		any_pop = { limit = { pop_type = soldiers } militancy = 10 }
+		any_pop = { limit = { pop_type = soldiers } ideology = { factor = 0.6 value = nationalist } }
+		change_variable = { which = n_rad value = 2 }
+		change_variable = { which = w_control value = -1 }
+		}
+	}
+country_event = {
+	id = 306
+	title = "EVTNAME000306"
+	desc = "EVTDESC000306"
+	picture = "german_autumn"
+	fire_only_once = yes
+	trigger = { 
+		tag = GER 
+		year = 1953
+		month = 3
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000306"
+		add_country_modifier = { name = elections_promised duration = 7650 }
+		any_pop = { limit = { is_primary_culture = yes } ideology = { factor = 0.3 value = conservative } }
+		change_variable = { which = n_rad value = -1 }
+		change_variable = { which = w_control value = -2 }
+		}
+	option = {
+		name = "EVTOPTB000306"
+		any_pop = { limit = { is_primary_culture = yes } ideology = { factor = 0.3 value = traditionalist } }
+		change_variable = { which = n_rad value = 2 }
+		change_variable = { which = w_control value = -1 }
+		}
+	option = {
+		name = "EVTOPTC000306"
+		add_country_modifier = { name = elections_denied duration = 7650 }
+		any_pop = { limit = { is_primary_culture = yes } ideology = { factor = 0.6 value = nationalist } }
+		change_variable = { which = n_rad value = 3 }
+		change_variable = { which = w_control value = 1 }
+		}
+	}
+country_event = {
+	id = 307
+	title = "EVTNAME000307"
+	desc = "EVTDESC000307"
+	picture = "german_autumn"
+	fire_only_once = yes
+	trigger = { 
+		tag = GER 
+		year = 1954
+		month = 8
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000307"
+		wealth = 1000000
+		add_country_modifier = { name = junkers_angered duration = 7650 }
+		any_pop = { limit = { is_primary_culture = yes } ideology = { factor = 0.3 value = nationalist } }
+		change_variable = { which = n_rad value = -2 }
+		change_variable = { which = w_control value = -2 }
+		}
+	option = {
+		name = "EVTOPTB000307"
+		wealth = -1000000
+		any_pop = { limit = { is_primary_culture = yes } ideology = { factor = 0.2 value = traditionalist } }
+		change_variable = { which = n_rad value = -1 }
+		change_variable = { which = w_control value = -1 }
+		}
+	option = {
+		name = "EVTOPTC000307"
+		add_country_modifier = { name = junker_estates duration = 7650 }
+		any_pop = { limit = { is_primary_culture = yes } ideology = { factor = 0.6 value = nationalist } }
+		change_variable = { which = n_rad value = 1 }
+		change_variable = { which = w_control value = 1 }
+		}
+	}
+########WEHRMACHT WINS
+country_event = {
+	id = 308
+	title = "EVTNAME000308"
+	desc = "EVTDESC000308"
+	picture = "german_autumn"
+	fire_only_once = yes
+	trigger = { 
+		tag = GER 
+		year = 1956
+		month = 2
+		NOT = { check_variable = { which = n_rad value = 3 } }
+		check_variable = { which = w_control value = 3 }
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000308"
+		set_country_flag = wehrmacht_germany
+		any_pop = { limit = { pop_type = soldiers } militancy = -10 ideology = { factor = 0.8 value = traditionalist } }
+		any_pop = { limit = { pop_type = officers } militancy = -10 ideology = { factor = 0.8 value = traditionalist } }
+		any_pop = { limit = { pop_type = aristocrats } militancy = -10 ideology = { factor = 0.8 value = traditionalist } }
+		}
+	}
+#########FASCISTS WIN
+country_event = {
+	id = 309
+	title = "EVTNAME000309"
+	desc = "EVTDESC000309"
+	picture = "german_autumn"
+	fire_only_once = yes
+	trigger = { 
+		tag = GER 
+		year = 1956
+		month = 2
+		NOT = { check_variable = { which = w_control value = 3 } }
+		check_variable = { which = n_rad value = 3 }
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000309"
+		government = nationalist_dictatorship
+		political_reform = none_voting
+		political_reform = ruling_party_opinion
+		political_reform = politicized_service
+		political_reform = state_publishing
+		political_reform = no_trade_unions
+		any_pop = { limit = { pop_type = soldiers } militancy = -10 ideology = { factor = 0.8 value = nationalist } }
+		any_pop = { limit = { pop_type = officers } militancy = -10 ideology = { factor = 0.8 value = nationalist } }
+		any_pop = { limit = { pop_type = craftsmen } militancy = -10 ideology = { factor = 0.8 value = nationalist } }
+		}
+	}
+######BOTH ARE WEAK - WEIMAR RESTORATION
+country_event = {
+	id = 310
+	title = "EVTNAME000310"
+	desc = "EVTDESC000310"
+	picture = "german_autumn"
+	fire_only_once = yes
+	trigger = { 
+		tag = GER 
+		year = 1956
+		month = 2
+		NOT = { check_variable = { which = w_control value = 3 } }
+		NOT = { check_variable = { which = n_rad value = 3 } }
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000310"
+		government = democracy
+		set_country_flag = weimar_germany
+		political_reform = free_voting
+		political_reform = parties_fair
+		political_reform = politicized_service
+		political_reform = democratic_state_opinion
+		political_reform = free_meeting
+		any_pop = { limit = { pop_type = farmers } militancy = -10 ideology = { factor = 0.8 value = conservative } }
+		any_pop = { limit = { pop_type = craftsmen } militancy = -10 ideology = { factor = 0.8 value = socialist } }
+		any_pop = { limit = { pop_type = capitalists } militancy = -10 ideology = { factor = 0.8 value = liberal } }
+		}
+	}
+######BOTH ARE STRONG - CIVIL WAR
+country_event = {
+	id = 311
+	title = "EVTNAME000311"
+	desc = "EVTDESC000311"
+	picture = "german_autumn"
+	fire_only_once = yes
+	trigger = { 
+		tag = GER 
+		year = 1956
+		month = 2
+		{ check_variable = { which = w_control value = 3 } }
+		{ check_variable = { which = n_rad value = 3 } }
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000311"
+		set_country_flag = wehrmacht_germany
+		any_pop = { limit = { pop_type = soldiers } militancy = -10 ideology = { factor = 0.8 value = traditionalist } }
+		any_pop = { limit = { pop_type = officers } militancy = -10 ideology = { factor = 0.8 value = traditionalist } }
+		any_pop = { limit = { pop_type = aristocrats } militancy = -10 ideology = { factor = 0.8 value = traditionalist } }
+		any_owned = { limit = { OR = { region = PRU_695 region = PRU_546 region = PRU_682 region = PRU_684 region = SAX_558 region = HOL_369 region = HAN_528 } } secede_province = SGF }
+		SGF = { government = nationalist_dictatorship }
+		war = {
+			target = SGF
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = civil_war }
+			}
+		}
+	}
+########FURTHER GERMAN CONTENT FROM HERE##########
