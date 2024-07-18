@@ -43,10 +43,9 @@ country_event = {
 		set_country_flag = german_hyperinflation
 		add_country_modifier = { name = hyperinflation duration = 7650 }
 		any_pop = {
-			limit = { is_colonial = no }
+			limit = { has_pop_culture = german }
 			ideology = { factor = 0.2 value = nationalist }
 			}
-		any_pop = { limit = { has_pop_culture = german } scaled_militancy = { factor = 3 ideology = { value = nationalist factor = 0.8 } } }
 		country_event = 303
 		}
 	}
@@ -62,14 +61,14 @@ country_event = {
 
 	option = {
 		name = "EVTOPTA000303"
-		wealth = 1000000
+		treasury = 1000000
 		any_pop = { limit = { pop_type = capitalists } militancy = 10 }
 		change_variable = { which = n_rad value = -1 }
 		change_variable = { which = w_control value = 1 }
 		}
 	option = {
 		name = "EVTOPTB000303"
-		wealth = -100000
+		treasury = -100000
 		any_pop = { limit = { is_primary_culture = yes } ideology = { factor = 0.3 value = nationalist } }
 		change_variable = { which = n_rad value = 1 }
 		change_variable = { which = w_control value = 1 }
@@ -79,6 +78,23 @@ country_event = {
 		any_pop = { limit = { is_primary_culture = yes } ideology = { factor = 0.6 value = nationalist } }
 		change_variable = { which = n_rad value = 2 }
 		change_variable = { which = w_control value = -1 }
+		}
+	}
+country_event = {
+	id = 304
+	title = "EVTNAME000304"
+	desc = "EVTDESC000304"
+	picture = "german_autumn"
+	fire_only_once = yes
+	trigger = { 
+		tag = SGF 
+		GER = { exists = no }
+		owns = 549
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000305"
+		change_tag = GER
 		}
 	}
 country_event = {
@@ -95,7 +111,7 @@ country_event = {
 	mean_time_to_happen = { days = 1 }
 	option = {
 		name = "EVTOPTA000305"
-		wealth = -1000000
+		treasury = -1000000
 		add_country_modifier = { name = wehrmacht_expanded duration = 7650 }
 		any_pop = { limit = { pop_type = officers } militancy = -10 }
 		any_pop = { limit = { pop_type = soldiers } militancy = -10 }
@@ -110,7 +126,7 @@ country_event = {
 		}
 	option = {
 		name = "EVTOPTC000305"
-		wealth = 1000000
+		treasury = 1000000
 		add_country_modifier = { name = defunded_wehrmacht duration = 7650 }
 		any_pop = { limit = { pop_type = officers } militancy = 10 }
 		any_pop = { limit = { pop_type = soldiers } militancy = 10 }
@@ -166,7 +182,7 @@ country_event = {
 	mean_time_to_happen = { days = 1 }
 	option = {
 		name = "EVTOPTA000307"
-		wealth = 1000000
+		treasury = 1000000
 		add_country_modifier = { name = junkers_angered duration = 7650 }
 		any_pop = { limit = { is_primary_culture = yes } ideology = { factor = 0.3 value = nationalist } }
 		change_variable = { which = n_rad value = -2 }
@@ -174,7 +190,7 @@ country_event = {
 		}
 	option = {
 		name = "EVTOPTB000307"
-		wealth = -1000000
+		treasury = -1000000
 		any_pop = { limit = { is_primary_culture = yes } ideology = { factor = 0.2 value = traditionalist } }
 		change_variable = { which = n_rad value = -1 }
 		change_variable = { which = w_control value = -1 }
@@ -228,6 +244,7 @@ country_event = {
 	option = {
 		name = "EVTOPTA000309"
 		government = nationalist_dictatorship
+		ruling_party_ideology = nationalist
 		political_reform = none_voting
 		political_reform = ruling_party_opinion
 		political_reform = politicized_service
@@ -278,18 +295,27 @@ country_event = {
 		tag = GER 
 		year = 1956
 		month = 2
-		{ check_variable = { which = w_control value = 3 } }
-		{ check_variable = { which = n_rad value = 3 } }
+		 check_variable = { which = w_control value = 3 } 
+		 check_variable = { which = n_rad value = 3 } 
 		}
 	mean_time_to_happen = { days = 1 }
 	option = {
 		name = "EVTOPTA000311"
 		set_country_flag = wehrmacht_germany
-		any_pop = { limit = { pop_type = soldiers } militancy = -10 ideology = { factor = 0.8 value = traditionalist } }
-		any_pop = { limit = { pop_type = officers } militancy = -10 ideology = { factor = 0.8 value = traditionalist } }
-		any_pop = { limit = { pop_type = aristocrats } militancy = -10 ideology = { factor = 0.8 value = traditionalist } }
-		any_owned = { limit = { OR = { region = PRU_695 region = PRU_546 region = PRU_682 region = PRU_684 region = SAX_558 region = HOL_369 region = HAN_528 } } secede_province = SGF }
-		SGF = { government = nationalist_dictatorship }
+		PRU_695 = { secede_province = SGF }
+		PRU_546 = { secede_province = SGF }
+		PRU_682 = { secede_province = SGF }
+		PRU_684 = { secede_province = SGF }
+		SAX_558 = { secede_province = SGF }
+		HOL_369 = { secede_province = SGF }
+		HAN_528 = { secede_province = SGF }
+		SGF = { government = nationalist_dictatorship 
+				ruling_party_ideology = nationalist
+				political_reform = none_voting
+				political_reform = ruling_party_opinion
+				political_reform = politicized_service
+				political_reform = state_publishing
+				political_reform = no_trade_unions }
 		war = {
 			target = SGF
 			attacker_goal = { casus_belli = civil_war }
@@ -298,3 +324,294 @@ country_event = {
 		}
 	}
 ########FURTHER GERMAN CONTENT FROM HERE##########
+######THE DANZIG CRISIS - DANZIG TRIES TO ESCAPE POLAND######
+country_event = {
+	id = 312
+	title = "EVTNAME000312"
+	desc = "EVTDESC000312"
+	picture = "german_autumn"
+	fire_only_once = yes
+	trigger = { 
+		tag = DZG 
+		year = 1949
+		month = 4
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000312"
+		set_global_flag = danzig_crisis
+		POL = { country_event = 313 }
+		government = nationalist_dictatorship
+		ai_chance = { value = 100 }
+		}
+	option = {
+		name = "EVTOPTB000312"
+		prestige = -500
+		badboy = -500
+		}
+	}
+######CRISIS TO POLAND######
+country_event = {
+	id = 313
+	title = "EVTNAME000313"
+	desc = "EVTDESC000313"
+	picture = "german_autumn"
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA000313"
+		badboy = 5
+		prestige = 25
+		DZG = { all_core = { add_core = POL } }
+		inherit = DZG
+		GER = { country_event = 314 }
+		ai_chance = { value = 75 }
+		relation = { who = GER value = -400 }
+		}
+	option = {
+		name = "EVTOPTB000313"
+		badboy = -3
+		prestige = -50
+		DZG = { all_core = { add_core = GER } }
+		GER = { inherit = DZG } 
+		relation = { who = GER value = 200 }
+		GER = { country_event = 321 }
+		ai_chance = { value = 25 }
+		}
+	}
+########GERMAN RESPONSE - HARDLINER POSITION OF WAR OR BIDE TIME	
+country_event = {
+	id = 314
+	title = "EVTNAME000314"
+	desc = "EVTDESC000314"
+	picture = "german_autumn"
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA000314"
+		badboy = 7
+		prestige = 50
+		PRU_684 = { add_core = GER }
+		PRU_690 = { add_core = GER }
+		PRU_701 = { add_core = GER }
+		casus_belli = { type = conquest target = POL months = 6 }
+		FRA = { country_event = 319 }
+		ENG = { country_event = 319 }
+		war = {
+			target = POL
+			attacker_goal = { casus_belli = conquest }
+			}
+		}
+	option = {
+		name = "EVTOPTB000314"
+		badboy = -4
+		prestige = -50
+		}
+	}		
+##########GENERALGOVERNMENT + NEW CORES UPON CONQUEST
+country_event = {
+	id = 315
+	title = "EVTNAME000315"
+	desc = "EVTDESC000315"
+	picture = "german_autumn"
+	fire_only_once = yes
+	trigger = {
+		tag = GER
+		POL = { exists = no }
+		owns = 706
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000315"
+		badboy = 4
+		prestige = 50
+		PRU_684 = { add_core = GER }
+		PRU_690 = { add_core = GER }
+		PRU_701 = { add_core = GER }
+		717 = { add_core = GER }
+		708 = { add_core = GER }
+		709 = { add_core = GER }
+		707 = { add_core = GER }
+		any_owned = { limit = { is_core = POL NOT = { is_core = GER } } secede_province = POL }
+		create_vassal = POL
+		POL = { government = colonial_government capital = 706 }
+		diplomatic_influence = { who = POL value = 500 }
+		set_global_flag = end_of_poland
+		RUS = { country_event = 316 }
+		ai_chance = { value = 100 }
+		}
+	option = {
+		name = "EVTOPTB000315"
+		badboy = 10
+		set_global_flag = end_of_poland
+		RUS = { country_event = 316 }
+		}
+	option = {
+		name = "EVTOPTC000315"
+		badboy = 2
+		PRU_684 = { add_core = GER }
+		PRU_690 = { add_core = GER }
+		PRU_701 = { add_core = GER }
+		717 = { add_core = GER }
+		708 = { add_core = GER }
+		709 = { add_core = GER }
+		707 = { add_core = GER }
+		any_owned = { limit = { is_core = POL NOT = { is_core = GER } } secede_province = POL }
+		create_vassal = POL
+		POL = { government = nationalist_dictatorship capital = 706 }
+		diplomatic_influence = { who = POL value = 500 }
+		set_global_flag = end_of_poland
+		RUS = { country_event = 316 }
+		}
+	}
+##########RUSSIAN REACTION TO GERMAN CONQUEST
+country_event = {
+	id = 316
+	title = "EVTNAME000316"
+	desc = "EVTDESC000316"
+	picture = "german_autumn"
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000316"
+		badboy = 5
+		prestige = 50
+		UKR = { all_core = { add_core = RUS } }
+		BYE = { all_core = { add_core = RUS } }
+		set_country_flag = claimed_eastern_poland
+		GER = { country_event = 317 }
+		ai_chance = { value = 100 }
+		}
+	option = {
+		name = "EVTOPTB000316"
+		badboy = -5
+		prestige = -50
+		relation = { who = GER value = 200 }
+		}
+	}
+########RUSSIA DEMANDS BELARUSSIAN LANDS OFF POLAND/GERMANY
+country_event = {
+	id = 317
+	title = "EVTNAME000317"
+	desc = "EVTDESC000317"
+	picture = "german_autumn"
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000317"
+		prestige = 50
+		any_owned = { limit = { NOT = { is_core = GER } is_core = RUS } secede_province = RUS }
+		POL = { country_event = 322 }
+		relation = { who = RUS value = 500 }
+		}
+	option = {
+		name = "EVTOPTB000317"
+		relation = { who = RUS value = -500 }
+		RUS = { country_event = 318 }
+		}
+	}
+#########GERMAN RESPONSE OF NO - RUSSIAN CASUS BELLI TO DISMANTLE - WORLD WAR
+country_event = {
+	id = 318
+	title = "EVTNAME000318"
+	desc = "EVTDESC000318"
+	picture = "german_autumn"
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000318"
+		prestige = 50
+		casus_belli = { type = dismantle_cb target = GER months = 12 }
+		relation = { who = GER value = -500 }
+		war = {
+			target = GER
+			attacker_goal = { casus_belli = dismantle_cb }
+			defender_goal = { casus_belli = dismantle_cb }
+			}
+		}
+	option = {
+		name = "EVTOPTB000318"
+		prestige = -500
+		relation = { who = GER value = 100 }
+		}
+	}
+##########BRITISH/FRENCH RESPONSE TO THE POLISH CRISIS - MAY DEMAND WITHDRAWAL OR WAR
+country_event = {
+	id = 319
+	title = "EVTNAME000319"
+	desc = "EVTDESC000319"
+	picture = "german_autumn"
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000319"
+		prestige = 50
+		GER = { country_event = 320 }
+		}
+	option = {
+		name = "EVTOPTB000319"
+		prestige = -500
+		relation = { who = GER value = 100 }
+		}
+	}
+########ULTIMATUM DELIVERED - WORLD WAR OR WHITE PEACE
+country_event = {
+	id = 320
+	title = "EVTNAME000320"
+	desc = "EVTDESC000320"
+	picture = "german_autumn"
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000320"
+		prestige = 50
+		casus_belli = { target = FROM type = dismantle_cb months = 12 }
+		war = { 
+			target = FROM
+			attacker_goal = { casus_belli = dismantle_cb }
+			defender_goal = { casus_belli = dismantle_cb }
+			}
+		}
+	option = {
+		name = "EVTOPTB000320"
+		prestige = -500
+		end_war = ENG
+		end_war = POL
+		end_war = FRA
+		relation = { who = FROM value = 100 }
+		}
+	}
+#########GERMANY RECEIVES DANZIG NOTIFIER EVENT
+country_event = {
+	id = 321
+	title = "EVTNAME000321"
+	desc = "EVTDESC000321"
+	picture = "german_autumn"
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000321"
+		prestige = 50
+		}
+	}
+#######POLAND GIVES UP EASTERN LAND TO RUSSIA
+country_event = {
+	id = 322
+	title = "EVTNAME000322"
+	desc = "EVTDESC000322"
+	picture = "german_autumn"
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000321"
+		prestige = -6000
+		any_owned = { limit = { OR = { is_core = RUS is_core = LIT } } secede_province = RUS }
+		}
+	}
