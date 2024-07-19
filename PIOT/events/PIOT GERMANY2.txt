@@ -365,7 +365,7 @@ country_event = {
 		DZG = { all_core = { add_core = POL } }
 		inherit = DZG
 		GER = { country_event = 314 }
-		ai_chance = { value = 75 }
+		ai_chance = { factor = 75 }
 		relation = { who = GER value = -400 }
 		}
 	option = {
@@ -376,7 +376,7 @@ country_event = {
 		GER = { inherit = DZG } 
 		relation = { who = GER value = 200 }
 		GER = { country_event = 321 }
-		ai_chance = { value = 25 }
+		ai_chance = { factor = 25 }
 		}
 	}
 ########GERMAN RESPONSE - HARDLINER POSITION OF WAR OR BIDE TIME	
@@ -389,6 +389,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = "EVTOPTA000314"
+		set_country_flag = danzig_hardliner
 		badboy = 7
 		prestige = 50
 		PRU_684 = { add_core = GER }
@@ -401,11 +402,13 @@ country_event = {
 			target = POL
 			attacker_goal = { casus_belli = conquest }
 			}
+		ai_chance = { factor = 70 }
 		}
 	option = {
 		name = "EVTOPTB000314"
 		badboy = -4
 		prestige = -50
+		ai_chance = { factor = 30 }
 		}
 	}		
 ##########GENERALGOVERNMENT + NEW CORES UPON CONQUEST
@@ -434,7 +437,7 @@ country_event = {
 		707 = { add_core = GER }
 		any_owned = { limit = { is_core = POL NOT = { is_core = GER } } secede_province = POL }
 		create_vassal = POL
-		POL = { government = colonial_government capital = 706 }
+		POL = { government = colonial_government capital = 706 add_country_modifier = { name = reichskomissariat duration = -1 } any_pop = { limit = { has_pop_culture = polish } pop_type = slaves } }
 		diplomatic_influence = { who = POL value = 500 }
 		set_global_flag = end_of_poland
 		RUS = { country_event = 316 }
@@ -505,11 +508,13 @@ country_event = {
 		any_owned = { limit = { NOT = { is_core = GER } is_core = RUS } secede_province = RUS }
 		POL = { country_event = 322 }
 		relation = { who = RUS value = 500 }
+		ai_chance = { factor = 90 }
 		}
 	option = {
 		name = "EVTOPTB000317"
 		relation = { who = RUS value = -500 }
 		RUS = { country_event = 318 }
+		ai_chance = { factor = 10 }
 		}
 	}
 #########GERMAN RESPONSE OF NO - RUSSIAN CASUS BELLI TO DISMANTLE - WORLD WAR
@@ -531,11 +536,13 @@ country_event = {
 			attacker_goal = { casus_belli = dismantle_cb }
 			defender_goal = { casus_belli = dismantle_cb }
 			}
+		ai_chance = { factor = 70 }
 		}
 	option = {
 		name = "EVTOPTB000318"
 		prestige = -500
 		relation = { who = GER value = 100 }
+		ai_chance = { factor = 30 }
 		}
 	}
 ##########BRITISH/FRENCH RESPONSE TO THE POLISH CRISIS - MAY DEMAND WITHDRAWAL OR WAR
@@ -551,6 +558,7 @@ country_event = {
 		name = "EVTOPTA000319"
 		prestige = 50
 		GER = { country_event = 320 }
+		ai_chance = { factor = 100 }
 		}
 	option = {
 		name = "EVTOPTB000319"
@@ -576,6 +584,7 @@ country_event = {
 			attacker_goal = { casus_belli = dismantle_cb }
 			defender_goal = { casus_belli = dismantle_cb }
 			}
+		ai_chance = { factor = 100 }
 		}
 	option = {
 		name = "EVTOPTB000320"
@@ -610,8 +619,143 @@ country_event = {
 	is_triggered_only = yes
 	mean_time_to_happen = { days = 1 }
 	option = {
-		name = "EVTOPTA000321"
+		name = "EVTOPTA000322"
 		prestige = -6000
 		any_owned = { limit = { OR = { is_core = RUS is_core = LIT } } secede_province = RUS }
+		}
+	}
+########GERMANY DEMANDS POLISH SUBJUGATION - IMPERIAL ROUTE
+country_event = {
+	id = 323
+	title = "EVTNAME000323"
+	desc = "EVTDESC000323"
+	picture = "german_autumn"
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000323"
+		prestige = -500
+		any_owned = { limit = { is_core = GER } secede_province = GER }
+		GER = { create_vassal = POL country_event = 324 }
+		ai_chance = { factor = 20 }
+		}
+	option = {
+		name = "EVTOPTB000323"
+		prestige = 50
+		GER = { country_event = 325 }
+		ai_chance = { factor = 80 }
+		}
+	}
+##########GERMANY IS NOTIFIED OF POLISH ACCEPTANCE
+country_event = {
+	id = 324
+	title = "EVTNAME000324"
+	desc = "EVTDESC000324"
+	picture = "german_autumn"
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000324"
+		prestige = 200
+		}
+	}
+#########POLISH REFUSAL - GO IN FOR CONQUEST OR BACK DOWN TEMPORARILY
+country_event = {
+	id = 325
+	title = "EVTNAME000325"
+	desc = "EVTDESC000325"
+	picture = "german_autumn"
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000325"
+		badboy = 7
+		prestige = 200
+		set_country_flag = danzig_hardliner
+		casus_belli = { type = conquest target = POL months = 6 }
+		FRA = { country_event = 319 }
+		ENG = { country_event = 319 }
+		war = {
+			target = POL
+			attacker_goal = { casus_belli = conquest }
+			}
+		ai_chance = { factor = 100 }
+		}
+	option = {
+		name = "EVTOPTB000325"
+		prestige = -75
+		}
+	}
+##########GERMANY DEMANDS DANZIG CORRIDOR - POLISH RESPONSE
+country_event = {
+	id = 326
+	title = "EVTNAME000326"
+	desc = "EVTDESC000326"
+	picture = "german_autumn"
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000326"
+		prestige = -50
+		any_owned = { limit = { is_core = GER } secede_province = GER }
+		GER = { country_event = 321 }
+		ai_chance = { factor = 50 }
+		}
+	option = {
+		name = "EVTOPTB000326"
+		prestige = 50
+		GER = { country_event = 325 }
+		ai_chance = { factor = 50 }
+		}
+	} 
+country_event = {
+	id = 327
+	title = "EVTNAME000327"
+	desc = "EVTDESC000327"
+	picture = "german_autumn"
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000327"
+		prestige = 50
+		treasury = 1000000
+		badboy = 4
+		any_owned = { limit = { is_core = GER } secede_province = GER }
+		GER = { country_event = 321 treasury = -1000000 }
+		LIT = { all_core = { add_core = POL } }
+		SLO = { all_core = { add_core = POL } }
+		casus_belli = { target = LAT type = make_puppet months = 36 }
+		casus_belli = { target = EST type = make_puppet months = 36 }
+		diplomatic_influence = { who = ROM value = 400 }
+		ai_chance = { factor = 80 }
+		}
+	option = {
+		name = "EVTOPTB000327"
+		prestige = 50
+		GER = { country_event = 325 }
+		ai_chance = { factor = 20 }
+		}
+	} 
+########REMOVE REICHSKOMISSARIAT MODIFIER FOR ANY THAT BREAK FREE
+country_event = {
+	id = 328
+	title = "EVTNAME000328"
+	desc = "EVTDESC000328"
+	picture = "german_autumn"
+	fire_only_once = yes
+	trigger = {
+		has_country_modifier = reichskomissariat
+		is_vassal = no
+		}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "EVTOPTA000327"
+		prestige = 50
+		remove_country_modifier = reichskomissariat
 		}
 	}

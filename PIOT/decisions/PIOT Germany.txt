@@ -1,0 +1,109 @@
+political_decisions = {
+		danzig_hardliner = {
+		picture = "claim_greater_germany"
+		potential = {
+			tag = GER
+			has_global_flag = danzig_crisis
+			NOT = { has_country_flag = danzig_hardliner }
+			NOT = { has_global_flag = end_of_poland }
+			war_policy = jingoism
+		}
+		allow = {
+			NOT = { relation = { who = POL value = -150 } }
+			NOT = { POL = { in_sphere = GER } }
+			is_disarmed = no
+			is_vassal = no 
+			}
+		effect = {
+			set_country_flag = danzig_hardliner
+			badboy = 18
+			prestige = 50
+			PRU_684 = { add_core = GER }
+			PRU_690 = { add_core = GER }
+			PRU_701 = { add_core = GER }
+			casus_belli = { type = conquest target = POL months = 6 }
+			FRA = { country_event = 319 }
+			ENG = { country_event = 319 }
+			war = {
+				target = POL
+				attacker_goal = { casus_belli = conquest }
+				}
+			}
+		}
+		danzig_imperial_borders = {
+		picture = "claim_greater_germany"
+		potential = {
+			tag = GER
+			has_global_flag = danzig_crisis
+			NOT = { has_country_flag = danzig_imperial }
+			NOT = { has_country_flag = danzig_hardliner }
+			NOT = { has_global_flag = end_of_poland }
+			war_policy = pro_military
+		}
+		allow = {
+			NOT = { relation = { who = POL value = -100 } }
+			is_disarmed = no
+			is_vassal = no 
+			}
+		effect = {
+			set_country_flag = danzig_imperial
+			badboy = 10
+			prestige = 50
+			PRU_684 = { add_core = GER }
+			PRU_690 = { add_core = GER }
+			PRU_701 = { add_core = GER }
+			POL = { country_event = 322 }
+			}
+		}
+		danzig_small_solution = {
+		picture = "claim_greater_germany"
+		potential = {
+			tag = GER
+			has_global_flag = danzig_crisis
+			NOT = { has_country_flag = danzig_imperial }
+			NOT = { has_country_flag = danzig_hardliner }
+			NOT = { has_country_flag = danzig_small_solution }
+			NOT = { has_global_flag = end_of_poland }
+			war_policy = anti_military
+		}
+		allow = {
+			NOT = { relation = { who = POL value = 100 } }
+			is_disarmed = no
+			is_vassal = no 
+			}
+		effect = {
+			set_country_flag = danzig_small_solution
+			badboy = 5
+			prestige = 50
+			PRU_690 = { add_core = GER }
+			POL = { country_event = 326 }
+			}
+		}
+		danzig_big_solution = {
+		picture = "claim_greater_germany"
+		potential = {
+			tag = GER
+			has_global_flag = danzig_crisis
+			NOT = { has_country_flag = danzig_imperial }
+			NOT = { has_country_flag = danzig_hardliner }
+			NOT = { has_country_flag = danzig_small_solution }
+			NOT = { has_country_flag = danzig_big_solution }
+			NOT = { has_global_flag = end_of_poland }
+			war_policy = pacifism
+		}
+		allow = {
+			relation = { who = POL value = 150 } 
+			POL = { in_sphere = GER }
+			treasury = 1000000
+			is_disarmed = no
+			is_vassal = no 
+			}
+		effect = {
+			set_country_flag = danzig_big_solution
+			badboy = 5
+			prestige = 50
+			690 = { add_core = GER }
+			POL = { country_event = 327 }
+			}
+		}
+	}

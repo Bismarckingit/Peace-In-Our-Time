@@ -8391,6 +8391,7 @@ wehrmacht_regime = {
 	global_pop_militancy_modifier = 0.05
 }
 defunded_wehrmacht = {
+	tax_efficiency = 0.05
 	land_organisation = -0.50
 	org_regain = -0.20
 	mobilisation_size = -0.10
@@ -8400,6 +8401,7 @@ defunded_wehrmacht = {
 	leadership_modifier = -0.75
 }
 wehrmacht_expanded = {
+	tax_efficiency = -0.05
 	land_organisation = 0.25
 	org_regain = 0.20
 	mobilisation_size = 0.10
@@ -8425,4 +8427,11 @@ junkers_angered = {
 junker_estates = {
 	RGO_output = 0.10
 	global_pop_consciousness_modifier = -0.05
+}
+reichskomissariat = {
+	RGO_output = 0.8
+	factory_output = -1
+	factory_input = -1
+	core_pop_militancy_modifier = 0.5
+	core_pop_consciousness_modifier = 0.5
 }
