@@ -106,4 +106,50 @@ political_decisions = {
 			POL = { country_event = 327 }
 			}
 		}
+		anschluss_luxembourg = {
+		picture = "claim_greater_germany"
+		potential = {
+			tag = GER
+			NOT = { has_country_flag = anschluss_luxembourg }
+		}
+		allow = {
+			OR = {
+				LUX = { in_sphere = GER }
+				LUX = { vassal_of = GER }
+				controls = 397 
+				owns = 397
+				has_country_flag = fall_of_france
+				}
+			}
+		effect = {
+			set_country_flag = anschluss_luxembourg
+			badboy = 0.5
+			prestige = 10
+			397 = { add_core = GER }
+			inherit = LUX
+			}
+		}
+				}
+		soft_coup_benelux = {
+		picture = "claim_greater_germany"
+		potential = {
+			tag = GER
+			NOT = { has_country_flag = soft_coup_benelux }
+			BEL = { OR = { in_sphere = GER vassal_of = GER } }
+			NET = { OR = { in_sphere = GER vassal_of = GER } }
+		}
+		allow = {
+			cold_war = 1
+			}
+		effect = {
+			set_country_flag = soft_coup_benelux
+			badboy = 5
+			prestige = 10
+			create_vassal = BEL
+			create_vassal = NET
+			BEL = { government = colonial_government add_country_modifier = { name = reichskomissariat duration = -1 } }
+			NET = { government = colonial_government add_country_modifier = { name = reichskomissariat duration = -1 } }
+			inherit = LUX
+			}
+		}
 	}

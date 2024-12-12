@@ -356,7 +356,7 @@ country_event = {
 		badboy = 15
 		add_accepted_culture = basque
 		add_accepted_culture = catalan
-		SPA = { all_core = add_core = FRA }
+		SPA = { all_core = { add_core = FRA } }
 		}
 	option = {
 		name = "EVTOPTB000113"
@@ -383,7 +383,7 @@ country_event = {
 	option = {
 		name = "EVTOPTA000114"
 		badboy = 10
-		SCI = { all_core = add_core = FRA }
+		SCI = { all_core = { add_core = FRA } }
 		}
 	option = {
 		name = "EVTOPTB000114"
@@ -1229,7 +1229,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = "EVTOPTA000145"
-		any_owned = { limit = { is_core = ALG } add_province_modifier = { nationalist_agitation duration = -1 } }
+		any_owned = { limit = { is_core = ALG } add_province_modifier = { name = nationalist_agitation duration = -1 } }
 		}
 	}
 country_event = {
@@ -1488,3 +1488,4 @@ country_event = {
 		any_owned = { limit = { OR = { is_core = DAI is_core = KUA is_core = CAM } } add_province_modifier = { name = nationalist_agitation duration = 3650 } }
 		}
 	}
+############ADD FREE FRENCH GOVERNMENT IN EXILE CONTENT HERE

@@ -356,6 +356,22 @@ BAY_progressive;Radikale Arbeiterpartei;Arbeiterpartei radical;Radikale Arbeiter
 BAY_socialist;Deutscher Arbeiterverein;Deutscher Arbeiterverein;Deutscher Arbeiterverein;;Deutscher Arbeiterverein;;;;;;;;;x;;;;;;;;;;;;;;;;
 BAY_socialist_2;Sozialdem. Arbeiterpartei ;Sozialdem. Arbeiterpartei ;Sozialdem. Arbeiterpartei ;;Sozialdem. Arbeiterpartei ;;;;;;;;;x;;;;;;;;;;;;;;;;
 BAY_socialist_3;Sozial. Arbeiterpartei ;Sozial. Arbeiterpartei ;Sozial. Arbeiterpartei ;;Sozial. Arbeiterpartei ;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL;Belgium;Belgique;Belgien;;Bélgica;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_ADJ;Belgian;Belge;Belgisch;;Belga;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_communist;Communist Partij;Partij communiste;Communist Partij;;Communist Partji;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_conservative;Katholieke Partij;Katholieke Partij;Katholieke Partij;;Katholieke Partij;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_conservative_2;Christene Volkspartij;Christene Volkspartij;Christene Volkspartij;;Christene Volkspartij;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_conservative_3;Meeting Partij;Meeting Partij;Meeting Partij;;Meeting Partij;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_liberal;Liberale Partij;Liberale Partij;Liberale Partij;;Liberale Partij;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_populist;Nationalist Partij;Partij nationaliste;Nationalist Partij;;Nationalist Partij;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_progressive;Radical Partij;Partij radical;Radical Partij;;Radical Partij;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_socialist;Belgische Werklieden Partij;Belgische Werklieden Partij;Belgische Werklieden Partij;;Belgische Werklieden Partij;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_traditionalist;Fascist Partij;Partij fasciste;Fascist Partij;;Fascist Partji;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_absolute_monarchy;The Kingdom of Belgium;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_hms_government;The Kingdom of Belgium;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_proletarian_dictatorship;Belgian People's Republic;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_nationalist_dictatorship;Burgundist Belgium;;;;;;;;;x;;;;;;;;;;;;;;;;
+BEL_colonial_government;Reichskommissariat Belgien-Frankreich;;;;;;;;;x;;;;;;;;;;;;;;;;
 BKF;The Balkan Federation;Fédération des Balkans;Balkan-Föderation;;Federación de los Balcanes;;;;;;;;;x;;;;;;;;;;;;;;;;
 BKF_ADJ;Balkan;;Balkanisch;Balkanski;Balcanico;;;;;;;;;x;;;;;;;;;;;;;;;;
 BKF_proletarian_dictatorship;The Balkan Union;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;
@@ -1969,6 +1985,7 @@ NET_nationalist_dictatorship;Greater Rijk of Holland;;;;;;;;;x;;;;;;;;;;;;;;;;
 NET_proletarian_dictatorship;Workers Republic of Holland;;;;;;;;;x;;;;;;;;;;;;;;;;
 NET_democracy;Batavian Republic;;;;;;;;;x;;;;;;;;;;;;;;;;
 NET_theocracy;Teutonic Niederlande;;;;;;;;;x;;;;;;;;;;;;;;;;
+NET_colonial_government;Reichskommissariat Niederlande;;;;;;;;;x;;;;;;;;;;;;;;;;
 NET_ADJ;Dutch;Néerlandais;Holländisch;;Holandesa;;;;;;;;;x;;;;;;;;;;;;;;;;
 NET_communist;Communist Party;;;;;;;;;;;;;x,,,;;;;;;;;;;;;;;;;
 NET_communist_2;Communist Partij;;;;;;;;;;;;;x,,,;;;;;;;;;;;;;;;;
@@ -2247,3 +2264,10 @@ SWE_populist;Sverigedemokraterna;Sverigedemokraterna;Sverigedemokraterna;;Sverig
 SWE_progressive;Miljöpartiet;Miljöpartiet;Miljöpartiet;;Miljöpartiet;;;;;;;;;x;;;;;;;;;;;;;;;;
 SWE_socialist;Socialdemokraterna;Socialdemokraterna;Socialdemokraterna;;Socialdemokraterna;;;;;;;;;x;;;;;;;;;;;;;;;;
 SWE_traditionalist;Sveriges Muslimska Förbund;Sveriges Muslimska Förbund;Sveriges Muslimska Förbund;;Sveriges Muslimska Förbund;;;;;;;;;x;;;;;;;;;;;;;;;;
+UFR;The French State;;;;;;;;;;;;;x
+UFR_ADJ;French;;;;;;;;;;;;;x
+UFR_absolute_monarchy;The Kingdom of France;;;;;;;;;x;;;;;;;;;;;;;;;;
+UFR_proletarian_dictatorship;People's Republic of France;;;;;;;;;x;;;;;;;;;;;;;;;;
+UFR_colonial_government;Reichskomissariat Frankreich;;;;;;;;;x;;;;;;;;;;;;;;;;
+UFR_nationalist_dictatorship;Frankish Volkstadt;;;;;;;;;x;;;;;;;;;;;;;;;;
+UFR_theocracy;The Knights Templar;;;;;;;;;x;;;;;;;;;;;;;;;;

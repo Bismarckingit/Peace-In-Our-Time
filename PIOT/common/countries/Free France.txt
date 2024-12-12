@@ -1,5 +1,7 @@
 graphical_culture = FrenchGC
 color = { 65 105 225 }
+colonial_government = { 51 50 89 }
+nationalist_dictatorship = { 20 18 97 }
 party = {
 		name = "party_big_tent"
 		citizenship_policy = full_citizenship
