@@ -36,15 +36,15 @@ penal_system = capital_punishment
 
 # Social Reforms
 safety_regulations = no_safety
-pensions = no_pensions
-education = private_education
-health_care = no_health_care
+pensions = low_pensions
+education = competent_public_education
+health_care = low_health_care
 security_reform = basic_security
-child_care = no_child_care
-unemployment_subsidies = no_subsidies
+child_care = adequate_child_care
+unemployment_subsidies = low_subsidies
 pollution = no_controls
-wage_reform = unregulated_hours
-public_housing_reform = no_public_housing
+wage_reform = low_minimum_wage
+public_housing_reform = acceptable_public_housing
 # Technologies
 post_war_radar = 1
 infantry = 1
