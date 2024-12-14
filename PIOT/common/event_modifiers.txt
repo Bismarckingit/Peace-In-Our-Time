@@ -8431,7 +8431,38 @@ junker_estates = {
 reichskomissariat = {
 	RGO_output = 0.8
 	factory_output = -1
-	factory_input = -1
+	factory_input = 1
 	core_pop_militancy_modifier = 0.5
 	core_pop_consciousness_modifier = 0.5
+}
+italian_slump = {
+	factory_output = -0.1
+	factory_input = 0.1
+	factory_throughput = -0.1
+	tax_efficiency = -0.05
+	industry_tech_research_bonus = -0.1
+	commerce_tech_research_bonus = -0.1
+	RGO_output = -0.1
+}
+italian_crash = {
+	factory_output = -0.5
+	factory_input = 0.5
+	factory_throughput = -0.5
+	tax_efficiency = -0.2
+	industry_tech_research_bonus = -0.5
+	commerce_tech_research_bonus = -0.5
+	RGO_output = -0.5
+}
+mussolini_personal_rule = {
+	core_pop_consciousness_modifier = -0.05
+	core_pop_militancy_modifier = 0.02
+	suppression_points_modifier = 0.3
+	ruling_party_support = 0.3
+	administrative_efficiency_modifier = -0.05
+	social_reform_desire = 0.1
+}
+land_confiscation = {
+	tax_efficiency = 0.1
+	RGO_output = -0.1
+	core_pop_militancy_modifier = 0.05
 }
