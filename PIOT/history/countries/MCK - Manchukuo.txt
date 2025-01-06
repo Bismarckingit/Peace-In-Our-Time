@@ -1,6 +1,5 @@
 capital = 1555
 primary_culture = manchu
-culture = chinese
 religion = secularism
 government = absolute_monarchy
 plurality = 82.0
